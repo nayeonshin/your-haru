@@ -11,12 +11,12 @@ function showGreeting(username) {
 }
 
 function handleLogInSubmit(event) {
-  event.preventDefault();
+  event.preventDefault(); // Stops browser from refreshing
   loginForm.classList.add(HIDDEN_CLASSNAME);
 
-  const username = loginInput.value;
-  localStorage.setItem(USERNAME_KEY, username);
-  showGreeting(username);
+  const inputUsername = loginInput.value;
+  localStorage.setItem(USERNAME_KEY, inputUsername);
+  showGreeting(inputUsername);
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);

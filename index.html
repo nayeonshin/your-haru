@@ -8,10 +8,15 @@
     <title>Pro Duck</title>
   </head>
   <body>
-    <div id="login-form">
-      <input type="text" placeholder="Up to 255 characters" />
+    <form id="login-form">
+      <input
+        maxlength="50"
+        placeholder="Up to 50 characters"
+        required
+        type="text"
+      />
       <button>Log In</button>
-    </div>
+    </form>
     <script src="js/script.js"></script>
   </body>
 </html>

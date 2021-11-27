@@ -1,6 +1,4 @@
 .background {
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.3);
   background-image: url("https://source.unsplash.com/random/1920x1080");
   background-repeat: no-repeat;
   background-size: cover;
@@ -8,10 +6,17 @@
   -o-background-size: cover;
   -webkit-background-size: cover;
   color: var(--white);
+  height: 100%;
+}
+
+.background__darkner {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: center;
+  width: 100%;
 }
 
 main {
@@ -27,7 +32,7 @@ main .background__clock .clock__am-pm {
 }
 
 main .background__calendar {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 0.1em;
 }
 
@@ -37,7 +42,7 @@ main .background__clock {
 }
 
 main .background__clock .clock__numbers {
-  margin-right: -0.2em;
+  margin-right: -0.1em;
 }
 
 main .background__clock .clock__am-pm {
@@ -46,4 +51,10 @@ main .background__clock .clock__am-pm {
 
 main .background__greeting {
   font-size: 1.5rem;
+}
+
+@media screen and (max-width: 200px) {
+  main {
+    display: none;
+  }
 }

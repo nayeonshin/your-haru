@@ -9,28 +9,30 @@
   </head>
   <body>
     <div class="background">
-      <div class="form-background js-form-background hidden">
-        <form class="form-background__login js-form-background__login hidden">
-          <h1>Welcome!</h1>
-          <span>What is your name?</span>
-          <input
-            maxlength="50"
-            placeholder="Up to 50 characters"
-            required
-            type="text"
-          />
-        </form>
+      <div class="background__darkner">
+        <div class="form-background js-form-background hidden">
+          <form class="form-background__login js-form-background__login hidden">
+            <h1>Welcome!</h1>
+            <span>What is your name?</span>
+            <input
+              maxlength="50"
+              placeholder="Up to 50 characters"
+              required
+              type="text"
+            />
+          </form>
+        </div>
+        <main>
+          <h3 class="background__calendar js-background__calendar">
+            Mon, Jan 00, 0000
+          </h3>
+          <h2 class="background__clock js-background__clock">
+            <span class="clock__numbers js-clock__numbers">00:00:00</span>
+            <span class="clock__am-pm js-clock__am-pm">am</span>
+          </h2>
+          <h1 class="background__greeting js-background__greeting">Hello!</h1>
+        </main>
       </div>
-      <main>
-        <h3 class="background__calendar js-background__calendar">
-          Mon, Jan 00, 0000
-        </h3>
-        <h2 class="background__clock js-background__clock">
-          <span class="clock__numbers js-clock__numbers">00:00:00</span>
-          <span class="clock__am-pm js-clock__am-pm">am</span>
-        </h2>
-        <h1 class="background__greeting js-background__greeting">Hello!</h1>
-      </main>
     </div>
     <script src="js/username.js"></script>
     <script src="js/time.js"></script>

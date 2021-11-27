@@ -4,9 +4,9 @@
 @import "variables.css";
 @import "animation.css";
 
-/* Components */
-@import "components/login-form.css";
-@import "components/background.css";
+/* Screens */
+@import "screens/login-form.css";
+@import "screens/background.css";
 
 body {
   /* box-sizing: border-box; */

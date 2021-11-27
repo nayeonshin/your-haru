@@ -42,7 +42,7 @@ main .background__clock {
 }
 
 main .background__clock .clock__numbers {
-  margin-right: -0.1em;
+  margin-right: -0.15em;
 }
 
 main .background__clock .clock__am-pm {

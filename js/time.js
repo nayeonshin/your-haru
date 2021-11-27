@@ -1,8 +1,6 @@
 const clock = document.querySelector(".js-background__clock");
-const hours = clock.querySelector("span:first-child");
-const minutes = clock.querySelector("span:nth-child(2)");
-const seconds = clock.querySelector("span:nth-child(3)");
-const amPm = clock.querySelector("span:last-child");
+const clockNumbers = clock.querySelector(".js-clock__numbers");
+const clockAmPm = clock.querySelector(".js-clock__am-pm");
 
 const calendar = document.querySelector(".js-background__calendar");
 const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -39,12 +37,21 @@ function updateClock(currentTime) {
   const currentHours = parseInt(currentClock[0]);
 
   const isCurrentAm = currentHours < 12 ? true : false;
+  const amPm = isCurrentAm ? "am" : "pm";
   if (!isCurrentAm) {
     currentClock[0] = currentHours - 12;
   }
 
-  [hours.innerText, minutes.innerText, seconds.innerText] = currentClock;
-  amPm.innerText = `${isCurrentAm ? "am" : "pm"}`;
+  let completeClock = "";
+  currentClock.forEach((unit, index) => {
+    if (index === currentClock.length - 1) {
+      completeClock += unit;
+    } else {
+      completeClock += `${unit}:`;
+    }
+  });
+  clockNumbers.innerText = completeClock;
+  clockAmPm.innerText = amPm;
 }
 
 function getTime() {

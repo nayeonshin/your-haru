@@ -4,8 +4,9 @@
 @import "variables.css";
 @import "animation.css";
 
-/* Screens */
-@import "screens/login-form.css";
+/* Components */
+@import "components/login-form.css";
+@import "components/background.css";
 
 body {
   font-family: var(--font);

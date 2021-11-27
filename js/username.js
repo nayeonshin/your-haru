@@ -1,7 +1,9 @@
-const loginFormBackground = document.querySelector(".form-background");
-const loginForm = loginFormBackground.querySelector(".login-form");
+const loginFormBackground = document.querySelector(".js-form-background");
+const loginForm = loginFormBackground.querySelector(
+  ".js-form-background__login"
+);
 const loginInput = loginForm.querySelector("input");
-const greeting = document.querySelector(".greeting");
+const greeting = document.querySelector(".js-background__greeting");
 
 const HIDDEN_CLASSNAME = "hidden";
 const APPEAR_CLASSNAME = "appear";

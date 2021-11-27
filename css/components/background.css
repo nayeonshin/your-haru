@@ -10,8 +10,15 @@
   /* width: 100vw; */
 }
 
-/* TODO: Stop text from moving up after submitting form */
-/* This is probably bc h1 is empty at first */
+.background__calendar,
+.background__clock .clock__am-pm {
+  text-transform: uppercase;
+}
+
+.background__calendar {
+  font-size: 3rem;
+  margin-bottom: 0.5em;
+}
 
 .background__clock {
   font-size: 9rem;
@@ -20,7 +27,6 @@
 
 .background__clock .clock__am-pm {
   font-size: 4.5rem;
-  text-transform: uppercase;
 }
 
 .background__greeting {

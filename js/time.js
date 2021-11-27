@@ -4,6 +4,8 @@ const minutes = clock.querySelector("span:nth-child(2)");
 const seconds = clock.querySelector("span:nth-child(3)");
 const amPm = clock.querySelector("span:last-child");
 
+const calendar = document.querySelector(".js-background__calendar");
+
 function getClock() {
   const currentDate = new Date();
   const currentTime = [

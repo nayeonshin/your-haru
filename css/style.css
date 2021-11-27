@@ -2,14 +2,24 @@
 
 @import "reset.css";
 @import "variables.css";
+@import "animation.css";
 
 /* Screens */
 @import "screens/login-form.css";
 
 body {
   font-family: var(--font);
+  height: 100vh;
 }
 
 .hidden {
   display: none;
+}
+
+.appear {
+  animation: fade-in 1s;
+}
+
+.disappear {
+  animation: fade-out 1s;
 }

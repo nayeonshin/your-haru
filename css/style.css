@@ -9,8 +9,10 @@
 @import "components/background.css";
 
 body {
+  /* box-sizing: border-box; */
   font-family: var(--font);
   height: 100vh;
+  width: 100vw;
 }
 
 .hidden {

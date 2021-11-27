@@ -1,0 +1,28 @@
+.background {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  /* background-image: url("https://source.unsplash.com/random/1920x1080"); */
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  /* width: 100vw; */
+}
+
+/* TODO: Stop text from moving up after submitting form */
+/* This is probably bc h1 is empty at first */
+
+.background__clock {
+  font-size: 9rem;
+  font-weight: bold;
+}
+
+.background__clock .clock__am-pm {
+  font-size: 4.5rem;
+  text-transform: uppercase;
+}
+
+.background__greeting {
+  font-size: 1.5rem;
+}

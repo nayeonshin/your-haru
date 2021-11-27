@@ -1,0 +1,40 @@
+.form-background {
+  align-items: center;
+  background-color: var(--dark-gray);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+}
+
+.form-background__login {
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 10px;
+  color: var(--black);
+  display: flex;
+  flex-direction: column;
+  height: 10em;
+  justify-content: center;
+  margin: auto 1em;
+  position: relative;
+  text-transform: uppercase;
+  width: 18em;
+}
+
+.form-background__login h1 {
+  margin: 0.2em 0;
+}
+
+.form-background__login input {
+  background-color: var(--dark-gray);
+  border: none;
+  border-radius: 1em;
+  color: var(--white);
+  font-family: var(--font);
+  height: 2em;
+  margin-top: 1em;
+  text-align: center;
+  width: 15em;
+}

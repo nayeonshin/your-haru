@@ -13,7 +13,6 @@ const USERNAME_KEY = "username";
 function showGreeting(username) {
   greeting.innerText = `Hello, ${username}!`;
   greeting.classList.remove(HIDDEN_CLASSNAME);
-  greeting.classList.add(APPEAR_CLASSNAME);
 }
 
 function handleLogInSubmit(event) {

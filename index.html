@@ -8,27 +8,28 @@
     <title>Pro Duck</title>
   </head>
   <body>
-    <div class="form-background js-form-background hidden">
-      <form class="form-background__login js-form-background__login hidden">
-        <h1>Welcome!</h1>
-        <span>What is your name?</span>
-        <input
-          maxlength="50"
-          placeholder="Up to 50 characters"
-          required
-          type="text"
-        />
-      </form>
-    </div>
     <div class="background">
+      <div class="form-background js-form-background hidden">
+        <form class="form-background__login js-form-background__login hidden">
+          <h1>Welcome!</h1>
+          <span>What is your name?</span>
+          <input
+            maxlength="50"
+            placeholder="Up to 50 characters"
+            required
+            type="text"
+          />
+        </form>
+      </div>
       <h2 class="background__clock js-background__clock">
-        <span>00</span>
-        <span>00</span>
-        <span>00</span>
+        <span class="clock__hours">00</span>
+        <span class="clock__minutes">00</span>
+        <span class="clock__seconds">00</span>
+        <span class="clock__am-pm">am</span>
       </h2>
       <h1 class="background__greeting js-background__greeting hidden"></h1>
     </div>
     <script src="js/username.js"></script>
-    <script src="js/clock.js"></script>
+    <script src="js/time.js"></script>
   </body>
 </html>

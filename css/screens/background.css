@@ -14,29 +14,36 @@
   justify-content: center;
 }
 
-.background__calendar,
-.background__clock .clock__am-pm {
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+main .background__calendar,
+main .background__clock .clock__am-pm {
   text-transform: uppercase;
 }
 
-.background__calendar {
+main .background__calendar {
   font-size: 3rem;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.1em;
 }
 
-.background__clock {
+main .background__clock {
   font-size: 8rem;
   font-weight: bold;
 }
 
-.background__clock .clock__numbers {
+main .background__clock .clock__numbers {
   margin-right: -0.2em;
 }
 
-.background__clock .clock__am-pm {
+main .background__clock .clock__am-pm {
   font-size: 2rem;
 }
 
-.background__greeting {
+main .background__greeting {
   font-size: 1.5rem;
 }

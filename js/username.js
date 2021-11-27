@@ -15,7 +15,6 @@ function showGreeting(username) {
 }
 
 function handleLogInSubmit(event) {
-  // TODO: Prevent screen from blinking
   event.preventDefault(); // Stops browser from refreshing
   loginFormBackground.classList.add(DISAPPEAR_CLASSNAME);
   loginForm.classList.add(DISAPPEAR_CLASSNAME);

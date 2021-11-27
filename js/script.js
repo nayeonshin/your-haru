@@ -1,4 +1,5 @@
-const loginForm = document.querySelector(".login-form");
+const loginFormBackground = document.querySelector(".form-background");
+const loginForm = loginFormBackground.querySelector(".login-form");
 const loginInput = loginForm.querySelector("input");
 const greeting = document.querySelector(".greeting");
 
@@ -12,6 +13,7 @@ function showGreeting(username) {
 
 function handleLogInSubmit(event) {
   event.preventDefault(); // Stops browser from refreshing
+  loginFormBackground.classList.add(HIDDEN_CLASSNAME);
   loginForm.classList.add(HIDDEN_CLASSNAME);
 
   const inputUsername = loginInput.value;
@@ -22,6 +24,7 @@ function handleLogInSubmit(event) {
 const savedUsername = localStorage.getItem(USERNAME_KEY);
 
 if (savedUsername === null) {
+  loginFormBackground.classList.remove(HIDDEN_CLASSNAME);
   loginForm.classList.remove(HIDDEN_CLASSNAME);
   loginForm.addEventListener("submit", handleLogInSubmit);
 } else {

@@ -1,12 +1,13 @@
 @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
 
 @import "reset.css";
+@import "variables.css";
 
 /* Screens */
 @import "screens/login-form.css";
 
 body {
-  font-family: "NanumSquare", sans-serif;
+  font-family: var(--font);
 }
 
 .hidden {

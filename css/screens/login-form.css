@@ -1,6 +1,6 @@
 .form-background {
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--dark-gray);
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -9,12 +9,29 @@
 
 .login-form {
   align-items: center;
-  background-color: #fff;
+  background-color: var(--white);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   height: 200px;
   justify-content: center;
   position: relative;
+  text-transform: uppercase;
   width: 300px;
+}
+
+.login-form h1 {
+  margin: 0.2em 0;
+}
+
+.login-form input {
+  background-color: var(--dark-gray);
+  border: none;
+  border-radius: 1em;
+  color: var(--white);
+  font-family: var(--font);
+  height: 2em;
+  margin-top: 1em;
+  text-align: center;
+  width: 15em;
 }

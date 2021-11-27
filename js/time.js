@@ -5,24 +5,53 @@ const seconds = clock.querySelector("span:nth-child(3)");
 const amPm = clock.querySelector("span:last-child");
 
 const calendar = document.querySelector(".js-background__calendar");
+const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
 
-function getClock() {
-  const currentDate = new Date();
-  const currentTime = [
-    currentDate.getHours(),
-    currentDate.getMinutes(),
-    currentDate.getSeconds(),
+function updateCalendar(currentTime) {
+  const currentDay = days[currentTime.getDay()];
+  const currentMonth = months[currentTime.getMonth()];
+  const currentDate = currentTime.getDate();
+  const currentYear = currentTime.getFullYear();
+
+  calendar.innerText = `${currentDay}, ${currentMonth} ${currentDate}, ${currentYear}`;
+}
+
+function updateClock(currentTime) {
+  const currentClock = [
+    currentTime.getHours(),
+    currentTime.getMinutes(),
+    currentTime.getSeconds(),
   ].map((number) => String(number).padStart(2, "0"));
-  const currentHours = parseInt(currentTime[0]);
+  const currentHours = parseInt(currentClock[0]);
 
   const isCurrentAm = currentHours < 12 ? true : false;
   if (!isCurrentAm) {
-    currentTime[0] = currentHours - 12;
+    currentClock[0] = currentHours - 12;
   }
 
-  [hours.innerText, minutes.innerText, seconds.innerText] = currentTime;
+  [hours.innerText, minutes.innerText, seconds.innerText] = currentClock;
   amPm.innerText = `${isCurrentAm ? "am" : "pm"}`;
 }
 
-getClock();
-setInterval(getClock, 1000);
+function getTime() {
+  const currentTime = new Date();
+  updateCalendar(currentTime);
+  updateClock(currentTime);
+}
+
+getTime();
+setInterval(getTime, 1000);

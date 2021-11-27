@@ -21,12 +21,12 @@
 }
 
 .background__clock {
-  font-size: 9rem;
+  font-size: 8rem;
   font-weight: bold;
 }
 
 .background__clock .clock__am-pm {
-  font-size: 4.5rem;
+  font-size: 3rem;
 }
 
 .background__greeting {

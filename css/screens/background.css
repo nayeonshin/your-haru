@@ -24,6 +24,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: auto 0.5em;
 }
 
 main .background__calendar,
@@ -36,13 +37,9 @@ main .background__calendar {
   margin-bottom: 0.1em;
 }
 
-main .background__clock {
-  font-size: 8rem;
-  font-weight: bold;
-}
-
 main .background__clock .clock__numbers {
-  margin-right: -0.15em;
+  font-size: 7.5rem;
+  font-weight: bold;
 }
 
 main .background__clock .clock__am-pm {

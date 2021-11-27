@@ -5,6 +5,10 @@
 /* Screens */
 @import "screens/login-form.css";
 
+body {
+  font-family: "NanumSquare", sans-serif;
+}
+
 .hidden {
   display: none;
 }

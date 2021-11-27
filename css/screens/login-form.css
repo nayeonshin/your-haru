@@ -1,0 +1,19 @@
+.form-background {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+}
+
+.login-form {
+  align-items: center;
+  background-color: tan;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: center;
+  position: relative;
+  width: 300px;
+}

@@ -2,8 +2,8 @@
 
 @import "reset.css";
 
-/* Components */
-@import "components/login-form.css";
+/* Screens */
+@import "screens/login-form.css";
 
 .hidden {
   display: none;

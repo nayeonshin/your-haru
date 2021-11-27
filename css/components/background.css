@@ -1,13 +1,17 @@
 .background {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.1);
-  /* background-image: url("https://source.unsplash.com/random/1920x1080"); */
+  background-image: url("https://source.unsplash.com/random/1920x1080");
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
   color: var(--white);
   display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: center;
-  /* width: 100vw; */
 }
 
 .background__calendar,
@@ -23,6 +27,11 @@
 .background__clock {
   font-size: 8rem;
   font-weight: bold;
+}
+
+.background__clock .clock__minutes,
+.background__clock .clock__seconds {
+  margin-left: -0.2em;
 }
 
 .background__clock .clock__am-pm {

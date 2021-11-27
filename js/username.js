@@ -22,7 +22,7 @@ function handleLogInSubmit(event) {
   setTimeout(() => {
     loginFormBackground.classList.add(HIDDEN_CLASSNAME);
     loginForm.classList.add(HIDDEN_CLASSNAME);
-  }, 1000);
+  }, 900);
 
   const inputUsername = loginInput.value;
   localStorage.setItem(USERNAME_KEY, inputUsername);

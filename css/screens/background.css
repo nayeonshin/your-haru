@@ -52,6 +52,10 @@ main .background__greeting {
   font-size: 1.5rem;
 }
 
+.red-text {
+  color: #f84240;
+}
+
 @media screen and (max-width: 350px) {
   main .background__clock .clock__numbers {
     font-size: 7rem;

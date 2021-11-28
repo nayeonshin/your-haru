@@ -19,6 +19,8 @@ const months = [
   "Dec",
 ];
 
+const RED_TEXT_CLASSNAME = "red-text";
+
 function updateCalendar(currentTime) {
   const currentDay = days[currentTime.getDay()];
   const currentMonth = months[currentTime.getMonth()];
@@ -26,6 +28,18 @@ function updateCalendar(currentTime) {
   const currentYear = currentTime.getFullYear();
 
   calendar.innerText = `${currentDay}, ${currentMonth} ${currentDate}, ${currentYear}`;
+}
+
+function changeClockColor(currentClock) {
+  const shouldClockBeRed = () => {
+    [_, currentMinutes, currentSeconds] = currentClock;
+    return parseInt(currentMinutes) === 59 && parseInt(currentSeconds) >= 55;
+  };
+  if (shouldClockBeRed()) {
+    clock.classList.add(RED_TEXT_CLASSNAME);
+  } else {
+    clock.classList.remove(RED_TEXT_CLASSNAME);
+  }
 }
 
 function updateClock(currentTime) {
@@ -39,7 +53,7 @@ function updateClock(currentTime) {
   const isCurrentAm = currentHours < 12 ? true : false;
   const amPm = isCurrentAm ? "am" : "pm";
   if (!isCurrentAm) {
-    currentClock[0] = currentHours - 12;
+    currentClock[0] = String(currentHours - 12);
   }
 
   let completeClock = "";
@@ -52,6 +66,8 @@ function updateClock(currentTime) {
   });
   clockNumbers.innerText = completeClock;
   clockAmPm.innerText = amPm;
+
+  changeClockColor(currentClock);
 }
 
 function getTime() {

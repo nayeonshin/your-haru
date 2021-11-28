@@ -11,6 +11,7 @@
 
 html {
   font-size: calc(1vw + 5px);
+  overflow: hidden;
 }
 
 body {

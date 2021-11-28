@@ -27,9 +27,18 @@ function handleHomeClick() {
 
 function handleSettingClick() {
   if (!isOnSettingScreen) {
-    homeScreen.classList.add(HIDDEN_CLASSNAME);
+    homeScreen.classList.add(DISAPPEAR_CLASSNAME);
+    setTimeout(() => {
+      homeScreen.classList.add(HIDDEN_CLASSNAME);
+    }, 900);
+    settingScreen.classList.add(APPEAR_CLASSNAME);
     settingScreen.classList.remove(HIDDEN_CLASSNAME);
     [isOnHomeScreen, isOnSettingScreen] = [isOnSettingScreen, isOnHomeScreen];
+
+    setTimeout(() => {
+      homeScreen.classList.remove(DISAPPEAR_CLASSNAME);
+      settingScreen.classList.remove(APPEAR_CLASSNAME);
+    }, 1000);
   }
 }
 

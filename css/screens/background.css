@@ -74,7 +74,7 @@ main .background__greeting {
 }
 
 .background__navigation ul li {
-  margin: 1em auto;
+  margin: 1.5em auto;
 }
 
 .background__navigation ul li {
@@ -89,11 +89,11 @@ main .background__greeting {
   background: none;
   border: none;
   color: rgba(255, 255, 255, 0.6);
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 
 .background__navigation ul li button:hover {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--white);
   cursor: pointer;
   transition: color 0.5s ease-in;
 }
@@ -106,13 +106,19 @@ main .background__greeting {
   color: #f84240;
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 400px) {
   main .background__clock .clock__numbers {
-    font-size: 7rem;
+    font-size: 7.5rem;
   }
 }
 
-@media screen and (max-width: 250px) {
+@media screen and (max-width: 350px) {
+  main .background__clock .clock__numbers {
+    font-size: 6.5rem;
+  }
+}
+
+@media screen and (max-width: 260px) {
   main,
   .background__navigation {
     display: none;

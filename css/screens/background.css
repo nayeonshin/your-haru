@@ -57,6 +57,35 @@ main .background__greeting {
   font-size: 1.5rem;
 }
 
+.background__navigation {
+  /* align-items: center; */
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 3em;
+}
+
+.background__navigation ul li {
+  margin: 1em auto;
+}
+
+.background__navigation ul li {
+  margin-left: 0.1em;
+}
+
+.background__navigation ul li:last-child {
+  margin-left: 0.2em;
+}
+
+.background__navigation i {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 2rem;
+}
+
 .red-text {
   color: #f84240;
 }
@@ -68,7 +97,8 @@ main .background__greeting {
 }
 
 @media screen and (max-width: 250px) {
-  main {
+  main,
+  .background__navigation {
     display: none;
   }
 }

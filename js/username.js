@@ -6,9 +6,6 @@ const loginInput = loginForm.querySelector("input");
 
 const greeting = document.querySelector(".js-background__greeting");
 
-const APPEAR_CLASSNAME = "appear";
-const DISAPPEAR_CLASSNAME = "disappear";
-const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
 
 function showGreeting(username) {

@@ -69,17 +69,22 @@ main .background__greeting {
   width: 3em;
 }
 
+.background__navigation ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .background__navigation ul li {
   margin: 1em auto;
 }
 
-.background__navigation ul li:first-child {
-  margin-left: 0.1em;
+.background__navigation ul li {
+  margin-left: 0.2em;
 }
 
-.background__navigation ul li:nth-child(2),
-.background__navigation ul li:last-child {
-  margin-left: 0.2em;
+.background__navigation ul div li:first-child {
+  margin-left: 0.1em;
 }
 
 .background__navigation ul li button {

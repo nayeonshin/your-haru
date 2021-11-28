@@ -8,7 +8,10 @@ const greeting = document.querySelector(".js-background__greeting");
 
 const USERNAME_KEY = "username";
 
+// TODO: If name length long (~50), change font size of greeting
+
 function showGreeting(username) {
+  // TODO: Smooth transition
   greeting.innerText = `Hello, ${username}!`;
 }
 
@@ -19,7 +22,7 @@ function handleLogInSubmit(event) {
   setTimeout(() => {
     loginFormBackground.classList.add(HIDDEN_CLASSNAME);
     loginForm.classList.add(HIDDEN_CLASSNAME);
-  }, 900);
+  }, TRANSITION_DURATION - 100);
 
   const inputUsername = loginInput.value;
   localStorage.setItem(USERNAME_KEY, inputUsername);
@@ -34,7 +37,7 @@ if (savedUsername === null) {
     loginFormBackground.classList.remove(HIDDEN_CLASSNAME);
     loginForm.classList.remove(APPEAR_CLASSNAME);
     loginForm.classList.remove(HIDDEN_CLASSNAME);
-  }, 500);
+  }, TRANSITION_DURATION - 200);
 
   loginForm.addEventListener("submit", handleLogInSubmit);
 } else {

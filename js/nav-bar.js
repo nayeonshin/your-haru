@@ -15,18 +15,18 @@ function handleHomeClick() {
     settingScreen.classList.add(DISAPPEAR_CLASSNAME);
     setTimeout(() => {
       settingScreen.classList.add(HIDDEN_CLASSNAME);
-    }, 900);
+    }, TRANSITION_DURATION - 100);
     setTimeout(() => {
       homeScreen.classList.add(APPEAR_CLASSNAME);
       homeScreen.classList.remove(HIDDEN_CLASSNAME);
-    }, 1000);
+    }, TRANSITION_DURATION);
 
     [isOnHomeScreen, isOnSettingScreen] = [isOnSettingScreen, isOnHomeScreen];
 
     setTimeout(() => {
       settingScreen.classList.remove(DISAPPEAR_CLASSNAME);
       homeScreen.classList.remove(APPEAR_CLASSNAME);
-    }, 2000);
+    }, TRANSITION_DURATION * 2);
   }
 }
 
@@ -35,18 +35,18 @@ function handleSettingClick() {
     homeScreen.classList.add(DISAPPEAR_CLASSNAME);
     setTimeout(() => {
       homeScreen.classList.add(HIDDEN_CLASSNAME);
-    }, 900);
+    }, TRANSITION_DURATION - 100);
     setTimeout(() => {
       settingScreen.classList.add(APPEAR_CLASSNAME);
       settingScreen.classList.remove(HIDDEN_CLASSNAME);
-    }, 1000);
+    }, TRANSITION_DURATION);
 
     [isOnHomeScreen, isOnSettingScreen] = [isOnSettingScreen, isOnHomeScreen];
 
     setTimeout(() => {
       homeScreen.classList.remove(DISAPPEAR_CLASSNAME);
       settingScreen.classList.remove(APPEAR_CLASSNAME);
-    }, 2000);
+    }, TRANSITION_DURATION * 2);
   }
 }
 

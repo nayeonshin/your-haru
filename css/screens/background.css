@@ -73,7 +73,7 @@ main .background__greeting {
   margin: 1em auto;
 }
 
-.background__navigation ul li {
+.background__navigation ul li:first-child {
   margin-left: 0.1em;
 }
 
@@ -84,6 +84,12 @@ main .background__greeting {
 .background__navigation i {
   color: rgba(255, 255, 255, 0.6);
   font-size: 2rem;
+}
+
+.background__navigation i:hover {
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: color 0.5s ease-in;
 }
 
 .red-text {

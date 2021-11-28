@@ -8,20 +8,25 @@ const settingButton = navigationBar.querySelector("div li:last-child button");
 let isOnHomeScreen = true;
 let isOnSettingScreen = false;
 
+// TODO: Refactor two functions into one
+
 function handleHomeClick() {
   if (!isOnHomeScreen) {
     settingScreen.classList.add(DISAPPEAR_CLASSNAME);
     setTimeout(() => {
       settingScreen.classList.add(HIDDEN_CLASSNAME);
     }, 900);
-    homeScreen.classList.add(APPEAR_CLASSNAME);
-    homeScreen.classList.remove(HIDDEN_CLASSNAME);
+    setTimeout(() => {
+      homeScreen.classList.add(APPEAR_CLASSNAME);
+      homeScreen.classList.remove(HIDDEN_CLASSNAME);
+    }, 1000);
+
     [isOnHomeScreen, isOnSettingScreen] = [isOnSettingScreen, isOnHomeScreen];
 
     setTimeout(() => {
       settingScreen.classList.remove(DISAPPEAR_CLASSNAME);
       homeScreen.classList.remove(APPEAR_CLASSNAME);
-    }, 1000);
+    }, 2000);
   }
 }
 
@@ -31,14 +36,17 @@ function handleSettingClick() {
     setTimeout(() => {
       homeScreen.classList.add(HIDDEN_CLASSNAME);
     }, 900);
-    settingScreen.classList.add(APPEAR_CLASSNAME);
-    settingScreen.classList.remove(HIDDEN_CLASSNAME);
+    setTimeout(() => {
+      settingScreen.classList.add(APPEAR_CLASSNAME);
+      settingScreen.classList.remove(HIDDEN_CLASSNAME);
+    }, 1000);
+
     [isOnHomeScreen, isOnSettingScreen] = [isOnSettingScreen, isOnHomeScreen];
 
     setTimeout(() => {
       homeScreen.classList.remove(DISAPPEAR_CLASSNAME);
       settingScreen.classList.remove(APPEAR_CLASSNAME);
-    }, 1000);
+    }, 2000);
   }
 }
 

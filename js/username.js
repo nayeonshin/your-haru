@@ -3,6 +3,7 @@ const loginForm = loginFormBackground.querySelector(
   ".js-form-background__login"
 );
 const loginInput = loginForm.querySelector("input");
+
 const greeting = document.querySelector(".js-background__greeting");
 
 const APPEAR_CLASSNAME = "appear";

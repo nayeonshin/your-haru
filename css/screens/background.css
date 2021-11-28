@@ -81,15 +81,21 @@ main .background__greeting {
   margin-left: 0.2em;
 }
 
-.background__navigation i {
+.background__navigation ul li button {
+  background: none;
+  border: none;
   color: rgba(255, 255, 255, 0.6);
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
-.background__navigation i:hover {
-  color: rgba(255, 255, 255, 0.8);
+.background__navigation ul li button:hover {
+  color: rgba(255, 255, 255, 0.9);
   cursor: pointer;
   transition: color 0.5s ease-in;
+}
+
+.background__setting {
+  position: fixed;
 }
 
 .red-text {

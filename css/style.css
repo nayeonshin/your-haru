@@ -7,6 +7,7 @@
 /* Screens */
 @import "screens/login-form.css";
 @import "screens/background.css";
+@import "screens/setting.css";
 
 html {
   font-size: calc(1vw + 5px);

@@ -8,7 +8,7 @@
     <title>Your Haru</title>
   </head>
   <body>
-    <div class="background">
+    <div class="background js-background">
       <div class="background__darkner">
         <div class="form-background js-form-background hidden">
           <form class="form-background__login js-form-background__login hidden">
@@ -32,11 +32,38 @@
           </h2>
           <h1 class="background__greeting js-background__greeting">Hello!</h1>
         </main>
+        <div class="background__setting js-background__setting hidden">
+          <div>
+            <h3>Change name</h3>
+            <form>
+              <input
+                maxlength="50"
+                placeholder="Press 'Enter' to Confirm"
+                required
+                type="text"
+              />
+            </form>
+          </div>
+          <div>
+            <h3>Dark Theme</h3>
+          </div>
+          <div>
+            <h3>Menu on the Left</h3>
+          </div>
+          <div>
+            <h3>Reset Data</h3>
+            <button>Reset</button>
+          </div>
+        </div>
       </div>
-      <nav class="background__navigation">
+      <nav class="background__navigation js-background__navigation">
         <ul>
-          <li><i class="fas fa-home"></i></li>
-          <li><i class="fas fa-cog"></i></li>
+          <li>
+            <button><i class="fas fa-home"></i></button>
+          </li>
+          <li>
+            <button><i class="fas fa-cog"></i></button>
+          </li>
         </ul>
       </nav>
     </div>

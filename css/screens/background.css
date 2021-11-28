@@ -33,6 +33,10 @@ main .background__clock .clock__am-pm {
   text-transform: uppercase;
 }
 
+main .background__clock {
+  display: flex;
+}
+
 main .background__calendar {
   font-size: 2.5rem;
   margin-bottom: 0.1em;
@@ -46,6 +50,7 @@ main .background__clock .clock__numbers {
 
 main .background__clock .clock__am-pm {
   font-size: 3.5rem;
+  margin-top: 0.2em;
 }
 
 main .background__greeting {

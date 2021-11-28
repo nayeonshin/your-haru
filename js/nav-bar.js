@@ -10,9 +10,18 @@ let isOnSettingScreen = false;
 
 function handleHomeClick() {
   if (!isOnHomeScreen) {
-    settingScreen.classList.add(HIDDEN_CLASSNAME);
+    settingScreen.classList.add(DISAPPEAR_CLASSNAME);
+    setTimeout(() => {
+      settingScreen.classList.add(HIDDEN_CLASSNAME);
+    }, 900);
+    homeScreen.classList.add(APPEAR_CLASSNAME);
     homeScreen.classList.remove(HIDDEN_CLASSNAME);
     [isOnHomeScreen, isOnSettingScreen] = [isOnSettingScreen, isOnHomeScreen];
+
+    setTimeout(() => {
+      settingScreen.classList.remove(DISAPPEAR_CLASSNAME);
+      homeScreen.classList.remove(APPEAR_CLASSNAME);
+    }, 1000);
   }
 }
 

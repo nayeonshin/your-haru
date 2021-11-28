@@ -29,10 +29,13 @@ function handleLogInSubmit(event) {
 const savedUsername = localStorage.getItem(USERNAME_KEY);
 
 if (savedUsername === null) {
-  loginFormBackground.classList.remove(HIDDEN_CLASSNAME);
-  loginFormBackground.classList.add(APPEAR_CLASSNAME);
-  loginForm.classList.remove(HIDDEN_CLASSNAME);
-  loginForm.classList.remove(APPEAR_CLASSNAME);
+  setTimeout(() => {
+    loginFormBackground.classList.add(APPEAR_CLASSNAME);
+    loginFormBackground.classList.remove(HIDDEN_CLASSNAME);
+    loginForm.classList.remove(APPEAR_CLASSNAME);
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+  }, 500);
+
   loginForm.addEventListener("submit", handleLogInSubmit);
 } else {
   showGreeting(savedUsername);

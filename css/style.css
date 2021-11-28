@@ -8,6 +8,10 @@
 @import "screens/login-form.css";
 @import "screens/background.css";
 
+html {
+  font-size: calc(1vw + 5px);
+}
+
 body {
   /* box-sizing: border-box; */
   font-family: var(--font);

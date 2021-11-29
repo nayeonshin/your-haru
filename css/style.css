@@ -26,9 +26,9 @@ body {
 }
 
 .appear {
-  animation: fade-in 0.8s;
+  animation: fade-in 0.5s;
 }
 
 .disappear {
-  animation: fade-out 0.8s;
+  animation: fade-out 0.5s;
 }

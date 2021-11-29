@@ -8,46 +8,41 @@ const settingButton = navigationBar.querySelector("div li:last-child button");
 let isOnHomeScreen = true;
 let isOnSettingScreen = false;
 
-// TODO: Refactor two functions into one
+function _switchScreens(currentScreen, newScreen) {
+  currentScreen.classList.add(DISAPPEAR_CLASSNAME);
+  setTimeout(() => {
+    currentScreen.classList.add(HIDDEN_CLASSNAME);
+  }, TRANSITION_DURATION - 100);
+  newScreen.classList.add(APPEAR_CLASSNAME);
+  setTimeout(() => {
+    newScreen.classList.remove(HIDDEN_CLASSNAME);
+  }, TRANSITION_DURATION);
 
-function handleHomeClick() {
-  if (isOnSettingScreen) {
-    settingScreen.classList.add(DISAPPEAR_CLASSNAME);
-    setTimeout(() => {
-      settingScreen.classList.add(HIDDEN_CLASSNAME);
-    }, TRANSITION_DURATION - 100);
-    setTimeout(() => {
-      homeScreen.classList.add(APPEAR_CLASSNAME);
-      homeScreen.classList.remove(HIDDEN_CLASSNAME);
-    }, TRANSITION_DURATION);
+  [isOnHomeScreen, isOnSettingScreen] = [isOnSettingScreen, isOnHomeScreen];
 
-    [isOnHomeScreen, isOnSettingScreen] = [isOnSettingScreen, isOnHomeScreen];
+  // Cleans up transition class names
+  setTimeout(() => {
+    currentScreen.classList.remove(DISAPPEAR_CLASSNAME);
+    newScreen.classList.remove(APPEAR_CLASSNAME);
+  }, TRANSITION_DURATION * 2);
+}
 
-    setTimeout(() => {
-      settingScreen.classList.remove(DISAPPEAR_CLASSNAME);
-      homeScreen.classList.remove(APPEAR_CLASSNAME);
-    }, TRANSITION_DURATION * 2);
+function switchScreens(isHomeClicked, isSettingClicked) {
+  if (isHomeClicked && isOnSettingScreen) {
+    _switchScreens(settingScreen, homeScreen);
+  }
+
+  if (isSettingClicked && isOnHomeScreen) {
+    _switchScreens(homeScreen, settingScreen);
   }
 }
 
+function handleHomeClick() {
+  switchScreens(true, false);
+}
+
 function handleSettingClick() {
-  if (isOnHomeScreen) {
-    homeScreen.classList.add(DISAPPEAR_CLASSNAME);
-    setTimeout(() => {
-      homeScreen.classList.add(HIDDEN_CLASSNAME);
-    }, TRANSITION_DURATION - 100);
-    setTimeout(() => {
-      settingScreen.classList.add(APPEAR_CLASSNAME);
-      settingScreen.classList.remove(HIDDEN_CLASSNAME);
-    }, TRANSITION_DURATION);
-
-    [isOnHomeScreen, isOnSettingScreen] = [isOnSettingScreen, isOnHomeScreen];
-
-    setTimeout(() => {
-      homeScreen.classList.remove(DISAPPEAR_CLASSNAME);
-      settingScreen.classList.remove(APPEAR_CLASSNAME);
-    }, TRANSITION_DURATION * 2);
-  }
+  switchScreens(false, true);
 }
 
 homeButton.addEventListener("click", handleHomeClick);

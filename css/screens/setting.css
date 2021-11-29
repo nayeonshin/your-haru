@@ -4,5 +4,10 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+  font-size: 1.5rem;
   justify-content: center;
+}
+
+.background__setting * {
+  margin: 0.5em auto;
 }

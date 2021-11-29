@@ -12,18 +12,14 @@ const USERNAME_KEY = "username";
 // TODO: If name length long (~50), change font size of greeting
 
 function showGreeting(username) {
-  // TODO: Smooth transition
   greeting.classList.add(DISAPPEAR_CLASSNAME);
   setTimeout(() => {
     greeting.classList.add(HIDDEN_CLASSNAME);
-  }, TRANSITION_DURATION - 100);
-
-  setTimeout(() => {
     greeting.classList.remove(DISAPPEAR_CLASSNAME);
     greeting.innerText = `Hello, ${username}!`;
     greeting.classList.add(APPEAR_CLASSNAME);
     greeting.classList.remove(HIDDEN_CLASSNAME);
-  }, TRANSITION_DURATION);
+  }, TRANSITION_DURATION - 100);
 
   setTimeout(() => {
     greeting.classList.remove(APPEAR_CLASSNAME);

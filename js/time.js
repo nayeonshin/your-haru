@@ -52,7 +52,9 @@ function updateClock(currentTime) {
 
   const isCurrentAm = currentHours < 12 ? true : false;
   const amPm = isCurrentAm ? "am" : "pm";
-  if (!isCurrentAm) {
+  if (currentHours === 0) {
+    currentClock[0] = 12; // When 12 a.m., displays 12
+  } else if (!isCurrentAm) {
     currentClock[0] = String(currentHours - 12);
   }
 

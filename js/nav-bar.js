@@ -50,15 +50,5 @@ function handleSettingClick() {
   }
 }
 
-// let isOnCurrentScreen = true;
-// let isOnNewScreen = false;
-
-// function switchScreens() {
-//   if (isOnNewScreen) {
-//     // !isOnCurrentScreen
-//   }
-// }
-
-// console.dir(homeButton);
 homeButton.addEventListener("click", handleHomeClick);
 settingButton.addEventListener("click", handleSettingClick);

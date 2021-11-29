@@ -1,3 +1,3 @@
-# Your Haru
+# your haru
 
-Your Haru is a productivity web app. Haru is pronounced hah-ru and means "day" in Korean.
+your haru is a productivity web app. "haru" is pronounced hah-ru and means "day" in Korean.

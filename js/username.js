@@ -52,5 +52,5 @@ if (savedUsername === null) {
 
   loginForm.addEventListener("submit", handleLogInSubmit);
 } else {
-  showGreeting(savedUsername);
+  greeting.innerText = `Hello, ${savedUsername}!`;
 }

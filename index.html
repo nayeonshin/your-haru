@@ -15,8 +15,8 @@
             <h1>Welcome!</h1>
             <span>What is your name?</span>
             <input
-              maxlength="50"
-              placeholder="Up to 50 characters"
+              maxlength="30"
+              placeholder="Up to 30 characters"
               required
               type="text"
             />
@@ -35,15 +35,18 @@
         <form class="background__setting js-background__setting hidden">
           <h3>Rename</h3>
           <input
-            maxlength="50"
+            class="setting__rename"
+            maxlength="30"
             placeholder="Press 'Enter' to Confirm"
             required
             type="text"
           />
           <h3>Dark Theme</h3>
+          <input class="setting__dark-theme" type="checkbox" />
           <h3>Menu on the Left</h3>
+          <input class="setting__left-menu" type="checkbox" />
           <h3>Reset Data</h3>
-          <button>Reset</button>
+          <button class="setting__reset">Reset</button>
         </form>
       </div>
       <nav class="background__navigation js-background__navigation">

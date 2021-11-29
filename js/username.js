@@ -6,6 +6,7 @@ const loginInput = loginForm.querySelector("input");
 
 const greeting = document.querySelector(".js-background__greeting");
 
+const INVISIBLE_CLASSNAME = "invisible";
 const USERNAME_KEY = "username";
 
 // TODO: If name length long (~50), change font size of greeting
@@ -18,13 +19,15 @@ function showGreeting(username) {
   }, TRANSITION_DURATION - 100);
 
   setTimeout(() => {
+    greeting.classList.remove(DISAPPEAR_CLASSNAME);
     greeting.innerText = `Hello, ${username}!`;
     greeting.classList.add(APPEAR_CLASSNAME);
-  }, TRANSITION_DURATION * 2);
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+  }, TRANSITION_DURATION);
 
-  // setTimeout(() => {
-  //   greeting.classList.remove(APPEAR_CLASSNAME);
-  // }, TRANSITION_DURATION * 3);
+  setTimeout(() => {
+    greeting.classList.remove(APPEAR_CLASSNAME);
+  }, TRANSITION_DURATION * 2);
 }
 
 function handleLogInSubmit(event) {

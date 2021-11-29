@@ -41,6 +41,10 @@
   width: 15em;
 }
 
+.form-background .appear .disappear {
+  transition-duration: 0.8;
+}
+
 @media screen and (max-width: 250px) {
   .form-background,
   .form-background__login {

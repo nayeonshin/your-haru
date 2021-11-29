@@ -22,7 +22,7 @@ function handleLogInSubmit(event) {
   setTimeout(() => {
     loginFormBackground.classList.add(HIDDEN_CLASSNAME);
     loginForm.classList.add(HIDDEN_CLASSNAME);
-  }, TRANSITION_DURATION - 100);
+  }, TRANSITION_DURATION - 50);
 
   const inputUsername = loginInput.value;
   localStorage.setItem(USERNAME_KEY, inputUsername);
@@ -37,7 +37,7 @@ if (savedUsername === null) {
     loginFormBackground.classList.remove(HIDDEN_CLASSNAME);
     loginForm.classList.remove(APPEAR_CLASSNAME);
     loginForm.classList.remove(HIDDEN_CLASSNAME);
-  }, TRANSITION_DURATION - 200);
+  }, TRANSITION_DURATION - 100);
 
   loginForm.addEventListener("submit", handleLogInSubmit);
 } else {

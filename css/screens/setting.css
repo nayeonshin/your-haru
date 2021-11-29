@@ -1,1 +1,8 @@
 /* TODO: Style setting page */
+
+.background__setting {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

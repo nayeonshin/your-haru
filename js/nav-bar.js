@@ -11,7 +11,7 @@ let isOnSettingScreen = false;
 // TODO: Refactor two functions into one
 
 function handleHomeClick() {
-  if (!isOnHomeScreen) {
+  if (isOnSettingScreen) {
     settingScreen.classList.add(DISAPPEAR_CLASSNAME);
     setTimeout(() => {
       settingScreen.classList.add(HIDDEN_CLASSNAME);
@@ -31,7 +31,7 @@ function handleHomeClick() {
 }
 
 function handleSettingClick() {
-  if (!isOnSettingScreen) {
+  if (isOnHomeScreen) {
     homeScreen.classList.add(DISAPPEAR_CLASSNAME);
     setTimeout(() => {
       homeScreen.classList.add(HIDDEN_CLASSNAME);
@@ -49,6 +49,15 @@ function handleSettingClick() {
     }, TRANSITION_DURATION * 2);
   }
 }
+
+// let isOnCurrentScreen = true;
+// let isOnNewScreen = false;
+
+// function switchScreens() {
+//   if (isOnNewScreen) {
+//     // !isOnCurrentScreen
+//   }
+// }
 
 // console.dir(homeButton);
 homeButton.addEventListener("click", handleHomeClick);

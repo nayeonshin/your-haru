@@ -6,7 +6,6 @@ const loginInput = loginForm.querySelector("input");
 
 const greeting = document.querySelector(".js-background__greeting");
 
-const INVISIBLE_CLASSNAME = "invisible";
 const USERNAME_KEY = "username";
 
 // TODO: If name length long (~50), change font size of greeting

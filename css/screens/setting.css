@@ -10,3 +10,64 @@
 .background__setting * {
   margin: 0.5em auto;
 }
+
+.setting__dark-theme,
+.setting__left-menu {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  width: 2em;
+}
+
+.setting__dark-theme .dark-theme__switch,
+.setting__left-menu .left-menu__switch {
+  height: 0;
+  opacity: 0;
+  width: 0;
+}
+
+.setting__dark-theme .switch__slider {
+  background-color: tomato;
+  border-radius: 0.5em;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+
+.setting__dark-theme .switch__slider::before {
+  border-radius: 0.8em;
+}
+
+.setting__dark-theme .switch__slider::before {
+  background-color: white;
+  bottom: 2em;
+  content: "";
+  height: 1em;
+  left: 2em;
+  position: absolute;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  width: 1em;
+}
+
+.dark-theme__switch:checked + .switch__slider,
+.left-menu__switch:checked + .switch__slider {
+  background-color: violet;
+}
+
+.dark-theme__switch:focus + .switch__slider,
+.left-menu__switch:focus + .switch__slider {
+  box-shadow: 0 0 0.1em yellow;
+}
+
+.dark-theme__switch:checked + .switch__slider::before,
+.left-menu__switch:checked + .switch__slider::before {
+  transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  -webkit-transform: translateX(26px);
+}

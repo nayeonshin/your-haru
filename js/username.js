@@ -12,7 +12,19 @@ const USERNAME_KEY = "username";
 
 function showGreeting(username) {
   // TODO: Smooth transition
-  greeting.innerText = `Hello, ${username}!`;
+  greeting.classList.add(DISAPPEAR_CLASSNAME);
+  setTimeout(() => {
+    greeting.classList.add(HIDDEN_CLASSNAME);
+  }, TRANSITION_DURATION - 100);
+
+  setTimeout(() => {
+    greeting.innerText = `Hello, ${username}!`;
+    greeting.classList.add(APPEAR_CLASSNAME);
+  }, TRANSITION_DURATION * 2);
+
+  // setTimeout(() => {
+  //   greeting.classList.remove(APPEAR_CLASSNAME);
+  // }, TRANSITION_DURATION * 3);
 }
 
 function handleLogInSubmit(event) {

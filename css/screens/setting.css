@@ -1,3 +1,5 @@
+/* TODO: Toggle switch slider darker when the toggle is checked */
+
 .background__setting {
   align-items: center;
   display: flex;
@@ -45,12 +47,8 @@
 .background__setting .setting__rename .rename__input:focus {
   background-color: var(--dark-gray);
   outline: none;
-  transition: 1s;
+  transition: background-color 1s;
 }
-
-/* TODO: Remove animation of switches when resizing screen
-   border-radius, width, height
-*/
 
 .background__setting .twenty-four-hour__toggle,
 .background__setting .dark-theme__toggle,
@@ -81,8 +79,8 @@
   position: absolute;
   right: 0;
   top: 0;
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
+  transition: transform 0.5s;
+  -webkit-transition: transform 0.5s;
 }
 
 .twenty-four-hour__toggle .toggle__slider::before,
@@ -95,8 +93,8 @@
   height: 0.9em;
   left: 0.15em;
   position: absolute;
-  transition: 0.2s;
-  -webkit-transition: 0.2s;
+  transition: transform 0.2s;
+  -webkit-transition: transform 0.2s;
   width: 0.9em;
 }
 

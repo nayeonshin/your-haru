@@ -2,7 +2,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   justify-content: center;
   text-transform: uppercase;
 }
@@ -11,10 +11,20 @@
   margin: 0.5em auto;
 }
 
+.background__setting .setting__rename {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: var(--white);
+  font-family: var(--font);
+  text-align: center;
+  width: 12em;
+}
+
 /* TODO: Remove animation of switches when resizing screen
    border-radius, width, height
 */
 
+.background__setting .setting__twenty-four-hour,
 .background__setting .setting__dark-theme,
 .background__setting .setting__left-menu {
   display: inline-block;
@@ -23,6 +33,7 @@
   width: 2.6em;
 }
 
+.setting__twenty-four-hour .twenty-four-hour__switch,
 .setting__dark-theme .dark-theme__switch,
 .setting__left-menu .left-menu__switch {
   height: 0;
@@ -30,6 +41,7 @@
   width: 0;
 }
 
+.setting__twenty-four-hour .twenty-four-hour__slider,
 .setting__dark-theme .dark-theme__slider,
 .setting__left-menu .left-menu__slider {
   background-color: var(--white);
@@ -44,6 +56,7 @@
   -webkit-transition: 0.5s;
 }
 
+.setting__twenty-four-hour .twenty-four-hour__slider::before,
 .setting__dark-theme .dark-theme__slider::before,
 .setting__left-menu .left-menu__slider::before {
   background-color: rgb(180, 180, 180);
@@ -58,11 +71,13 @@
   width: 0.9em;
 }
 
+.twenty-four-hour__switch:checked + .twenty-four-hour__slider,
 .dark-theme__switch:checked + .dark-theme__slider,
 .left-menu__switch:checked + .left-menu__slider {
   background-color: #72e07b;
 }
 
+.twenty-four-hour__switch:checked + .twenty-four-hour__slider::before,
 .dark-theme__switch:checked + .dark-theme__slider::before,
 .left-menu__switch:checked + .left-menu__slider::before {
   transform: translateX(1.4em);

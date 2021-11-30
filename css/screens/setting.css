@@ -117,14 +117,13 @@
 .setting__reset .reset__button {
   background-color: #f2480d;
   border: none;
-  border-radius: 0.7em;
+  border-radius: 1em;
   color: var(--white);
   cursor: pointer;
   font-family: var(--font);
   font-size: 1.2rem;
-  height: 1.5em;
+  padding: 0.5em 0.8em;
   text-transform: uppercase;
-  width: 4em;
 }
 
 @media screen and (min-width: 1024px) {

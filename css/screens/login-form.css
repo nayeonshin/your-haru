@@ -51,7 +51,7 @@
   transition-duration: 0.8;
 }
 
-@media screen and (max-width: 250px) {
+@media screen and (max-width: 260px) {
   .form-background,
   .form-background__login {
     display: none;

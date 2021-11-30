@@ -1,20 +1,10 @@
-/* TODO: (fix) rename input focused when clicking reset btn */
-/* TODO: Check if reset button is clicked when rename input focused */
-
 .background__setting {
   align-items: center;
   display: flex;
   flex-direction: column;
-  font-size: 1.5rem;
-  justify-content: center;
+  font-size: 1.4rem;
+  justify-content: space-around;
   text-transform: uppercase;
-}
-
-.background__setting div:not(:first-child) h3,
-.background__setting label,
-.background__setting button,
-.background__setting .setting__rename * {
-  margin: 0.5em;
 }
 
 .background__setting .setting__rename,
@@ -28,7 +18,14 @@
   justify-content: center;
 }
 
-/* TODO: Reduce input height on smaller screen */
+.setting__rename .rename__title,
+.setting__twenty-four-hour .twenty-four-hour__title,
+.setting__dark-theme .dark-theme__title,
+.setting__left-menu .left-menu__title,
+.setting__reset .reset__title {
+  margin: 1em;
+}
+
 .background__setting .setting__rename .rename__input {
   background-color: rgba(0, 0, 0, 0.5);
   border: none;
@@ -36,8 +33,7 @@
   color: var(--white);
   font-family: var(--font);
   font-size: 1.2rem;
-  height: 2.5em;
-  padding: auto 0.2em;
+  height: 2em;
   text-align: center;
   width: 9em;
 }
@@ -118,14 +114,14 @@
   -webkit-transform: translateX(1.4em);
 }
 
-.reset__button {
+.setting__reset .reset__button {
   background-color: #f2480d;
   border: none;
   border-radius: 0.7em;
   color: var(--white);
   cursor: pointer;
   font-family: var(--font);
-  font-size: 1rem;
+  font-size: 1.2rem;
   height: 1.5em;
   text-transform: uppercase;
   width: 4em;
@@ -134,6 +130,18 @@
 @media screen and (min-width: 1024px) {
   .background__setting {
     font-size: 1.2rem;
+  }
+
+  .background__setting .setting__rename .rename__input {
+    font-size: 1rem;
+  }
+
+  .background__setting .setting__rename .rename__input::placeholder {
+    font-size: 0.7rem;
+  }
+
+  .setting__reset .reset__button {
+    font-size: 1rem;
   }
 }
 

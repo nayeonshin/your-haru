@@ -11,57 +11,59 @@
   margin: 0.5em auto;
 }
 
+/* TODO: Remove animation of switches when resizing screen */
+
 .background__setting .setting__dark-theme,
 .background__setting .setting__left-menu {
-  position: relative;
   display: inline-block;
-  width: 55px;
-  height: 30px;
+  height: 2.2em;
+  position: relative;
+  width: 2.6em;
 }
 
 .setting__dark-theme .dark-theme__switch,
 .setting__left-menu .left-menu__switch {
+  height: 0;
   opacity: 0;
   width: 0;
-  height: 0;
 }
 
 .setting__dark-theme .dark-theme__slider,
 .setting__left-menu .left-menu__slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
+  background-color: var(--white);
+  border-radius: 0.6em;
   bottom: 0;
-  border-radius: 20px;
-  background-color: #ccc;
-  -webkit-transition: 0.4s;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
   transition: 0.4s;
+  -webkit-transition: 0.4s;
 }
 
 .setting__dark-theme .dark-theme__slider::before,
 .setting__left-menu .left-menu__slider::before {
-  position: absolute;
+  background-color: rgb(180, 180, 180);
+  border-radius: 50%;
+  bottom: 0.15em;
   content: "";
-  height: 22px;
-  width: 22px;
-  left: 4px;
-  bottom: 4px;
-  background-color: #fff;
-  -webkit-transition: 0.5s;
+  height: 0.9em;
+  left: 0.15em;
+  position: absolute;
   transition: 0.4s;
-  border-radius: 20px;
+  -webkit-transition: 0.4s;
+  width: 0.9em;
 }
 
 .dark-theme__switch:checked + .dark-theme__slider,
 .left-menu__switch:checked + .left-menu__slider {
-  background-color: #f2d522;
+  background-color: #72e07b;
 }
 
 .dark-theme__switch:checked + .dark-theme__slider::before,
 .left-menu__switch:checked + .left-menu__slider::before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  transform: translateX(1.4em);
+  -ms-transform: translateX(1.4em);
+  -webkit-transform: translateX(1.4em);
 }

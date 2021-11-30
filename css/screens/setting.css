@@ -11,7 +11,7 @@
   margin: 0.5em auto;
 }
 
-.background__setting .setting__rename {
+.background__setting .setting__rename .rename__input {
   background-color: rgba(0, 0, 0, 0.5);
   border: none;
   color: var(--white);
@@ -24,8 +24,8 @@
    border-radius, width, height
 */
 
-.background__setting .setting__twenty-four-hour,
-.background__setting .setting__dark-theme,
+.background__setting .twenty-four-hour__toggle,
+.background__setting .dark-theme__toggle,
 .background__setting .setting__left-menu {
   display: inline-block;
   height: 2.2em;
@@ -33,16 +33,16 @@
   width: 2.6em;
 }
 
-.setting__twenty-four-hour .twenty-four-hour__switch,
-.setting__dark-theme .dark-theme__switch,
+.twenty-four-hour__toggle .toggle__switch,
+.dark-theme__toggle .toggle__switch,
 .setting__left-menu .left-menu__switch {
   height: 0;
   opacity: 0;
   width: 0;
 }
 
-.setting__twenty-four-hour .twenty-four-hour__slider,
-.setting__dark-theme .dark-theme__slider,
+.twenty-four-hour__toggle .toggle__slider,
+.dark-theme__toggle .toggle__slider,
 .setting__left-menu .left-menu__slider {
   background-color: var(--white);
   border-radius: 0.6em;
@@ -56,8 +56,8 @@
   -webkit-transition: 0.5s;
 }
 
-.setting__twenty-four-hour .twenty-four-hour__slider::before,
-.setting__dark-theme .dark-theme__slider::before,
+.twenty-four-hour__toggle .toggle__slider::before,
+.dark-theme__toggle .toggle__slider::before,
 .setting__left-menu .left-menu__slider::before {
   background-color: rgb(180, 180, 180);
   border-radius: 50%;
@@ -71,14 +71,14 @@
   width: 0.9em;
 }
 
-.twenty-four-hour__switch:checked + .twenty-four-hour__slider,
-.dark-theme__switch:checked + .dark-theme__slider,
+.toggle__switch:checked + .toggle__slider,
+.toggle__switch:checked + .toggle__slider,
 .left-menu__switch:checked + .left-menu__slider {
   background-color: #72e07b;
 }
 
-.twenty-four-hour__switch:checked + .twenty-four-hour__slider::before,
-.dark-theme__switch:checked + .dark-theme__slider::before,
+.toggle__switch:checked + .toggle__slider::before,
+.toggle__switch:checked + .toggle__slider::before,
 .left-menu__switch:checked + .left-menu__slider::before {
   transform: translateX(1.4em);
   -ms-transform: translateX(1.4em);

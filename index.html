@@ -34,31 +34,41 @@
           <h1 class="background__greeting js-background__greeting">Hello!</h1>
         </main>
         <form class="background__setting js-background__setting hidden">
-          <h3>Rename</h3>
-          <input
-            class="setting__rename"
-            maxlength="30"
-            placeholder="Press 'Enter' to Confirm"
-            required
-            type="text"
-          />
-          <h3>24-Hour Format</h3>
-          <label class="setting__twenty-four-hour">
-            <input class="twenty-four-hour__switch" type="checkbox" />
-            <span class="twenty-four-hour__slider"></span>
-          </label>
-          <h3>Dark Theme</h3>
-          <label class="setting__dark-theme">
-            <input class="dark-theme__switch" type="checkbox" />
-            <span class="dark-theme__slider"></span>
-          </label>
-          <h3>Menu on the Left</h3>
-          <label class="setting__left-menu">
-            <input class="left-menu__switch" type="checkbox" />
-            <span class="left-menu__slider"></span>
-          </label>
-          <h3>Reset Data</h3>
-          <button class="setting__reset">Reset</button>
+          <div class="setting__rename">
+            <h3>Rename</h3>
+            <input
+              class="rename__input"
+              maxlength="30"
+              placeholder="Press 'Enter' to Confirm"
+              required
+              type="text"
+            />
+          </div>
+          <div class="setting__twenty-four-hour">
+            <h3>24-Hour Format</h3>
+            <label class="twenty-four-hour__toggle">
+              <input class="toggle__switch" type="checkbox" />
+              <span class="toggle__slider"></span>
+            </label>
+          </div>
+          <div class="setting__dark-theme">
+            <h3>Dark Theme</h3>
+            <label class="dark-theme__toggle">
+              <input class="toggle__switch" type="checkbox" />
+              <span class="toggle__slider"></span>
+            </label>
+          </div>
+          <div>
+            <h3>Menu on the Left</h3>
+            <label class="setting__left-menu">
+              <input class="left-menu__switch" type="checkbox" />
+              <span class="left-menu__slider"></span>
+            </label>
+          </div>
+          <div>
+            <h3>Reset Data</h3>
+            <button class="setting__reset">Reset</button>
+          </div>
         </form>
       </div>
       <nav class="background__navigation js-background__navigation">

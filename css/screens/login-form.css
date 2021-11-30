@@ -41,6 +41,12 @@
   width: 15em;
 }
 
+.form-background__login input:focus {
+  background-color: rgba(0, 0, 0, 0.9);
+  border: none;
+  transition: background-color 1s;
+}
+
 .form-background .appear .disappear {
   transition-duration: 0.8;
 }

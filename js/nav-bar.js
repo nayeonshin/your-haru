@@ -5,6 +5,8 @@ const navigationBar = document.querySelector(".js-background__navigation");
 const homeButton = navigationBar.querySelector("div li:first-child button");
 const settingButton = navigationBar.querySelector("div li:last-child button");
 
+// TODO: When log in form is visible, disable clicking on nav bar
+
 let isOnHomeScreen = true;
 let isOnSettingScreen = false;
 

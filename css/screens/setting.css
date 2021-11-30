@@ -1,3 +1,6 @@
+/* TODO: (fix) rename input focused when clicking reset btn */
+/* TODO: Check if reset button is clicked when rename input focused */
+
 .background__setting {
   align-items: center;
   display: flex;
@@ -7,8 +10,11 @@
   text-transform: uppercase;
 }
 
-.background__setting * {
-  margin: 0.5em auto;
+.background__setting div:not(:first-child) h3,
+.background__setting label,
+.background__setting button,
+.background__setting .setting__rename * {
+  margin: 0.5em;
 }
 
 .background__setting .setting__rename,
@@ -22,13 +28,22 @@
   justify-content: center;
 }
 
+/* TODO: Reduce input height on smaller screen */
 .background__setting .setting__rename .rename__input {
   background-color: rgba(0, 0, 0, 0.5);
   border: none;
+  border-radius: 2em;
   color: var(--white);
   font-family: var(--font);
+  height: 2.5em;
   text-align: center;
   width: 12em;
+}
+
+.background__setting .setting__rename .rename__input:focus {
+  background-color: var(--dark-gray);
+  outline: none;
+  transition: 1s;
 }
 
 /* TODO: Remove animation of switches when resizing screen
@@ -39,7 +54,7 @@
 .background__setting .dark-theme__toggle,
 .background__setting .left-menu__toggle {
   display: inline-block;
-  height: 2.2em;
+  height: 1.2em;
   position: relative;
   width: 2.6em;
 }
@@ -59,6 +74,7 @@
   border-radius: 0.6em;
   bottom: 0;
   cursor: pointer;
+  height: 1.2em;
   left: 0;
   position: absolute;
   right: 0;
@@ -96,7 +112,7 @@
   -webkit-transform: translateX(1.4em);
 }
 
-.setting__reset {
+.reset__button {
   background-color: #f2480d;
   border: none;
   border-radius: 0.7em;

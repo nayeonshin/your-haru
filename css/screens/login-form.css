@@ -43,7 +43,7 @@
 
 .form-background__login input:focus {
   background-color: rgba(0, 0, 0, 0.9);
-  border: none;
+  outline: none;
   transition: background-color 1s;
 }
 

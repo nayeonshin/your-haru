@@ -105,15 +105,27 @@ main .background__greeting {
   color: #f84240;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 550px) {
   main .background__clock .clock__numbers {
-    font-size: 7.5rem;
+    font-size: 8rem;
   }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 460px) {
   main .background__clock .clock__numbers {
-    font-size: 6.5rem;
+    font-size: 7rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  main .background__clock .clock__numbers {
+    font-size: 6rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  main .background__clock .clock__numbers {
+    font-size: 5rem;
   }
 }
 

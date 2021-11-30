@@ -67,3 +67,9 @@
   -ms-transform: translateX(1.4em);
   -webkit-transform: translateX(1.4em);
 }
+
+@media screen and (max-width: 260px) {
+  .background__setting {
+    display: none;
+  }
+}

@@ -11,7 +11,9 @@
   margin: 0.5em auto;
 }
 
-/* TODO: Remove animation of switches when resizing screen */
+/* TODO: Remove animation of switches when resizing screen
+   border-radius, width, height
+*/
 
 .background__setting .setting__dark-theme,
 .background__setting .setting__left-menu {
@@ -38,8 +40,8 @@
   position: absolute;
   right: 0;
   top: 0;
-  transition: 0.4s;
-  -webkit-transition: 0.4s;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
 }
 
 .setting__dark-theme .dark-theme__slider::before,
@@ -51,8 +53,8 @@
   height: 0.9em;
   left: 0.15em;
   position: absolute;
-  transition: 0.4s;
-  -webkit-transition: 0.4s;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
   width: 0.9em;
 }
 
@@ -66,6 +68,19 @@
   transform: translateX(1.4em);
   -ms-transform: translateX(1.4em);
   -webkit-transform: translateX(1.4em);
+}
+
+.setting__reset {
+  background-color: #f2480d;
+  border: none;
+  border-radius: 0.7em;
+  color: var(--white);
+  cursor: pointer;
+  font-family: var(--font);
+  font-size: 1.2rem;
+  height: 1.5em;
+  text-transform: uppercase;
+  width: 4em;
 }
 
 @media screen and (max-width: 260px) {

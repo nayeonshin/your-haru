@@ -109,23 +109,37 @@ main .background__greeting {
   main .background__clock .clock__numbers {
     font-size: 8rem;
   }
+
+  main .background__greeting {
+    font-size: 1.3rem;
+  }
 }
 
 @media screen and (max-width: 460px) {
+  main .background__calendar {
+    font-size: 2.1rem;
+  }
+
   main .background__clock .clock__numbers {
     font-size: 7rem;
   }
-}
 
-@media screen and (max-width: 380px) {
-  main .background__clock .clock__numbers {
-    font-size: 6rem;
+  main .background__greeting {
+    font-size: 1.1rem;
   }
 }
 
 @media screen and (max-width: 380px) {
+  main .background__calendar {
+    font-size: 1.8rem;
+  }
+
   main .background__clock .clock__numbers {
     font-size: 5rem;
+  }
+
+  main .background__greeting {
+    font-size: 0.9rem;
   }
 }
 

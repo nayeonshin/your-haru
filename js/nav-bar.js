@@ -22,7 +22,6 @@ function _switchScreens(currentScreen, newScreen) {
 
   [isOnHomeScreen, isOnSettingScreen] = [isOnSettingScreen, isOnHomeScreen];
 
-  // Cleans up transition class names
   setTimeout(() => {
     currentScreen.classList.remove(DISAPPEAR_CLASSNAME);
     newScreen.classList.remove(APPEAR_CLASSNAME);

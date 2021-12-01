@@ -1,6 +1,7 @@
 const setting = document.querySelector(".js-background__setting");
 const renameForm = setting.querySelector(".js-setting__rename");
 const renameInput = renameForm.querySelector(".js-rename__input");
+const successModal = setting.querySelector(".setting__modal");
 
 const twentyFourSwitch = setting.querySelector(
   ".js-twenty-four-hour__toggle .js-toggle__switch"
@@ -31,7 +32,23 @@ function handleRenameSubmit(event) {
   localStorage.setItem(USERNAME_KEY, newUsername);
   GREETING.innerText = `Hello, ${newUsername}!`;
   renameForm.reset();
-  // TODO: Display message that name was successfully changed
+
+  const firstAsync = TRANSITION_DURATION / 2;
+  setTimeout(() => {
+    successModal.classList.add(APPEAR_CLASSNAME);
+    successModal.classList.remove(HIDDEN_CLASSNAME);
+  }, firstAsync);
+  setTimeout(() => {
+    successModal.classList.add(DISAPPEAR_CLASSNAME);
+  }, firstAsync + TRANSITION_DURATION * 2); // Waits a little more
+  setTimeout(() => {
+    successModal.classList.add(HIDDEN_CLASSNAME);
+  }, firstAsync + TRANSITION_DURATION * 3 - 100);
+
+  setTimeout(() => {
+    successModal.classList.remove(APPEAR_CLASSNAME);
+    successModal.classList.remove(DISAPPEAR_CLASSNAME);
+  }, firstAsync + TRANSITION_DURATION * 3);
 }
 
 renameForm.addEventListener("submit", handleRenameSubmit);

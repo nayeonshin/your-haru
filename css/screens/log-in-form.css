@@ -49,10 +49,6 @@
   transition: background-color 1s;
 }
 
-.form-background .appear .disappear {
-  transition-duration: 0.8;
-}
-
 @media screen and (max-width: 260px) {
   .form-background {
     display: none;

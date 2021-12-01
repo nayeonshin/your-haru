@@ -32,3 +32,11 @@ body {
 .disappear {
   animation: fade-out 0.5s;
 }
+
+.slow-appear {
+  animation: fade-in 1s;
+}
+
+.slow-disappear {
+  animation: fade-out 1s;
+}

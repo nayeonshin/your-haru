@@ -12,6 +12,7 @@ const darkThemeSwitch = setting.querySelector(
 const leftMenuSwitch = setting.querySelector(
   ".js-left-menu__toggle .js-toggle__switch"
 );
+// TODO: Implement reset feature after completing to-do list
 const resetButton = setting.querySelector(".js-reset__button");
 
 const CLICK_EVENT = "click";

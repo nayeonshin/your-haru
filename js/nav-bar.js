@@ -39,12 +39,12 @@ function switchScreens(isHomeClicked, isSettingClicked) {
   }
 }
 
-function handleHomeClick() {
-  switchScreens(true, false);
-}
-
 function handleSettingClick() {
   switchScreens(false, true);
+}
+
+function handleHomeClick() {
+  switchScreens(true, false);
 }
 
 homeButton.addEventListener("click", handleHomeClick);

@@ -21,15 +21,6 @@ const months = [
 
 const RED_TEXT_CLASSNAME = "red-text";
 
-function updateCalendar(currentTime) {
-  const currentDay = days[currentTime.getDay()];
-  const currentMonth = months[currentTime.getMonth()];
-  const currentDate = currentTime.getDate();
-  const currentYear = currentTime.getFullYear();
-
-  calendar.innerText = `${currentDay}, ${currentMonth} ${currentDate}, ${currentYear}`;
-}
-
 function changeClockColor(currentClock) {
   const shouldClockBeRed = () => {
     [_, currentMinutes, currentSeconds] = currentClock;
@@ -70,6 +61,15 @@ function updateClock(currentTime) {
   clockAmPm.innerText = amPm;
 
   changeClockColor(currentClock);
+}
+
+function updateCalendar(currentTime) {
+  const currentDay = days[currentTime.getDay()];
+  const currentMonth = months[currentTime.getMonth()];
+  const currentDate = currentTime.getDate();
+  const currentYear = currentTime.getFullYear();
+
+  calendar.innerText = `${currentDay}, ${currentMonth} ${currentDate}, ${currentYear}`;
 }
 
 function getTime() {

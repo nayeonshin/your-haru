@@ -130,7 +130,7 @@ main .background__greeting {
 }
 
 @media screen and (max-width: 260px) {
-  main,
+  .background main,
   .background__navigation {
     display: none;
   }

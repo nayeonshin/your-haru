@@ -1,7 +1,7 @@
 const setting = document.querySelector(".js-background__setting");
 const renameForm = setting.querySelector(".js-setting__rename");
 const renameInput = renameForm.querySelector(".js-rename__input");
-const successModal = setting.querySelector(".setting__modal");
+const renameModal = setting.querySelector(".setting__modal");
 
 const twentyFourSwitch = setting.querySelector(
   ".js-twenty-four-hour__toggle .js-toggle__switch"
@@ -27,29 +27,39 @@ function handleDarkThemeClick() {}
 
 function handleTwentyFourClick() {}
 
-function handleRenameSubmit(event) {
-  event.preventDefault();
-  newUsername = renameInput.value;
-  localStorage.setItem(USERNAME_KEY, newUsername);
-  GREETING.innerText = `Hello, ${newUsername}!`;
-  renameForm.reset();
-
+function showModal(message) {
   const firstAsync = TRANSITION_DURATION / 2;
   setTimeout(() => {
-    successModal.classList.add(APPEAR_CLASSNAME);
-    successModal.classList.remove(HIDDEN_CLASSNAME);
+    renameModal.innerText = message;
+    renameModal.classList.add(APPEAR_CLASSNAME);
+    renameModal.classList.remove(HIDDEN_CLASSNAME);
   }, firstAsync);
   setTimeout(() => {
-    successModal.classList.add(DISAPPEAR_CLASSNAME);
+    renameModal.classList.add(DISAPPEAR_CLASSNAME);
   }, firstAsync + TRANSITION_DURATION * 2); // Waits a little more
   setTimeout(() => {
-    successModal.classList.add(HIDDEN_CLASSNAME);
+    renameModal.classList.add(HIDDEN_CLASSNAME);
   }, firstAsync + TRANSITION_DURATION * 3 - 100);
 
   setTimeout(() => {
-    successModal.classList.remove(APPEAR_CLASSNAME);
-    successModal.classList.remove(DISAPPEAR_CLASSNAME);
+    renameModal.classList.remove(APPEAR_CLASSNAME);
+    renameModal.classList.remove(DISAPPEAR_CLASSNAME);
   }, firstAsync + TRANSITION_DURATION * 3);
+}
+
+function handleRenameSubmit(event) {
+  event.preventDefault();
+  newUsername = renameInput.value;
+  const savedUsername = localStorage.getItem(USERNAME_KEY);
+  if (newUsername === savedUsername) {
+    showModal(`Username is already "${newUsername}".`);
+  } else {
+    localStorage.setItem(USERNAME_KEY, newUsername);
+    GREETING.innerText = `Hello, ${newUsername}!`;
+    renameForm.reset();
+
+    showModal("Username successfully changed");
+  }
 }
 
 renameForm.addEventListener("submit", handleRenameSubmit);

@@ -46,7 +46,7 @@ function handleLeftMenuClick() {
   const turnedOn = turnOnOrOff(LEFT_MENU_KEY);
 }
 
-function changeBgOpacity(shouldBeDarker) {
+function changeBgColor(shouldBeDarker) {
   if (shouldBeDarker) {
     darkBackground.classList.add(DARKER_CLASSNAME);
   } else {
@@ -56,11 +56,11 @@ function changeBgOpacity(shouldBeDarker) {
 
 function handleDarkThemeClick() {
   const shouldChange = turnOnOrOff(DARK_THEME_KEY);
-  changeBgOpacity(shouldChange);
+  changeBgColor(shouldChange);
 }
 
 function handleTwentyFourClick() {
-  const turnedOn = turnOnOrOff(TWENTY_FOUR_KEY);
+  is24HourOn = turnOnOrOff(TWENTY_FOUR_KEY);
 }
 
 function showModal(message) {

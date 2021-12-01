@@ -4,22 +4,18 @@ const loginForm = loginFormBackground.querySelector(
 );
 const loginInput = loginForm.querySelector(".js-log-in__input");
 
-const greeting = document.querySelector(".js-background__greeting");
-
-const USERNAME_KEY = "username";
-
 function showGreeting(username) {
-  greeting.classList.add(DISAPPEAR_CLASSNAME);
+  GREETING.classList.add(DISAPPEAR_CLASSNAME);
   setTimeout(() => {
-    greeting.classList.add(HIDDEN_CLASSNAME);
-    greeting.classList.remove(DISAPPEAR_CLASSNAME);
-    greeting.innerText = `Hello, ${username}!`;
-    greeting.classList.add(APPEAR_CLASSNAME);
-    greeting.classList.remove(HIDDEN_CLASSNAME);
+    GREETING.classList.add(HIDDEN_CLASSNAME);
+    GREETING.classList.remove(DISAPPEAR_CLASSNAME);
+    GREETING.innerText = `Hello, ${username}!`;
+    GREETING.classList.add(APPEAR_CLASSNAME);
+    GREETING.classList.remove(HIDDEN_CLASSNAME);
   }, TRANSITION_DURATION - 100);
 
   setTimeout(() => {
-    greeting.classList.remove(APPEAR_CLASSNAME);
+    GREETING.classList.remove(APPEAR_CLASSNAME);
   }, TRANSITION_DURATION * 2);
 }
 
@@ -49,5 +45,5 @@ if (savedUsername === null) {
 
   loginForm.addEventListener("submit", handleLogInSubmit);
 } else {
-  greeting.innerText = `Hello, ${savedUsername}!`;
+  GREETING.innerText = `Hello, ${savedUsername}!`;
 }

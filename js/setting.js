@@ -1,6 +1,7 @@
 const setting = document.querySelector(".js-background__setting");
 const renameForm = setting.querySelector(".js-setting__rename");
 const renameInput = renameForm.querySelector(".js-rename__input");
+
 const twentyFourSwitch = setting.querySelector(
   ".js-twenty-four-hour__toggle .js-toggle__switch"
 );
@@ -27,6 +28,8 @@ function handleTwentyFourClick() {}
 function handleRenameSubmit(event) {
   event.preventDefault();
   newUsername = renameInput.value;
+  localStorage.setItem(USERNAME_KEY, newUsername);
+  GREETING.innerText = `Hello, ${newUsername}!`;
 }
 
 renameForm.addEventListener("submit", handleRenameSubmit);

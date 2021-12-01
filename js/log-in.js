@@ -2,7 +2,7 @@ const loginFormBackground = document.querySelector(".js-form-background");
 const loginForm = loginFormBackground.querySelector(
   ".js-form-background__log-in"
 );
-const loginInput = loginForm.querySelector("input");
+const loginInput = loginForm.querySelector(".js-log-in__input");
 
 const greeting = document.querySelector(".js-background__greeting");
 

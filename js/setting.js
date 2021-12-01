@@ -30,6 +30,8 @@ function handleRenameSubmit(event) {
   newUsername = renameInput.value;
   localStorage.setItem(USERNAME_KEY, newUsername);
   GREETING.innerText = `Hello, ${newUsername}!`;
+  renameForm.reset();
+  // TODO: Display message that name was successfully changed
 }
 
 renameForm.addEventListener("submit", handleRenameSubmit);

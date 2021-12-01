@@ -1,3 +1,6 @@
+// TODO: (local storage) If on, toggle switch's slider is on the right.
+// i.e. Display states from local storage
+
 const setting = document.querySelector(".js-background__setting");
 const renameForm = setting.querySelector(".js-setting__rename");
 const renameInput = renameForm.querySelector(".js-rename__input");
@@ -9,23 +12,56 @@ const twentyFourSwitch = setting.querySelector(
 const darkThemeSwitch = setting.querySelector(
   ".js-dark-theme__toggle .js-toggle__switch"
 );
+const darkBackground = document.querySelector(".js-background__darkened"); // UNUSED YET
 const leftMenuSwitch = setting.querySelector(
   ".js-left-menu__toggle .js-toggle__switch"
 );
 // TODO: Implement reset feature after completing to-do list
 const resetButton = setting.querySelector(".js-reset__button");
 
+const DARKER_CLASSNAME = "darker";
+
 const CLICK_EVENT = "click";
+const DARK_THEME_KEY = "isDarkThemeOn";
+const LEFT_MENU_KEY = "isLeftMenuOn";
+const TWENTY_FOUR_KEY = "is24HourOn";
 
 function handleResetClick(event) {
   event.preventDefault();
 }
 
-function handleLeftMenuClick() {}
+function turnOnOrOff(key) {
+  const isOn = localStorage.getItem(key);
+  let shouldBeOn;
+  if (isOn === null || isOn === "false") {
+    shouldBeOn = true;
+  } else {
+    shouldBeOn = false;
+  }
+  localStorage.setItem(key, `${shouldBeOn}`);
+  return shouldBeOn;
+}
 
-function handleDarkThemeClick() {}
+function handleLeftMenuClick() {
+  const turnedOn = turnOnOrOff(LEFT_MENU_KEY);
+}
 
-function handleTwentyFourClick() {}
+function changeBgOpacity(shouldBeDarker) {
+  if (shouldBeDarker) {
+    darkBackground.classList.add(DARKER_CLASSNAME);
+  } else {
+    darkBackground.classList.remove(DARKER_CLASSNAME);
+  }
+}
+
+function handleDarkThemeClick() {
+  const shouldChange = turnOnOrOff(DARK_THEME_KEY);
+  changeBgOpacity(shouldChange);
+}
+
+function handleTwentyFourClick() {
+  const turnedOn = turnOnOrOff(TWENTY_FOUR_KEY);
+}
 
 function showModal(message) {
   const firstAsync = TRANSITION_DURATION / 2;
@@ -49,7 +85,7 @@ function showModal(message) {
 
 function handleRenameSubmit(event) {
   event.preventDefault();
-  newUsername = renameInput.value;
+  const newUsername = renameInput.value;
   const savedUsername = localStorage.getItem(USERNAME_KEY);
   if (newUsername === savedUsername) {
     showModal(`Username is already "${newUsername}".`);

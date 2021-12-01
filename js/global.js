@@ -9,5 +9,7 @@ const SLOW_DISAPPEAR_CLASSNAME = "slow-disappear";
 const TRANSITION_DURATION = 500;
 
 // JS
-const USERNAME_KEY = "username";
 const GREETING = document.querySelector(".js-background__greeting");
+const USERNAME_KEY = "username";
+
+let is24HourOn;

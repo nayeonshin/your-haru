@@ -73,7 +73,7 @@ main .background__greeting {
 }
 
 .background__navigation ul li {
-  margin: 1.5em auto 1.5em 0.2em;
+  margin: 1.5em auto 1.5em 0.1em;
 }
 
 .background__navigation ul li button {
@@ -84,9 +84,9 @@ main .background__greeting {
 }
 
 .background__navigation img {
-  height: 1.2em;
+  height: 1.1em;
   opacity: 0.5;
-  width: 1.2em;
+  width: 1.1em;
 }
 
 .background__navigation ul li button:hover img {

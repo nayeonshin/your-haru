@@ -2,7 +2,6 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  font-size: 1.4rem;
   justify-content: space-around;
   text-transform: uppercase;
 }
@@ -23,7 +22,8 @@
 .setting__dark-theme .dark-theme__title,
 .setting__left-menu .left-menu__title,
 .setting__reset .reset__title {
-  margin: 1em;
+  font-size: 1rem;
+  margin: 1.5em;
 }
 
 .background__setting .setting__rename .rename__input {

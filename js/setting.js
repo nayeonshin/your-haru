@@ -16,6 +16,7 @@ const darkBackground = document.querySelector(".js-background__darkened");
 const leftMenuSwitch = setting.querySelector(
   ".js-left-menu__toggle .js-toggle__switch"
 );
+const menu = document.querySelector(".js-background__navigation");
 const resetButton = setting.querySelector(".js-reset__button");
 
 const DARKER_CLASSNAME = "darker";
@@ -40,9 +41,17 @@ function turnOnOrOff(key) {
   return shouldBeOn;
 }
 
+function changeMenuLocation(shouldBeOnLeft) {
+  if (shouldBeOnLeft) {
+    menu.classList.add("left-menu");
+  } else {
+    menu.classList.remove("left-menu");
+  }
+}
+
 function handleLeftMenuClick() {
-  const turnedOn = turnOnOrOff(LEFT_MENU_KEY);
-  console.log(turnedOn);
+  const shouldChange = turnOnOrOff(LEFT_MENU_KEY);
+  changeMenuLocation(shouldChange);
 }
 
 function changeBgColor(shouldBeDarker) {

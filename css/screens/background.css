@@ -110,6 +110,11 @@ main .background__greeting {
   color: #f84240;
 }
 
+.left-menu {
+  left: 0;
+  right: auto;
+}
+
 @media screen and (max-width: 550px) {
   main .background__clock .clock__numbers {
     font-size: 8rem;

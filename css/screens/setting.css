@@ -1,5 +1,4 @@
 /* TODO: Remove toggle switch resizing animation when resizing screen */
-/* TODO: Instead of .clicked, check whether checkbox is clicked */
 
 .background__setting {
   align-items: center;
@@ -22,7 +21,7 @@
 }
 
 .background__setting .setting__rename .rename__input {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--gray);
   border: none;
   border-radius: 2em;
   color: var(--white);

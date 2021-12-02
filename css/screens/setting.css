@@ -133,6 +133,16 @@
   text-transform: none;
 }
 
+.checked .toggle__slider {
+  background-color: #72e07b;
+  right: 0;
+}
+
+.checked .toggle__slider::before {
+  left: auto;
+  right: 0.15em;
+}
+
 @media screen and (min-width: 1024px) {
   .background__setting {
     font-size: 1.2rem;

@@ -4,7 +4,7 @@
 const setting = document.querySelector(".js-background__setting");
 const renameForm = setting.querySelector(".js-setting__rename");
 const renameInput = renameForm.querySelector(".js-rename__input");
-const renameModal = setting.querySelector(".setting__modal");
+const renameModal = setting.querySelector(".js-setting__modal");
 
 const twentyFourSwitch = setting.querySelector(
   ".js-twenty-four-hour__toggle .js-toggle__switch"
@@ -87,7 +87,7 @@ function handleRenameSubmit(event) {
   const newUsername = renameInput.value;
   const savedUsername = localStorage.getItem(USERNAME_KEY);
   if (newUsername === savedUsername) {
-    showModal(`Username is already "${newUsername}".`);
+    showModal(`⚠️ Username is already "${newUsername}".`);
   } else {
     localStorage.setItem(USERNAME_KEY, newUsername);
     GREETING.innerText = `Hello, ${newUsername}!`;

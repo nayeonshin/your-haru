@@ -80,10 +80,6 @@ main .background__greeting {
   margin-left: 0.2em;
 }
 
-.background__navigation ul div li:first-child {
-  margin-left: 0.1em;
-}
-
 .background__navigation ul li button {
   background: none;
   border: none;
@@ -95,6 +91,11 @@ main .background__greeting {
   color: var(--white);
   cursor: pointer;
   transition: color 0.5s ease-in;
+}
+
+.background__navigation img {
+  height: 1.2em;
+  width: 1.2em;
 }
 
 .background__setting {

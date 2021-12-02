@@ -1,6 +1,3 @@
-// TODO: (local storage) If on, toggle switch's slider is on the right.
-// i.e. Display states from local storage
-
 const setting = document.querySelector(".js-background__setting");
 const renameForm = setting.querySelector(".js-setting__rename");
 const renameInput = renameForm.querySelector(".js-rename__input");
@@ -31,12 +28,7 @@ function handleResetClick(event) {
 
 function turnOnOrOff(key) {
   const isOn = localStorage.getItem(key) === "true";
-  let shouldBeOn;
-  if (isOn) {
-    shouldBeOn = false;
-  } else {
-    shouldBeOn = true;
-  }
+  const shouldBeOn = isOn ? false : true;
   localStorage.setItem(key, `${shouldBeOn}`);
   return shouldBeOn;
 }
@@ -107,10 +99,11 @@ function showInitialStates() {
   const isDarkThemeOn = localStorage.getItem("isDarkThemeOn") === "true";
   const isLeftMenuOn = localStorage.getItem("isLeftMenuOn") === "true";
 
+  // Applies changes
   changeState(isDarkThemeOn, darkBackground, DARK_THEME_CLASSNAME);
   changeState(isLeftMenuOn, menu, LEFT_MENU_CLASSNAME);
 
-  // Toggle switches
+  // Maintains switch states
   changeState(is24HourOn, twentyFourToggle, CHECKED_CLASSNAME);
   changeState(isDarkThemeOn, darkThemeToggle, CHECKED_CLASSNAME);
   changeState(isLeftMenuOn, leftMenuToggle, CHECKED_CLASSNAME);

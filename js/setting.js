@@ -101,17 +101,8 @@ function showInitialStates() {
   const isDarkThemeOn = localStorage.getItem("isDarkThemeOn");
   const isLeftMenuOn = localStorage.getItem("isLeftMenuOn");
 
-  if (isDarkThemeOn === "true") {
-    darkBackground.classList.add(DARK_THEME_CLASSNAME);
-  } else {
-    darkBackground.classList.remove(DARK_THEME_CLASSNAME);
-  }
-
-  if (isLeftMenuOn === "true") {
-    menu.classList.add(LEFT_MENU_CLASSNAME);
-  } else {
-    menu.classList.remove(LEFT_MENU_CLASSNAME);
-  }
+  changeState(isDarkThemeOn === "true", darkBackground, DARK_THEME_CLASSNAME);
+  changeState(isLeftMenuOn === "true", menu, LEFT_MENU_CLASSNAME);
 }
 
 showInitialStates();

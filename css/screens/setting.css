@@ -111,7 +111,7 @@
   color: var(--white);
   cursor: pointer;
   font-family: var(--font);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   padding: 0.5em 0.8em;
   text-transform: uppercase;
 }
@@ -146,6 +146,32 @@
   transform: translateX(-1.4em);
   -ms-transform: translateX(-1.4em);
   -webkit-transform: translateX(-1.4em);
+}
+
+@media screen and (max-width: 1024px) {
+  .background__setting h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 896px) {
+  .background__setting h3 {
+    font-size: 1.2rem;
+  }
+
+  .setting__reset .reset__button {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 864px) {
+  .background__setting h3 {
+    font-size: 1.3rem;
+  }
+
+  .setting__reset .reset__button {
+    font-size: 1rem;
+  }
 }
 
 @media screen and (max-width: 260px) {

@@ -50,14 +50,14 @@ function changeState(shouldChange, element, className) {
 }
 
 function handleLeftMenuClick() {
-  const shouldChange = turnOnOrOff("isLeftMenuOn");
-  changeState(shouldChange, menu, LEFT_MENU_CLASSNAME);
+  const isTurnedOn = turnOnOrOff("isLeftMenuOn");
+  changeState(isTurnedOn, menu, LEFT_MENU_CLASSNAME);
 }
 
 function handleDarkThemeClick() {
   // TODO: Fix CSS when this is off
-  const shouldChange = turnOnOrOff("isDarkThemeOn");
-  changeState(shouldChange, darkBackground, DARK_THEME_CLASSNAME);
+  const isTurnedOn = turnOnOrOff("isDarkThemeOn");
+  changeState(isTurnedOn, darkBackground, DARK_THEME_CLASSNAME);
 }
 
 function handleTwentyFourClick() {

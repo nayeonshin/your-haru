@@ -12,11 +12,10 @@ const twentyFourSwitch = setting.querySelector(
 const darkThemeSwitch = setting.querySelector(
   ".js-dark-theme__toggle .js-toggle__switch"
 );
-const darkBackground = document.querySelector(".js-background__darkened"); // UNUSED YET
+const darkBackground = document.querySelector(".js-background__darkened");
 const leftMenuSwitch = setting.querySelector(
   ".js-left-menu__toggle .js-toggle__switch"
 );
-// TODO: Implement reset feature after completing to-do list
 const resetButton = setting.querySelector(".js-reset__button");
 
 const DARKER_CLASSNAME = "darker";
@@ -32,10 +31,10 @@ function handleResetClick(event) {
 function turnOnOrOff(key) {
   const isOn = localStorage.getItem(key);
   let shouldBeOn;
-  if (isOn === null || isOn === "false") {
-    shouldBeOn = true;
-  } else {
+  if (isOn === "true") {
     shouldBeOn = false;
+  } else {
+    shouldBeOn = true;
   }
   localStorage.setItem(key, `${shouldBeOn}`);
   return shouldBeOn;

@@ -42,6 +42,7 @@ function turnOnOrOff(key) {
 
 function handleLeftMenuClick() {
   const turnedOn = turnOnOrOff(LEFT_MENU_KEY);
+  console.log(turnedOn);
 }
 
 function changeBgColor(shouldBeDarker) {

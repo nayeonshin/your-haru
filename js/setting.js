@@ -19,6 +19,9 @@ const leftMenuSwitch = setting.querySelector(
 const menu = document.querySelector(".js-background__navigation");
 const resetButton = setting.querySelector(".js-reset__button");
 
+const DARK_THEME_CLASSNAME = "darker";
+const LEFT_MENU_CLASSNAME = "left-menu";
+
 const CLICK_EVENT = "click";
 
 function handleResetClick(event) {
@@ -47,12 +50,12 @@ function changeState(shouldChange, element, className) {
 
 function handleLeftMenuClick() {
   const shouldChange = turnOnOrOff("isLeftMenuOn");
-  changeState(shouldChange, menu, "left-menu");
+  changeState(shouldChange, menu, LEFT_MENU_CLASSNAME);
 }
 
 function handleDarkThemeClick() {
   const shouldChange = turnOnOrOff("isDarkThemeOn");
-  changeState(shouldChange, darkBackground, "darker");
+  changeState(shouldChange, darkBackground, DARK_THEME_CLASSNAME);
 }
 
 function handleTwentyFourClick() {
@@ -93,6 +96,25 @@ function handleRenameSubmit(event) {
     showModal("Username successfully changed");
   }
 }
+
+function showInitialStates() {
+  const isDarkThemeOn = localStorage.getItem("isDarkThemeOn");
+  const isLeftMenuOn = localStorage.getItem("isLeftMenuOn");
+
+  if (isDarkThemeOn === "true") {
+    darkBackground.classList.add(DARK_THEME_CLASSNAME);
+  } else {
+    darkBackground.classList.remove(DARK_THEME_CLASSNAME);
+  }
+
+  if (isLeftMenuOn === "true") {
+    menu.classList.add(LEFT_MENU_CLASSNAME);
+  } else {
+    menu.classList.remove(LEFT_MENU_CLASSNAME);
+  }
+}
+
+showInitialStates();
 
 renameForm.addEventListener("submit", handleRenameSubmit);
 twentyFourSwitch.addEventListener(CLICK_EVENT, handleTwentyFourClick);

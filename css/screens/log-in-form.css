@@ -1,5 +1,3 @@
-/* TODO: "You can always change it later." */
-
 .form-background {
   align-items: center;
   background-color: var(--dark-gray);
@@ -46,7 +44,7 @@
 .form-background__log-in input:focus {
   background-color: rgba(0, 0, 0, 0.9);
   outline: none;
-  transition: background-color 1s;
+  transition: background-color var(--slow-speed);
 }
 
 /* TODO: Natural transition */

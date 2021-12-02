@@ -1,5 +1,3 @@
-/* TODO: rm toggle size animation on resizing screen */
-
 .background__setting {
   align-items: center;
   display: flex;
@@ -39,7 +37,7 @@
 .background__setting .setting__rename .rename__input:focus {
   background-color: var(--dark-gray);
   outline: none;
-  transition: background-color 1s;
+  transition: background-color var(--slow-speed);
 }
 
 .background__setting .twenty-four-hour__toggle,
@@ -62,7 +60,7 @@
 .twenty-four-hour__toggle .toggle__slider,
 .dark-theme__toggle .toggle__slider,
 .left-menu__toggle .toggle__slider {
-  background-color: var(--white);
+  background-color: var(--toggle-gray);
   border-radius: 0.6em;
   bottom: 0;
   cursor: pointer;
@@ -71,14 +69,14 @@
   position: absolute;
   right: 0;
   top: 0;
-  transition: transform 0.5s;
-  -webkit-transition: transform 0.5s;
+  transition: transform var(--medium-speed);
+  -webkit-transition: transform var(--medium-speed);
 }
 
 .twenty-four-hour__toggle .toggle__slider::before,
 .dark-theme__toggle .toggle__slider::before,
 .left-menu__toggle .toggle__slider::before {
-  background-color: rgb(180, 180, 180);
+  background-color: var(--white);
   border-radius: 50%;
   bottom: 0.15em;
   content: "";
@@ -93,7 +91,7 @@
 .toggle__switch:checked + .toggle__slider,
 .toggle__switch:checked + .toggle__slider,
 .toggle__switch:checked + .toggle__slider {
-  background-color: #72e07b;
+  background-color: var(--toggle-green);
 }
 
 .toggle__switch:checked + .toggle__slider::before,
@@ -127,16 +125,26 @@
   text-transform: none;
 }
 
-/* Checked */
-
+/* Toggle states */
 .checked .toggle__slider {
-  background-color: #72e07b;
+  background-color: var(--toggle-green);
   right: 0;
 }
 
 .checked .toggle__slider::before {
   left: auto;
   right: 0.15em;
+}
+
+.unchecked .toggle__slider {
+  background-color: var(--toggle-gray);
+  left: 0;
+  transition: left 0.2s;
+}
+
+.unchecked .toggle__slider::before {
+  left: 0.15em;
+  right: auto;
 }
 
 /* TODO: Clean up checked class name */

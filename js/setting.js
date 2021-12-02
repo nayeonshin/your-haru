@@ -26,13 +26,14 @@ function handleResetClick(event) {
   event.preventDefault();
 }
 
-function turnOnOrOff(key) {
+function checkIsOn(key) {
   const isOn = localStorage.getItem(key) === "true";
   const shouldBeOn = isOn ? false : true;
-  localStorage.setItem(key, `${shouldBeOn}`);
+  localStorage.setItem(key, String(shouldBeOn));
   return shouldBeOn;
 }
 
+// TODO: Try changing this with toggle()
 function changeState(shouldChange, element, className) {
   if (shouldChange) {
     element.classList.add(className);
@@ -42,18 +43,26 @@ function changeState(shouldChange, element, className) {
 }
 
 function handleLeftMenuClick() {
-  const isTurnedOn = turnOnOrOff("isLeftMenuOn");
-  changeState(isTurnedOn, menu, LEFT_MENU_CLASSNAME);
+  const shouldChange = checkIsOn("isLeftMenuOn");
+  changeState(shouldChange, menu, LEFT_MENU_CLASSNAME);
+
+  console.log("clicked");
+
+  // TODO: Restore switch bg color upon click after refresh
+  // Warning: Only initial states
+  // if (leftMenuToggle.classList.contains(CHECKED_CLASSNAME)) {
+  //   leftMenuToggle.classList.add("unchecked")
+  // }
 }
 
 function handleDarkThemeClick() {
   // TODO: Fix CSS when this is off
-  const isTurnedOn = turnOnOrOff("isDarkThemeOn");
-  changeState(isTurnedOn, darkBackground, DARK_THEME_CLASSNAME);
+  const shouldChange = checkIsOn("isDarkThemeOn");
+  changeState(shouldChange, darkBackground, DARK_THEME_CLASSNAME);
 }
 
 function handleTwentyFourClick() {
-  turnOnOrOff(TWENTY_FOUR_KEY);
+  const _ = checkIsOn(TWENTY_FOUR_KEY);
 }
 
 function showModal(message) {
@@ -104,6 +113,7 @@ function showInitialStates() {
   changeState(isLeftMenuOn, menu, LEFT_MENU_CLASSNAME);
 
   // Maintains switch states
+  // TODO: This doesn't seem to work somehow.
   changeState(is24HourOn, twentyFourToggle, CHECKED_CLASSNAME);
   changeState(isDarkThemeOn, darkThemeToggle, CHECKED_CLASSNAME);
   changeState(isLeftMenuOn, leftMenuToggle, CHECKED_CLASSNAME);

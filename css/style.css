@@ -15,7 +15,6 @@ html {
 }
 
 body {
-  /* box-sizing: border-box; */
   font-family: var(--font);
   height: 100vh;
   width: 100vw;
@@ -27,17 +26,17 @@ body {
 }
 
 .appear {
-  animation: fade-in 0.5s;
+  animation: fade-in var(--medium-speed);
 }
 
 .disappear {
-  animation: fade-out 0.5s;
+  animation: fade-out var(--medium-speed);
 }
 
 .slow-appear {
-  animation: fade-in 1s;
+  animation: fade-in var(--slow-speed);
 }
 
 .slow-disappear {
-  animation: fade-out 1s;
+  animation: fade-out var(--slow-speed);
 }

@@ -2,5 +2,9 @@
   --black: #000;
   --dark-gray: rgba(0, 0, 0, 0.8);
   --font: "NanumSquare", sans-serif;
+  --medium-speed: 0.5s;
+  --slow-speed: 1s;
+  --toggle-gray: rgb(180, 180, 180);
+  --toggle-green: #72e07b;
   --white: #fff;
 }

@@ -45,18 +45,9 @@ function changeState(shouldChange, element, className) {
 function handleLeftMenuClick() {
   const shouldChange = checkIsOn("isLeftMenuOn");
   changeState(shouldChange, menu, LEFT_MENU_CLASSNAME);
-
-  console.log("clicked");
-
-  // TODO: Restore switch bg color upon click after refresh
-  // Warning: Only initial states
-  // if (leftMenuToggle.classList.contains(CHECKED_CLASSNAME)) {
-  //   leftMenuToggle.classList.add("unchecked")
-  // }
 }
 
 function handleDarkThemeClick() {
-  // TODO: Fix CSS when this is off
   const shouldChange = checkIsOn("isDarkThemeOn");
   changeState(shouldChange, darkBackground, DARK_THEME_CLASSNAME);
 }
@@ -108,15 +99,18 @@ function showInitialStates() {
   const isDarkThemeOn = localStorage.getItem("isDarkThemeOn") === "true";
   const isLeftMenuOn = localStorage.getItem("isLeftMenuOn") === "true";
 
-  // Applies changes
   changeState(isDarkThemeOn, darkBackground, DARK_THEME_CLASSNAME);
   changeState(isLeftMenuOn, menu, LEFT_MENU_CLASSNAME);
 
-  // Maintains switch states
-  // TODO: This doesn't seem to work somehow.
-  changeState(is24HourOn, twentyFourToggle, CHECKED_CLASSNAME);
-  changeState(isDarkThemeOn, darkThemeToggle, CHECKED_CLASSNAME);
-  changeState(isLeftMenuOn, leftMenuToggle, CHECKED_CLASSNAME);
+  if (is24HourOn) {
+    twentyFourSwitch.checked = true;
+  }
+  if (isDarkThemeOn) {
+    darkThemeSwitch.checked = true;
+  }
+  if (isLeftMenuOn) {
+    leftMenuSwitch.checked = true;
+  }
 }
 
 showInitialStates();

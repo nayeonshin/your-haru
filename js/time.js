@@ -43,6 +43,7 @@ function updateClock(currentTime) {
 
   const isCurrentAm = currentHours < 12 ? true : false;
   const amPm = isCurrentAm ? "am" : "pm";
+  // TODO: Only check localStorage when status has changed
   const is24HourOn = localStorage.getItem(TWENTY_FOUR_KEY) === "true";
   if (currentHours === 0 && !is24HourOn) {
     currentClock[0] = "12"; // When 12 a.m., displays 12

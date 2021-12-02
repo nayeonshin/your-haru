@@ -19,11 +19,7 @@ const leftMenuSwitch = setting.querySelector(
 const menu = document.querySelector(".js-background__navigation");
 const resetButton = setting.querySelector(".js-reset__button");
 
-const DARKER_CLASSNAME = "darker";
-
 const CLICK_EVENT = "click";
-const DARK_THEME_KEY = "isDarkThemeOn";
-const LEFT_MENU_KEY = "isLeftMenuOn";
 
 function handleResetClick(event) {
   event.preventDefault();
@@ -41,30 +37,22 @@ function turnOnOrOff(key) {
   return shouldBeOn;
 }
 
-function changeMenuLocation(shouldBeOnLeft) {
-  if (shouldBeOnLeft) {
-    menu.classList.add("left-menu");
+function changeState(shouldChange, element, className) {
+  if (shouldChange) {
+    element.classList.add(className);
   } else {
-    menu.classList.remove("left-menu");
+    element.classList.remove(className);
   }
 }
 
 function handleLeftMenuClick() {
-  const shouldChange = turnOnOrOff(LEFT_MENU_KEY);
-  changeMenuLocation(shouldChange);
-}
-
-function changeBgColor(shouldBeDarker) {
-  if (shouldBeDarker) {
-    darkBackground.classList.add(DARKER_CLASSNAME);
-  } else {
-    darkBackground.classList.remove(DARKER_CLASSNAME);
-  }
+  const shouldChange = turnOnOrOff("isLeftMenuOn");
+  changeState(shouldChange, menu, "left-menu");
 }
 
 function handleDarkThemeClick() {
-  const shouldChange = turnOnOrOff(DARK_THEME_KEY);
-  changeBgColor(shouldChange);
+  const shouldChange = turnOnOrOff("isDarkThemeOn");
+  changeState(shouldChange, darkBackground, "darker");
 }
 
 function handleTwentyFourClick() {

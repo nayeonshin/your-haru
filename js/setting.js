@@ -1,24 +1,22 @@
-// TODO: (local storage) If on, toggle switch's slider is on the right.
-// i.e. Display states from local storage
-
 const setting = document.querySelector(".js-background__setting");
 const renameForm = setting.querySelector(".js-setting__rename");
 const renameInput = renameForm.querySelector(".js-rename__input");
 const renameModal = setting.querySelector(".js-setting__modal");
 
-const twentyFourSwitch = setting.querySelector(
-  ".js-twenty-four-hour__toggle .js-toggle__switch"
-);
-const darkThemeSwitch = setting.querySelector(
-  ".js-dark-theme__toggle .js-toggle__switch"
-);
+const twentyFourToggle = setting.querySelector(".js-twenty-four-hour__toggle");
+const twentyFourSwitch = twentyFourToggle.querySelector(".js-toggle__switch");
+
+const darkThemeToggle = setting.querySelector(".js-dark-theme__toggle");
+const darkThemeSwitch = darkThemeToggle.querySelector(".js-toggle__switch");
 const darkBackground = document.querySelector(".js-background__darkened");
-const leftMenuSwitch = setting.querySelector(
-  ".js-left-menu__toggle .js-toggle__switch"
-);
+
+const leftMenuToggle = setting.querySelector(".js-left-menu__toggle");
+const leftMenuSwitch = leftMenuToggle.querySelector(".js-toggle__switch");
 const menu = document.querySelector(".js-background__navigation");
+
 const resetButton = setting.querySelector(".js-reset__button");
 
+const CHECKED_CLASSNAME = "checked";
 const DARK_THEME_CLASSNAME = "darker";
 const LEFT_MENU_CLASSNAME = "left-menu";
 
@@ -29,13 +27,8 @@ function handleResetClick(event) {
 }
 
 function turnOnOrOff(key) {
-  const isOn = localStorage.getItem(key);
-  let shouldBeOn;
-  if (isOn === "true") {
-    shouldBeOn = false;
-  } else {
-    shouldBeOn = true;
-  }
+  const isOn = localStorage.getItem(key) === "true";
+  const shouldBeOn = isOn ? false : true;
   localStorage.setItem(key, `${shouldBeOn}`);
   return shouldBeOn;
 }
@@ -49,17 +42,18 @@ function changeState(shouldChange, element, className) {
 }
 
 function handleLeftMenuClick() {
-  const shouldChange = turnOnOrOff("isLeftMenuOn");
-  changeState(shouldChange, menu, LEFT_MENU_CLASSNAME);
+  const isTurnedOn = turnOnOrOff("isLeftMenuOn");
+  changeState(isTurnedOn, menu, LEFT_MENU_CLASSNAME);
 }
 
 function handleDarkThemeClick() {
-  const shouldChange = turnOnOrOff("isDarkThemeOn");
-  changeState(shouldChange, darkBackground, DARK_THEME_CLASSNAME);
+  // TODO: Fix CSS when this is off
+  const isTurnedOn = turnOnOrOff("isDarkThemeOn");
+  changeState(isTurnedOn, darkBackground, DARK_THEME_CLASSNAME);
 }
 
 function handleTwentyFourClick() {
-  const _ = turnOnOrOff(TWENTY_FOUR_KEY);
+  turnOnOrOff(TWENTY_FOUR_KEY);
 }
 
 function showModal(message) {
@@ -69,6 +63,9 @@ function showModal(message) {
     renameModal.classList.add(APPEAR_CLASSNAME);
     renameModal.classList.remove(HIDDEN_CLASSNAME);
   }, firstAsync);
+  setTimeout(() => {
+    renameModal.classList.remove(HIDDEN_CLASSNAME);
+  }, firstAsync + TRANSITION_DURATION);
   setTimeout(() => {
     renameModal.classList.add(DISAPPEAR_CLASSNAME);
   }, firstAsync + TRANSITION_DURATION * 2); // Waits a little more than usual
@@ -98,11 +95,18 @@ function handleRenameSubmit(event) {
 }
 
 function showInitialStates() {
-  const isDarkThemeOn = localStorage.getItem("isDarkThemeOn");
-  const isLeftMenuOn = localStorage.getItem("isLeftMenuOn");
+  const is24HourOn = localStorage.getItem("is24HourOn") === "true";
+  const isDarkThemeOn = localStorage.getItem("isDarkThemeOn") === "true";
+  const isLeftMenuOn = localStorage.getItem("isLeftMenuOn") === "true";
 
-  changeState(isDarkThemeOn === "true", darkBackground, DARK_THEME_CLASSNAME);
-  changeState(isLeftMenuOn === "true", menu, LEFT_MENU_CLASSNAME);
+  // Applies changes
+  changeState(isDarkThemeOn, darkBackground, DARK_THEME_CLASSNAME);
+  changeState(isLeftMenuOn, menu, LEFT_MENU_CLASSNAME);
+
+  // Maintains switch states
+  changeState(is24HourOn, twentyFourToggle, CHECKED_CLASSNAME);
+  changeState(isDarkThemeOn, darkThemeToggle, CHECKED_CLASSNAME);
+  changeState(isLeftMenuOn, leftMenuToggle, CHECKED_CLASSNAME);
 }
 
 showInitialStates();

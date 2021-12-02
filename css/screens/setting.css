@@ -1,3 +1,5 @@
+/* TODO: rm toggle size animation on resizing screen */
+
 .background__setting {
   align-items: center;
   display: flex;
@@ -6,22 +8,14 @@
   text-transform: uppercase;
 }
 
-.background__setting .setting__rename,
-.background__setting .setting__twenty-four-hour,
-.background__setting .setting__dark-theme,
-.background__setting .setting__left-menu,
-.background__setting .setting__reset {
+.background__setting form {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.setting__rename .rename__title,
-.setting__twenty-four-hour .twenty-four-hour__title,
-.setting__dark-theme .dark-theme__title,
-.setting__left-menu .left-menu__title,
-.setting__reset .reset__title {
+.background__setting h3 {
   font-size: 1rem;
   margin: 1.5em;
 }
@@ -39,7 +33,7 @@
 }
 
 .background__setting .setting__rename .rename__input::placeholder {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .background__setting .setting__rename .rename__input:focus {
@@ -117,7 +111,7 @@
   color: var(--white);
   cursor: pointer;
   font-family: var(--font);
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   padding: 0.5em 0.8em;
   text-transform: uppercase;
 }
@@ -133,17 +127,46 @@
   text-transform: none;
 }
 
-@media screen and (min-width: 1024px) {
-  .background__setting {
+/* Checked */
+
+.checked .toggle__slider {
+  background-color: #72e07b;
+  right: 0;
+}
+
+.checked .toggle__slider::before {
+  left: auto;
+  right: 0.15em;
+}
+
+/* TODO: Clean up checked class name */
+.checked .toggle__switch:checked + .toggle__slider::before,
+.checked .toggle__switch:checked + .toggle__slider::before,
+.checked .toggle__switch:checked + .toggle__slider::before {
+  transform: translateX(-1.4em);
+  -ms-transform: translateX(-1.4em);
+  -webkit-transform: translateX(-1.4em);
+}
+
+@media screen and (max-width: 1024px) {
+  .background__setting h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 896px) {
+  .background__setting h3 {
     font-size: 1.2rem;
   }
 
-  .background__setting .setting__rename .rename__input {
-    font-size: 1rem;
+  .setting__reset .reset__button {
+    font-size: 0.9rem;
   }
+}
 
-  .background__setting .setting__rename .rename__input::placeholder {
-    font-size: 0.7rem;
+@media screen and (max-width: 864px) {
+  .background__setting h3 {
+    font-size: 1.3rem;
   }
 
   .setting__reset .reset__button {

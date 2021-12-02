@@ -49,6 +49,14 @@
   transition: background-color 1s;
 }
 
+/* TODO: Natural transition */
+.form-background__log-in .log-in__message {
+  color: #66b46c;
+  font-size: 0.8rem;
+  margin-top: 0.5em;
+  text-transform: none;
+}
+
 @media screen and (max-width: 260px) {
   .form-background {
     display: none;

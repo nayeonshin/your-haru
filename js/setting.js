@@ -30,9 +30,9 @@ function handleResetClick(event) {
 }
 
 function turnOnOrOff(key) {
-  const isOn = localStorage.getItem(key);
+  const isOn = localStorage.getItem(key) === "true";
   let shouldBeOn;
-  if (isOn === "true") {
+  if (isOn) {
     shouldBeOn = false;
   } else {
     shouldBeOn = true;

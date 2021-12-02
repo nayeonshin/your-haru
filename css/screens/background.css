@@ -95,6 +95,10 @@ main .background__greeting {
   transition: opacity 0.5s ease-in;
 }
 
+.background__navigation ul li button:focus {
+  border: none;
+}
+
 .background__setting {
   position: fixed;
 }

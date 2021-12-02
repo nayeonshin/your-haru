@@ -16,7 +16,7 @@
 }
 
 .background__setting h3 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin: 1.5em;
 }
 
@@ -33,7 +33,7 @@
 }
 
 .background__setting .setting__rename .rename__input::placeholder {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .background__setting .setting__rename .rename__input:focus {
@@ -111,7 +111,7 @@
   color: var(--white);
   cursor: pointer;
   font-family: var(--font);
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   padding: 0.5em 0.8em;
   text-transform: uppercase;
 }
@@ -148,12 +148,6 @@
   -webkit-transform: translateX(-1.4em);
 }
 
-@media screen and (min-width: 500px) {
-  .background__setting h3 {
-    font-size: 1.3rem;
-  }
-}
-
 /* @media screen and (min-width: 650px) {
   .background__setting h3 {
     font-size: 1.1rem;
@@ -171,12 +165,7 @@
     font-size: 1rem;
   }
 }
-
-@media screen and (min-width: 800px) {
-  .background__setting h3 {
-    font-size: 1rem;
-  }
-} */
+*/
 
 @media screen and (max-width: 260px) {
   .background__setting {

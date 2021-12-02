@@ -10,6 +10,10 @@ const settingButton = navigationBar.querySelector("div li:last-child button");
 let isOnHomeScreen = true;
 let isOnSettingScreen = false;
 
+// TODO: Factor out and make into functions:
+//       - APPEAR & remove HIDDEN
+//       - DISAPPEAR & HIDDEN
+
 function _switchScreens(currentScreen, newScreen) {
   currentScreen.classList.add(DISAPPEAR_CLASSNAME);
   setTimeout(() => {

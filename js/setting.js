@@ -61,7 +61,7 @@ function handleDarkThemeClick() {
 }
 
 function handleTwentyFourClick() {
-  const _ = turnOnOrOff(TWENTY_FOUR_KEY);
+  turnOnOrOff(TWENTY_FOUR_KEY);
 }
 
 function showModal(message) {
@@ -71,6 +71,9 @@ function showModal(message) {
     renameModal.classList.add(APPEAR_CLASSNAME);
     renameModal.classList.remove(HIDDEN_CLASSNAME);
   }, firstAsync);
+  setTimeout(() => {
+    renameModal.classList.remove(HIDDEN_CLASSNAME);
+  }, firstAsync + TRANSITION_DURATION);
   setTimeout(() => {
     renameModal.classList.add(DISAPPEAR_CLASSNAME);
   }, firstAsync + TRANSITION_DURATION * 2); // Waits a little more than usual

@@ -43,12 +43,12 @@ function updateClock(currentTime) {
 
   const isCurrentAm = currentHours < 12 ? true : false;
   const amPm = isCurrentAm ? "am" : "pm";
-  const is24HourOn = localStorage.getItem(TWENTY_FOUR_KEY);
-  if (currentHours === 0) {
+  const is24HourOn = localStorage.getItem(TWENTY_FOUR_KEY) === "true";
+  if (currentHours === 0 && !is24HourOn) {
     currentClock[0] = "12"; // When 12 a.m., displays 12
   } else if (!isCurrentAm) {
     let clockHours;
-    if (is24HourOn === "true") {
+    if (is24HourOn) {
       clockHours = currentHours < 12 ? currentHours + 12 : currentHours;
     } else {
       clockHours = currentHours - 12;

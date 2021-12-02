@@ -103,15 +103,15 @@ function handleRenameSubmit(event) {
 }
 
 function showInitialStates() {
-  const isSavedDarkThemeOn = localStorage.getItem("isDarkThemeOn");
-  const isSavedLeftMenuOn = localStorage.getItem("isLeftMenuOn");
-  const isDarkThemeOn = isSavedDarkThemeOn === "true";
-  const isLeftMenuOn = isSavedLeftMenuOn === "true";
+  const is24HourOn = localStorage.getItem("is24HourOn") === "true";
+  const isDarkThemeOn = localStorage.getItem("isDarkThemeOn") === "true";
+  const isLeftMenuOn = localStorage.getItem("isLeftMenuOn") === "true";
 
   changeState(isDarkThemeOn, darkBackground, DARK_THEME_CLASSNAME);
   changeState(isLeftMenuOn, menu, LEFT_MENU_CLASSNAME);
 
   // Toggle switches
+  changeState(is24HourOn, twentyFourToggle, CHECKED_CLASSNAME);
   changeState(isDarkThemeOn, darkThemeToggle, CHECKED_CLASSNAME);
   changeState(isLeftMenuOn, leftMenuToggle, CHECKED_CLASSNAME);
 }

@@ -24,7 +24,6 @@ const DARKER_CLASSNAME = "darker";
 const CLICK_EVENT = "click";
 const DARK_THEME_KEY = "isDarkThemeOn";
 const LEFT_MENU_KEY = "isLeftMenuOn";
-const TWENTY_FOUR_KEY = "is24HourOn";
 
 function handleResetClick(event) {
   event.preventDefault();
@@ -60,7 +59,7 @@ function handleDarkThemeClick() {
 }
 
 function handleTwentyFourClick() {
-  is24HourOn = turnOnOrOff(TWENTY_FOUR_KEY);
+  const _ = turnOnOrOff(TWENTY_FOUR_KEY);
 }
 
 function showModal(message) {
@@ -72,7 +71,7 @@ function showModal(message) {
   }, firstAsync);
   setTimeout(() => {
     renameModal.classList.add(DISAPPEAR_CLASSNAME);
-  }, firstAsync + TRANSITION_DURATION * 2); // Waits a little more
+  }, firstAsync + TRANSITION_DURATION * 2); // Waits a little more than usual
   setTimeout(() => {
     renameModal.classList.add(HIDDEN_CLASSNAME);
   }, firstAsync + TRANSITION_DURATION * 3 - 100);

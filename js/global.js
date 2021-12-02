@@ -10,6 +10,5 @@ const TRANSITION_DURATION = 500;
 
 // JS
 const GREETING = document.querySelector(".js-background__greeting");
+const TWENTY_FOUR_KEY = "is24HourOn";
 const USERNAME_KEY = "username";
-
-let is24HourOn;

@@ -32,10 +32,8 @@ const savedUsername = localStorage.getItem(USERNAME_KEY);
 
 if (savedUsername === null) {
   setTimeout(() => {
-    loginFormBackground.classList.add(SLOW_APPEAR_CLASSNAME);
-    loginFormBackground.classList.remove(HIDDEN_CLASSNAME);
-    loginForm.classList.remove(SLOW_APPEAR_CLASSNAME);
-    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    fadeIn(loginFormBackground, true, false);
+    fadeIn(loginForm, true, false);
   }, TRANSITION_DURATION * 2 - 100);
 
   loginForm.addEventListener("submit", handleLogInSubmit);

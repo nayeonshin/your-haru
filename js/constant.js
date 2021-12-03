@@ -1,3 +1,5 @@
+// TODO: Add JSDoc
+
 // HTML
 const APPEAR_CLASSNAME = "appear";
 const DISAPPEAR_CLASSNAME = "disappear";

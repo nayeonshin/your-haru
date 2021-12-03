@@ -28,15 +28,19 @@ function handleLogInSubmit(event) {
   showGreeting(inputUsername);
 }
 
-const savedUsername = localStorage.getItem(USERNAME_KEY);
+function askForUsername() {
+  const savedUsername = localStorage.getItem(USERNAME_KEY);
 
-if (savedUsername === null) {
-  setTimeout(() => {
-    fadeIn(loginFormBackground, true, false);
-    fadeIn(loginForm, true, false);
-  }, TRANSITION_DURATION * 2 - 100);
+  if (savedUsername === null) {
+    setTimeout(() => {
+      fadeIn(loginFormBackground, true, false);
+      fadeIn(loginForm, true, false);
+    }, TRANSITION_DURATION * 2 - 100);
 
-  loginForm.addEventListener("submit", handleLogInSubmit);
-} else {
-  GREETING.innerText = `Hello, ${savedUsername}!`;
+    loginForm.addEventListener("submit", handleLogInSubmit);
+  } else {
+    GREETING.innerText = `Hello, ${savedUsername}!`;
+  }
 }
+
+askForUsername();

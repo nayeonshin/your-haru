@@ -1,3 +1,9 @@
+function calculateTimeout(isSlow, isAfterInOrOut) {
+  let delay = isSlow ? TRANSITION_DURATION * 2 : TRANSITION_DURATION;
+  delay = isAfterInOrOut ? TRANSITION_DURATION * 2 : TRANSITION_DURATION;
+  return delay;
+}
+
 function fadeIn(element, shouldBeSlow, isAfterOut, func = undefined) {
   const className = shouldBeSlow ? SLOW_APPEAR_CLASSNAME : APPEAR_CLASSNAME;
   element.classList.remove(HIDDEN_CLASSNAME);
@@ -6,19 +12,10 @@ function fadeIn(element, shouldBeSlow, isAfterOut, func = undefined) {
     func();
   }
   // Cleans up class name
-  const timeout = () => {
-    let delay;
-    if (shouldBeSlow) {
-      delay = TRANSITION_DURATION * 2;
-    }
-    if (isAfterOut) {
-      delay = TRANSITION_DURATION * 2;
-    }
-    return delay;
-  };
+
   setTimeout(() => {
     element.classList.remove(className);
-  }, timeout()); // TODO: Check timeout
+  }, calculateTimeout(shouldBeSlow, isAfterOut)); // TODO: Check timeout
 }
 
 function fadeOut(element, shouldBeSlow, isAfterIn, func = undefined) {
@@ -33,10 +30,7 @@ function fadeOut(element, shouldBeSlow, isAfterIn, func = undefined) {
     }
   }, TRANSITION_DURATION - 50);
   // Cleans up class name
-  setTimeout(
-    () => {
-      element.classList.remove(className);
-    },
-    isAfterIn ? TRANSITION_DURATION * 2 : TRANSITION_DURATION
-  );
+  setTimeout(() => {
+    element.classList.remove(className);
+  }, calculateTimeout(shouldBeSlow, isAfterIn));
 }

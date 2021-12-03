@@ -1,4 +1,5 @@
 const setting = document.querySelector(".js-background__setting");
+
 const renameForm = setting.querySelector(".js-setting__rename");
 const renameInput = renameForm.querySelector(".js-rename__input");
 const renameModal = setting.querySelector(".js-setting__modal");
@@ -81,8 +82,10 @@ function showModal(message) {
 
 function handleRenameSubmit(event) {
   event.preventDefault();
+
   const newUsername = renameInput.value;
   const savedUsername = localStorage.getItem(USERNAME_KEY);
+
   if (newUsername === savedUsername) {
     showModal(`⚠️ Username is already "${newUsername}".`);
   } else {
@@ -105,9 +108,11 @@ function showInitialStates() {
   if (is24HourOn) {
     twentyFourSwitch.checked = true;
   }
+
   if (isDarkThemeOn) {
     darkThemeSwitch.checked = true;
   }
+
   if (isLeftMenuOn) {
     leftMenuSwitch.checked = true;
   }

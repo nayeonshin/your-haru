@@ -19,6 +19,7 @@ function _fadeOut(options) {
   }, TRANSITION_DURATION);
 }
 
+// TODO: Fix timing
 function _fadeIn(options) {
   let element;
   let isSlow;

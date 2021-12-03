@@ -1,3 +1,5 @@
+// TODO: When log in form is visible, disable clicking on nav bar
+
 const homeScreen = document.querySelector(".js-background main");
 const settingScreen = document.querySelector(".js-background__setting");
 
@@ -5,14 +7,8 @@ const navigationBar = document.querySelector(".js-background__navigation");
 const homeButton = navigationBar.querySelector("div li:first-child button");
 const settingButton = navigationBar.querySelector("div li:last-child button");
 
-// TODO: When log in form is visible, disable clicking on nav bar
-
 let isOnHomeScreen = true;
 let isOnSettingScreen = false;
-
-// TODO: Factor out and make into functions:
-//       - APPEAR & remove HIDDEN
-//       - DISAPPEAR & HIDDEN
 
 function _switchScreens(currentScreen, newScreen) {
   currentScreen.classList.add(DISAPPEAR_CLASSNAME);

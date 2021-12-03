@@ -6,12 +6,19 @@ function fadeIn(element, shouldBeSlow, isAfterOut, func = undefined) {
     func();
   }
   // Cleans up class name
-  setTimeout(
-    () => {
-      element.classList.remove(className);
-    },
-    isAfterOut ? TRANSITION_DURATION * 2 : TRANSITION_DURATION
-  ); // TODO: Check timeout
+  const timeout = () => {
+    let delay;
+    if (shouldBeSlow) {
+      delay = TRANSITION_DURATION * 2;
+    }
+    if (isAfterOut) {
+      delay = TRANSITION_DURATION * 2;
+    }
+    return delay;
+  };
+  setTimeout(() => {
+    element.classList.remove(className);
+  }, timeout()); // TODO: Check timeout
 }
 
 function fadeOut(element, shouldBeSlow, isAfterIn, func = undefined) {

@@ -16,8 +16,12 @@ function showGreeting(username) {
 
 function handleLogInSubmit(event) {
   event.preventDefault(); // Stops browser from refreshing
+  // fadeOut(loginFormBackground, true, false);
+  // fadeOut(loginForm, true, false);
+
   loginFormBackground.classList.add(SLOW_DISAPPEAR_CLASSNAME);
   loginForm.classList.add(SLOW_DISAPPEAR_CLASSNAME);
+
   setTimeout(() => {
     loginFormBackground.classList.add(HIDDEN_CLASSNAME);
     loginForm.classList.add(HIDDEN_CLASSNAME);

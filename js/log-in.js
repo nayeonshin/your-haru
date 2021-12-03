@@ -1,33 +1,30 @@
 // TODO: Clean up form disappear class name
+// TODO: Line breaks
 const loginFormBackground = document.querySelector(".js-form-background");
 const loginForm = loginFormBackground.querySelector(
   ".js-form-background__log-in"
 );
 const loginInput = loginForm.querySelector(".js-log-in__input");
 
+// TODO: Fix greeting flickering
 function showGreeting(username) {
-  fadeOut(GREETING, false, false, () => {
-    GREETING.innerText = `Hello, ${username}!`;
-  });
   setTimeout(() => {
-    fadeIn(GREETING, false, true);
-  }, TRANSITION_DURATION - 50);
+    fadeOut(GREETING, false, false, () => {
+      GREETING.innerText = `Hello, ${username}!`;
+    });
+
+    fadeIn(GREETING, true, false);
+  }, TRANSITION_DURATION);
 }
 
 function handleLogInSubmit(event) {
   event.preventDefault(); // Stops browser from refreshing
-  // fadeOut(loginFormBackground, true, false);
-  // fadeOut(loginForm, true, false);
 
-  loginFormBackground.classList.add(SLOW_DISAPPEAR_CLASSNAME);
-  loginForm.classList.add(SLOW_DISAPPEAR_CLASSNAME);
-
-  setTimeout(() => {
-    loginFormBackground.classList.add(HIDDEN_CLASSNAME);
-    loginForm.classList.add(HIDDEN_CLASSNAME);
-  }, TRANSITION_DURATION * 2 - 50);
+  fadeOut(loginFormBackground, false, true);
+  fadeOut(loginForm, false, true);
 
   const inputUsername = loginInput.value;
+
   localStorage.setItem(USERNAME_KEY, inputUsername);
   showGreeting(inputUsername);
 }
@@ -37,8 +34,8 @@ function askForUsername() {
 
   if (savedUsername === null) {
     setTimeout(() => {
-      fadeIn(loginFormBackground, true, false);
-      fadeIn(loginForm, true, false);
+      fadeIn(loginFormBackground, false, true);
+      fadeIn(loginForm, false, true);
     }, TRANSITION_DURATION * 2 - 100);
 
     loginForm.addEventListener("submit", handleLogInSubmit);

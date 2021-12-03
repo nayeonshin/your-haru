@@ -1,10 +1,19 @@
-function calculateTimeout(isSlow, isAfterInOrOut) {
-  let delay = isSlow ? TRANSITION_DURATION * 2 : TRANSITION_DURATION;
-  delay = isAfterInOrOut ? TRANSITION_DURATION * 2 : TRANSITION_DURATION;
-  return delay;
+function getTimeout(isAfterInOrOut, isSlow) {
+  let timeout = isAfterInOrOut
+    ? TRANSITION_DURATION * 2 - 50
+    : TRANSITION_DURATION;
+  timeout = isSlow ? timeout * 10 : timeout;
+  console.log(timeout);
+  return timeout;
 }
 
-function fadeIn(element, shouldBeSlow, isAfterOut, func = undefined) {
+function _fadeIn(options) {
+  let element;
+  let isAfterOut;
+  let shouldBeSlow;
+  let func;
+  [element, isAfterOut, shouldBeSlow, func] = options;
+
   const className = shouldBeSlow ? SLOW_APPEAR_CLASSNAME : APPEAR_CLASSNAME;
   element.classList.remove(HIDDEN_CLASSNAME);
   element.classList.add(className);
@@ -12,13 +21,24 @@ function fadeIn(element, shouldBeSlow, isAfterOut, func = undefined) {
     func();
   }
   // Cleans up class name
-
   setTimeout(() => {
     element.classList.remove(className);
-  }, calculateTimeout(shouldBeSlow, isAfterOut)); // TODO: Check timeout
+  }, getTimeout(isAfterOut, shouldBeSlow)); // TODO: Check timeout
 }
 
-function fadeOut(element, shouldBeSlow, isAfterIn, func = undefined) {
+// TODO: Refactor out inner code into a func
+function fadeIn(element, isAfterOut, shouldBeSlow, func = undefined) {
+  params = [element, isAfterOut, shouldBeSlow, (func = undefined)];
+  if (isAfterOut) {
+    setTimeout(() => {
+      _fadeIn(params);
+    }, TRANSITION_DURATION - 50);
+  } else {
+    _fadeIn(params);
+  }
+}
+
+function fadeOut(element, isAfterIn, shouldBeSlow, func = undefined) {
   const className = shouldBeSlow
     ? SLOW_DISAPPEAR_CLASSNAME
     : DISAPPEAR_CLASSNAME;
@@ -32,5 +52,5 @@ function fadeOut(element, shouldBeSlow, isAfterIn, func = undefined) {
   // Cleans up class name
   setTimeout(() => {
     element.classList.remove(className);
-  }, calculateTimeout(shouldBeSlow, isAfterIn));
+  }, getTimeout(isAfterIn, shouldBeSlow));
 }

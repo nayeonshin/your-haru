@@ -1,4 +1,3 @@
-// TODO: Clean up form disappear class name
 const loginFormBackground = document.querySelector(".js-form-background");
 const loginForm = loginFormBackground.querySelector(
   ".js-form-background__log-in"

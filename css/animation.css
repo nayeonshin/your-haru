@@ -15,3 +15,23 @@
     opacity: 0;
   }
 }
+
+.appear,
+.slow-appear {
+  animation: fade-in;
+}
+
+.disappear,
+.slow-disappear {
+  animation: fade-out;
+}
+
+.appear,
+.disappear {
+  animation-duration: var(--medium-speed);
+}
+
+.slow-appear,
+.slow-disappear {
+  animation-duration: var(--slow-speed);
+}

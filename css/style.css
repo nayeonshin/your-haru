@@ -20,23 +20,6 @@ body {
   width: 100vw;
 }
 
-/* CSS Classes */
 .hidden {
   display: none;
-}
-
-.appear {
-  animation: fade-in var(--medium-speed);
-}
-
-.disappear {
-  animation: fade-out var(--medium-speed);
-}
-
-.slow-appear {
-  animation: fade-in var(--slow-speed);
-}
-
-.slow-disappear {
-  animation: fade-out var(--slow-speed);
 }

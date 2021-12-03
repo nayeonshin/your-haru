@@ -7,28 +7,33 @@ function getTimeout(isAfterInOrOut, isSlow) {
   return timeout;
 }
 
+// TODO: Fix timing
 function _fadeIn(options) {
   let element;
   let isAfterOut;
-  let shouldBeSlow;
+  let isSlow;
   let func;
-  [element, isAfterOut, shouldBeSlow, func] = options;
+  [element, isAfterOut, isSlow, func] = options;
 
-  const className = shouldBeSlow ? SLOW_APPEAR_CLASSNAME : APPEAR_CLASSNAME;
+  const className = isSlow ? SLOW_APPEAR_CLASSNAME : APPEAR_CLASSNAME;
   element.classList.remove(HIDDEN_CLASSNAME);
   element.classList.add(className);
+  // setTimeout(() => {
+  //   element.classList.remove(HIDDEN_CLASSNAME);
+  // }, 0.1);
+
   if (func !== undefined) {
     func();
   }
-  // Cleans up class name
-  setTimeout(() => {
-    element.classList.remove(className);
-  }, getTimeout(isAfterOut, shouldBeSlow)); // TODO: Check timeout
+  // // Cleans up class name
+  // setTimeout(() => {
+  //   element.classList.remove(className);
+  // }, getTimeout(isAfterOut, shouldBeSlow)); // TODO: Check timeout
 }
 
-// TODO: Refactor out inner code into a func
+// TODO: Refactor out inner code of two functions into one func
 function fadeIn(element, isAfterOut, shouldBeSlow, func = undefined) {
-  params = [element, isAfterOut, shouldBeSlow, (func = undefined)];
+  params = [element, isAfterOut, shouldBeSlow, func];
   if (isAfterOut) {
     setTimeout(() => {
       _fadeIn(params);
@@ -38,6 +43,7 @@ function fadeIn(element, isAfterOut, shouldBeSlow, func = undefined) {
   }
 }
 
+// TODO: settimeout in the beginning if isAfterIn
 function fadeOut(element, isAfterIn, shouldBeSlow, func = undefined) {
   const className = shouldBeSlow
     ? SLOW_DISAPPEAR_CLASSNAME

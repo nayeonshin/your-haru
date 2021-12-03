@@ -1,5 +1,4 @@
 // TODO: Clean up form disappear class name
-// TODO: Line breaks
 const loginFormBackground = document.querySelector(".js-form-background");
 const loginForm = loginFormBackground.querySelector(
   ".js-form-background__log-in"
@@ -13,7 +12,7 @@ function showGreeting(username) {
       GREETING.innerText = `Hello, ${username}!`;
     });
 
-    fadeIn(GREETING, true, false);
+    // fadeIn(GREETING, true, false); // TODO: Fix timing
   }, TRANSITION_DURATION);
 }
 

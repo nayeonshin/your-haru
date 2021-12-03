@@ -3,7 +3,6 @@ function getTimeout(isAfterInOrOut, isSlow) {
     ? TRANSITION_DURATION * 2 - 50
     : TRANSITION_DURATION;
   timeout = isSlow ? timeout * 10 : timeout;
-  console.log(timeout);
   return timeout;
 }
 
@@ -18,9 +17,6 @@ function _fadeIn(options) {
   const className = isSlow ? SLOW_APPEAR_CLASSNAME : APPEAR_CLASSNAME;
   element.classList.remove(HIDDEN_CLASSNAME);
   element.classList.add(className);
-  // setTimeout(() => {
-  //   element.classList.remove(HIDDEN_CLASSNAME);
-  // }, 0.1);
 
   if (func !== undefined) {
     func();
@@ -58,5 +54,7 @@ function fadeOut(element, isAfterIn, shouldBeSlow, func = undefined) {
   // Cleans up class name
   setTimeout(() => {
     element.classList.remove(className);
-  }, getTimeout(isAfterIn, shouldBeSlow));
+  }, TRANSITION_DURATION);
+  console.log(element);
+  // getTimeout(isAfterIn, shouldBeSlow)
 }

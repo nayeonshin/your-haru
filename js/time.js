@@ -26,6 +26,7 @@ function changeClockColor(currentClock) {
     [_, currentMinutes, currentSeconds] = currentClock;
     return parseInt(currentMinutes) === 59 && parseInt(currentSeconds) >= 55;
   };
+
   if (shouldClockBeRed()) {
     clock.classList.add(RED_TEXT_CLASSNAME);
   } else {
@@ -45,15 +46,18 @@ function updateClock(currentTime) {
   const amPm = isCurrentAm ? "am" : "pm";
   // TODO: Only check localStorage when status has changed
   const is24HourOn = localStorage.getItem(TWENTY_FOUR_KEY) === "true";
+
   if (currentHours === 0 && !is24HourOn) {
     currentClock[0] = "12"; // When 12 a.m., displays 12
   } else if (!isCurrentAm) {
     let clockHours;
+
     if (is24HourOn) {
       clockHours = currentHours < 12 ? currentHours + 12 : currentHours;
     } else {
       clockHours = currentHours - 12;
     }
+
     currentClock[0] = String(clockHours).padStart(2, "0");
   }
 
@@ -65,6 +69,7 @@ function updateClock(currentTime) {
       completeClock += `${unit}:`;
     }
   });
+
   clockNumbers.innerText = completeClock;
   clockAmPm.innerText = amPm;
 

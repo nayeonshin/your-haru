@@ -67,7 +67,7 @@ function showModal(message) {
     fadeIn(renameModal, false);
   }, firstDelay);
 
-  // Waits a little more for the message
+  // Waits a little more than usual for the message
   setTimeout(() => {
     renameModal.classList.add(DISAPPEAR_CLASSNAME);
   }, firstDelay + TRANSITION_DURATION * 2);

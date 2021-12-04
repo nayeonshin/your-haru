@@ -16,7 +16,6 @@ function fadeIn(element, isSlow, func = undefined) {
   );
 }
 
-// TODO: fix timing
 function fadeOut(element, isSlow, func = undefined) {
   const className = isSlow ? SLOW_DISAPPEAR_CLASSNAME : DISAPPEAR_CLASSNAME;
 
@@ -26,6 +25,7 @@ function fadeOut(element, isSlow, func = undefined) {
     () => {
       element.classList.add(HIDDEN_CLASSNAME);
       element.classList.remove(DISAPPEAR_CLASSNAME);
+
       if (func !== undefined) {
         func();
       }

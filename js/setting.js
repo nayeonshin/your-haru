@@ -27,7 +27,6 @@ function handleResetClick(event) {
   event.preventDefault();
 }
 
-// TODO: Try changing this with toggle()
 function changeState(shouldChange, element, className) {
   if (shouldChange) {
     element.classList.add(className);
@@ -39,17 +38,20 @@ function changeState(shouldChange, element, className) {
 function checkIsOn(key) {
   const isOn = localStorage.getItem(key) === "true";
   const shouldBeOn = isOn ? false : true;
+
   localStorage.setItem(key, String(shouldBeOn));
   return shouldBeOn;
 }
 
 function handleLeftMenuClick() {
   const shouldChange = checkIsOn("isLeftMenuOn");
+
   changeState(shouldChange, menu, LEFT_MENU_CLASSNAME);
 }
 
 function handleDarkThemeClick() {
   const shouldChange = checkIsOn("isDarkThemeOn");
+
   changeState(shouldChange, darkBackground, DARK_THEME_CLASSNAME);
 }
 
@@ -59,10 +61,12 @@ function handleTwentyFourClick() {
 
 function showModal(message) {
   const firstDelay = TRANSITION_DURATION / 2;
+
   setTimeout(() => {
     renameModal.innerText = message;
     fadeIn(renameModal, false);
   }, firstDelay);
+
   // Waits a little more for the message
   setTimeout(() => {
     renameModal.classList.add(DISAPPEAR_CLASSNAME);

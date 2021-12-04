@@ -9,13 +9,10 @@ function showGreeting(username) {
     fadeOut(GREETING, false, () => {
       GREETING.innerText = `Hello, ${username}!`;
     });
+
     setTimeout(() => {
       fadeIn(GREETING, false);
     }, TRANSITION_DURATION);
-
-    setTimeout(() => {
-      GREETING.classList.remove(APPEAR_CLASSNAME);
-    }, TRANSITION_DURATION * 2);
   }, TRANSITION_DURATION);
 }
 

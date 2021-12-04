@@ -1,10 +1,13 @@
 function fadeIn(element, isSlow, func = undefined) {
   const className = isSlow ? SLOW_APPEAR_CLASSNAME : APPEAR_CLASSNAME;
+
   element.classList.add(className);
   element.classList.remove(HIDDEN_CLASSNAME);
+
   setTimeout(
     () => {
       element.classList.remove(className);
+
       if (func !== undefined) {
         func();
       }
@@ -15,7 +18,9 @@ function fadeIn(element, isSlow, func = undefined) {
 
 function fadeOut(element, isSlow, func = undefined) {
   const className = isSlow ? SLOW_DISAPPEAR_CLASSNAME : DISAPPEAR_CLASSNAME;
+
   element.classList.add(className);
+
   setTimeout(
     () => {
       element.classList.add(HIDDEN_CLASSNAME);

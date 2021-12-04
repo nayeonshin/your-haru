@@ -57,27 +57,21 @@ function handleTwentyFourClick() {
   const _ = checkIsOn(TWENTY_FOUR_KEY);
 }
 
+// TODO: Refactor showModal out
 function showModal(message) {
-  const firstAsync = TRANSITION_DURATION / 2;
+  const firstDelay = TRANSITION_DURATION / 2;
   setTimeout(() => {
     renameModal.innerText = message;
-    renameModal.classList.add(APPEAR_CLASSNAME);
-    renameModal.classList.remove(HIDDEN_CLASSNAME);
-  }, firstAsync);
-  setTimeout(() => {
-    renameModal.classList.remove(HIDDEN_CLASSNAME);
-  }, firstAsync + TRANSITION_DURATION);
+    fadeIn(renameModal, false);
+  }, firstDelay);
+  // Waits a little more than usual
   setTimeout(() => {
     renameModal.classList.add(DISAPPEAR_CLASSNAME);
-  }, firstAsync + TRANSITION_DURATION * 2); // Waits a little more than usual
+  }, firstDelay + TRANSITION_DURATION * 2);
   setTimeout(() => {
     renameModal.classList.add(HIDDEN_CLASSNAME);
-  }, firstAsync + TRANSITION_DURATION * 3 - 100);
-
-  setTimeout(() => {
-    renameModal.classList.remove(APPEAR_CLASSNAME);
     renameModal.classList.remove(DISAPPEAR_CLASSNAME);
-  }, firstAsync + TRANSITION_DURATION * 3);
+  }, firstDelay + TRANSITION_DURATION * 3 - 50);
 }
 
 function handleRenameSubmit(event) {

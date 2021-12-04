@@ -62,6 +62,7 @@ function updateClock(currentTime) {
   }
 
   let completeClock = "";
+
   currentClock.forEach((unit, index) => {
     if (index === currentClock.length - 1) {
       completeClock += unit;
@@ -87,6 +88,7 @@ function updateCalendar(currentTime) {
 
 function getTime() {
   const currentTime = new Date();
+
   updateCalendar(currentTime);
   updateClock(currentTime);
 }

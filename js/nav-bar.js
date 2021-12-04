@@ -2,13 +2,16 @@
 // TODO: Fix transition
 
 const homeScreen = document.querySelector(".js-background main");
+const toDoScreen = document.querySelector(".js-background__to-do");
 const settingScreen = document.querySelector(".js-background__setting");
 
 const navigationBar = document.querySelector(".js-background__navigation");
 const homeButton = navigationBar.querySelector("div li:first-child button");
+const toDoButton = navigationBar.querySelector("div li:nth-child(2) button");
 const settingButton = navigationBar.querySelector("div li:last-child button");
 
 let isOnHomeScreen = true;
+let isOnToDoScreen = false;
 let isOnSettingScreen = false;
 
 function _switchScreens(currentScreen, newScreen) {
@@ -18,26 +21,68 @@ function _switchScreens(currentScreen, newScreen) {
     fadeIn(newScreen, false);
   }, TRANSITION_DURATION);
 
-  [isOnHomeScreen, isOnSettingScreen] = [isOnSettingScreen, isOnHomeScreen];
+  // TODO: Fix
+  if (currentScreen === homeScreen) {
+    if (newScreen === toDoScreen) {
+      [isOnHomeScreen, isOnToDoScreen] = [isOnToDoScreen, isOnHomeScreen];
+    } else {
+      [isOnHomeScreen, isOnSettingScreen] = [isOnSettingScreen, isOnHomeScreen];
+    }
+  } else if (currentScreen === toDoScreen) {
+    if (newScreen === homeScreen) {
+      [isOnToDoScreen, isOnHomeScreen] = [isOnHomeScreen, isOnToDoScreen];
+    } else {
+      [isOnToDoScreen, isOnSettingScreen] = [isOnSettingScreen, isOnToDoScreen];
+    }
+  } else {
+    if (newScreen === homeScreen) {
+      [isOnSettingScreen, isOnHomeScreen] = [isOnHomeScreen, isOnSettingScreen];
+    } else {
+      [isOnSettingScreen, isOnToDoScreen] = [isOnToDoScreen, isOnSettingScreen];
+    }
+  }
 }
 
-function switchScreens(isHomeClicked, isSettingClicked) {
-  if (isHomeClicked && isOnSettingScreen) {
-    _switchScreens(settingScreen, homeScreen);
+function switchScreens({
+  isHomeClicked,
+  isToDoClicked,
+  isSettingClicked,
+} = {}) {
+  let currentScreen;
+
+  if (isOnHomeScreen) {
+    currentScreen = homeScreen;
+  } else if (isOnToDoScreen) {
+    currentScreen = toDoScreen;
+  } else {
+    currentScreen = settingScreen;
   }
 
-  if (isSettingClicked && isOnHomeScreen) {
-    _switchScreens(homeScreen, settingScreen);
+  if (isHomeClicked && !isOnHomeScreen) {
+    _switchScreens(currentScreen, homeScreen);
+  }
+
+  if (isToDoClicked && !isOnToDoScreen) {
+    _switchScreens(currentScreen, toDoScreen);
+  }
+
+  if (isSettingClicked && !isOnSettingScreen) {
+    _switchScreens(currentScreen, settingScreen);
   }
 }
 
 function handleSettingClick() {
-  switchScreens(false, true);
+  switchScreens({ isSettingClicked: true });
+}
+
+function handleToDoClick() {
+  switchScreens({ isToDoClicked: true });
 }
 
 function handleHomeClick() {
-  switchScreens(true, false);
+  switchScreens({ isHomeClicked: true });
 }
 
 homeButton.addEventListener("click", handleHomeClick);
+toDoButton.addEventListener("click", handleToDoClick);
 settingButton.addEventListener("click", handleSettingClick);

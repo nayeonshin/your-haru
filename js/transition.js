@@ -4,12 +4,16 @@ function fadeIn(element, isSlow) {
   element.classList.remove(HIDDEN_CLASSNAME);
 }
 
-function fadeOut(element, isSlow) {
+function fadeOut(element, isSlow, func = undefined) {
   const className = isSlow ? SLOW_DISAPPEAR_CLASSNAME : DISAPPEAR_CLASSNAME;
   element.classList.add(className);
   setTimeout(
     () => {
       element.classList.add(HIDDEN_CLASSNAME);
+      element.classList.remove(DISAPPEAR_CLASSNAME);
+      if (func !== undefined) {
+        func();
+      }
     },
     isSlow ? TRANSITION_DURATION * 2 - 50 : TRANSITION_DURATION
   );

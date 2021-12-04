@@ -6,11 +6,10 @@ const loginInput = loginForm.querySelector(".js-log-in__input");
 
 function showGreeting(username) {
   setTimeout(() => {
-    GREETING.classList.add(DISAPPEAR_CLASSNAME);
-    setTimeout(() => {
-      GREETING.classList.add(HIDDEN_CLASSNAME);
-      GREETING.classList.remove(DISAPPEAR_CLASSNAME);
+    fadeOut(GREETING, false, () => {
       GREETING.innerText = `Hello, ${username}!`;
+    });
+    setTimeout(() => {
       fadeIn(GREETING, false);
     }, TRANSITION_DURATION);
 

@@ -11,8 +11,7 @@ function showGreeting(username) {
       GREETING.classList.add(HIDDEN_CLASSNAME);
       GREETING.classList.remove(DISAPPEAR_CLASSNAME);
       GREETING.innerText = `Hello, ${username}!`;
-      GREETING.classList.add(APPEAR_CLASSNAME);
-      GREETING.classList.remove(HIDDEN_CLASSNAME);
+      fadeIn(GREETING, false);
     }, TRANSITION_DURATION);
 
     setTimeout(() => {
@@ -24,12 +23,8 @@ function showGreeting(username) {
 function handleLogInSubmit(event) {
   event.preventDefault(); // Stops browser from refreshing
 
-  loginFormBackground.classList.add(SLOW_DISAPPEAR_CLASSNAME);
-  loginForm.classList.add(SLOW_DISAPPEAR_CLASSNAME);
-  setTimeout(() => {
-    loginFormBackground.classList.add(HIDDEN_CLASSNAME);
-    loginForm.classList.add(HIDDEN_CLASSNAME);
-  }, TRANSITION_DURATION * 2 - 50);
+  fadeOut(loginFormBackground, true);
+  fadeOut(loginForm, true);
 
   const inputUsername = loginInput.value;
 
@@ -42,10 +37,8 @@ function askForUsername() {
 
   if (savedUsername === null) {
     setTimeout(() => {
-      loginFormBackground.classList.add(SLOW_APPEAR_CLASSNAME);
-      loginForm.classList.add(SLOW_APPEAR_CLASSNAME);
-      loginFormBackground.classList.remove(HIDDEN_CLASSNAME);
-      loginForm.classList.remove(HIDDEN_CLASSNAME);
+      fadeIn(loginFormBackground, true);
+      fadeIn(loginForm, true);
     }, TRANSITION_DURATION * 2 - 100);
 
     loginForm.addEventListener("submit", handleLogInSubmit);

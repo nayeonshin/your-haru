@@ -1,5 +1,5 @@
 // TODO: When log in form is visible, disable clicking on nav bar
-// TODO: Fix transition after renaming??
+// TODO: Fix transition
 
 const homeScreen = document.querySelector(".js-background main");
 const settingScreen = document.querySelector(".js-background__setting");

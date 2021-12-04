@@ -27,13 +27,6 @@ function handleResetClick(event) {
   event.preventDefault();
 }
 
-function checkIsOn(key) {
-  const isOn = localStorage.getItem(key) === "true";
-  const shouldBeOn = isOn ? false : true;
-  localStorage.setItem(key, String(shouldBeOn));
-  return shouldBeOn;
-}
-
 // TODO: Try changing this with toggle()
 function changeState(shouldChange, element, className) {
   if (shouldChange) {
@@ -41,6 +34,13 @@ function changeState(shouldChange, element, className) {
   } else {
     element.classList.remove(className);
   }
+}
+
+function checkIsOn(key) {
+  const isOn = localStorage.getItem(key) === "true";
+  const shouldBeOn = isOn ? false : true;
+  localStorage.setItem(key, String(shouldBeOn));
+  return shouldBeOn;
 }
 
 function handleLeftMenuClick() {
@@ -57,14 +57,13 @@ function handleTwentyFourClick() {
   const _ = checkIsOn(TWENTY_FOUR_KEY);
 }
 
-// TODO: Refactor showModal out
 function showModal(message) {
   const firstDelay = TRANSITION_DURATION / 2;
   setTimeout(() => {
     renameModal.innerText = message;
     fadeIn(renameModal, false);
   }, firstDelay);
-  // Waits a little more than usual
+  // Waits a little more for the message
   setTimeout(() => {
     renameModal.classList.add(DISAPPEAR_CLASSNAME);
   }, firstDelay + TRANSITION_DURATION * 2);
@@ -84,6 +83,7 @@ function handleRenameSubmit(event) {
     showModal(`⚠️ Username is already "${newUsername}".`);
   } else {
     localStorage.setItem(USERNAME_KEY, newUsername);
+
     GREETING.innerText = `Hello, ${newUsername}!`;
     renameForm.reset();
 

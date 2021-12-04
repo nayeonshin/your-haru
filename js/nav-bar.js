@@ -11,21 +11,13 @@ let isOnHomeScreen = true;
 let isOnSettingScreen = false;
 
 function _switchScreens(currentScreen, newScreen) {
-  currentScreen.classList.add(DISAPPEAR_CLASSNAME);
+  fadeOut(currentScreen, false);
+
   setTimeout(() => {
-    currentScreen.classList.add(HIDDEN_CLASSNAME);
-  }, TRANSITION_DURATION - 100);
-  newScreen.classList.add(APPEAR_CLASSNAME);
-  setTimeout(() => {
-    newScreen.classList.remove(HIDDEN_CLASSNAME);
+    fadeIn(newScreen, false);
   }, TRANSITION_DURATION);
 
   [isOnHomeScreen, isOnSettingScreen] = [isOnSettingScreen, isOnHomeScreen];
-
-  setTimeout(() => {
-    currentScreen.classList.remove(DISAPPEAR_CLASSNAME);
-    newScreen.classList.remove(APPEAR_CLASSNAME);
-  }, TRANSITION_DURATION * 2);
 }
 
 function switchScreens(isHomeClicked, isSettingClicked) {

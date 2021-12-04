@@ -6,19 +6,30 @@ const loginInput = loginForm.querySelector(".js-log-in__input");
 
 function showGreeting(username) {
   setTimeout(() => {
-    fadeOut(GREETING, false, false, () => {
+    GREETING.classList.add(DISAPPEAR_CLASSNAME);
+    setTimeout(() => {
+      GREETING.classList.add(HIDDEN_CLASSNAME);
+      GREETING.classList.remove(DISAPPEAR_CLASSNAME);
       GREETING.innerText = `Hello, ${username}!`;
-    });
-    // TODO: Fix greeting flickering
-    fadeIn(GREETING, true, false);
+      GREETING.classList.add(APPEAR_CLASSNAME);
+      GREETING.classList.remove(HIDDEN_CLASSNAME);
+    }, TRANSITION_DURATION);
+
+    setTimeout(() => {
+      GREETING.classList.remove(APPEAR_CLASSNAME);
+    }, TRANSITION_DURATION * 2);
   }, TRANSITION_DURATION);
 }
 
 function handleLogInSubmit(event) {
   event.preventDefault(); // Stops browser from refreshing
 
-  fadeOut(loginFormBackground, false, true);
-  fadeOut(loginForm, false, true);
+  loginFormBackground.classList.add(SLOW_DISAPPEAR_CLASSNAME);
+  loginForm.classList.add(SLOW_DISAPPEAR_CLASSNAME);
+  setTimeout(() => {
+    loginFormBackground.classList.add(HIDDEN_CLASSNAME);
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+  }, TRANSITION_DURATION * 2 - 50);
 
   const inputUsername = loginInput.value;
 
@@ -31,8 +42,10 @@ function askForUsername() {
 
   if (savedUsername === null) {
     setTimeout(() => {
-      fadeIn(loginFormBackground, false, true);
-      fadeIn(loginForm, false, true);
+      loginFormBackground.classList.add(SLOW_APPEAR_CLASSNAME);
+      loginForm.classList.add(SLOW_APPEAR_CLASSNAME);
+      loginFormBackground.classList.remove(HIDDEN_CLASSNAME);
+      loginForm.classList.remove(HIDDEN_CLASSNAME);
     }, TRANSITION_DURATION * 2 - 100);
 
     loginForm.addEventListener("submit", handleLogInSubmit);

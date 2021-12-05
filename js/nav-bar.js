@@ -21,25 +21,12 @@ function _switchScreens(currentScreen, newScreen) {
     fadeIn(newScreen, false);
   }, TRANSITION_DURATION);
 
-  // TODO: Fix
   if (currentScreen === homeScreen) {
-    if (newScreen === toDoScreen) {
-      [isOnHomeScreen, isOnToDoScreen] = [isOnToDoScreen, isOnHomeScreen];
-    } else {
-      [isOnHomeScreen, isOnSettingScreen] = [isOnSettingScreen, isOnHomeScreen];
-    }
+    isOnHomeScreen = false;
   } else if (currentScreen === toDoScreen) {
-    if (newScreen === homeScreen) {
-      [isOnToDoScreen, isOnHomeScreen] = [isOnHomeScreen, isOnToDoScreen];
-    } else {
-      [isOnToDoScreen, isOnSettingScreen] = [isOnSettingScreen, isOnToDoScreen];
-    }
+    isOnToDoScreen = false;
   } else {
-    if (newScreen === homeScreen) {
-      [isOnSettingScreen, isOnHomeScreen] = [isOnHomeScreen, isOnSettingScreen];
-    } else {
-      [isOnSettingScreen, isOnToDoScreen] = [isOnToDoScreen, isOnSettingScreen];
-    }
+    isOnSettingScreen = false;
   }
 }
 
@@ -60,14 +47,17 @@ function switchScreens({
 
   if (isHomeClicked && !isOnHomeScreen) {
     _switchScreens(currentScreen, homeScreen);
+    isOnHomeScreen = true;
   }
 
   if (isToDoClicked && !isOnToDoScreen) {
     _switchScreens(currentScreen, toDoScreen);
+    isOnToDoScreen = true;
   }
 
   if (isSettingClicked && !isOnSettingScreen) {
     _switchScreens(currentScreen, settingScreen);
+    isOnSettingScreen = true;
   }
 }
 

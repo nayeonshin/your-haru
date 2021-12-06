@@ -25,54 +25,21 @@ function handleResetClick(event) {
   event.preventDefault();
 }
 
-function changeState(shouldChange, element, className) {
-  if (shouldChange) {
-    element.classList.add(className);
-  } else {
-    element.classList.remove(className);
-  }
-}
-
-function checkIsOn(key) {
+function changeState(key) {
   const isOn = localStorage.getItem(key) === "true";
-  const shouldBeOn = isOn ? false : true;
 
-  localStorage.setItem(key, String(shouldBeOn));
-  return shouldBeOn;
-}
-
-function handleLeftMenuClick() {
-  const shouldChange = checkIsOn("isLeftMenuOn");
-
-  changeState(shouldChange, menu, LEFT_MENU_CLASSNAME);
-}
-
-function handleDarkThemeClick() {
-  const shouldChange = checkIsOn("isDarkThemeOn");
-
-  changeState(shouldChange, darkBackground, DARK_THEME_CLASSNAME);
-}
-
-function handleTwentyFourClick() {
-  const _ = checkIsOn(TWENTY_FOUR_KEY);
+  localStorage.setItem(key, !isOn);
 }
 
 function showModal(message) {
-  const firstDelay = TRANSITION_DURATION / 2;
-
   setTimeout(() => {
     renameModal.innerText = message;
-    fadeIn(renameModal, false);
-  }, firstDelay);
+    fadeIn(renameModal);
 
-  // Waits a little more than usual for the message
-  setTimeout(() => {
-    renameModal.classList.add(DISAPPEAR_CLASSNAME);
-  }, firstDelay + TRANSITION_DURATION * 2);
-  setTimeout(() => {
-    renameModal.classList.add(HIDDEN_CLASSNAME);
-    renameModal.classList.remove(DISAPPEAR_CLASSNAME);
-  }, firstDelay + TRANSITION_DURATION * 3 - 50);
+    setTimeout(() => {
+      fadeOut(renameModal, { isAfterIn: true });
+    }, TRANSITION_DURATION * 2);
+  }, TRANSITION_DURATION / 2);
 }
 
 function handleRenameSubmit(event) {
@@ -98,9 +65,16 @@ function showInitialStates() {
   const isDarkThemeOn = localStorage.getItem("isDarkThemeOn") === "true";
   const isLeftMenuOn = localStorage.getItem("isLeftMenuOn") === "true";
 
-  changeState(isDarkThemeOn, darkBackground, DARK_THEME_CLASSNAME);
-  changeState(isLeftMenuOn, menu, LEFT_MENU_CLASSNAME);
+  // Effects
+  if (isDarkThemeOn) {
+    darkBackground.classList.add(DARK_THEME_CLASSNAME);
+  }
 
+  if (isLeftMenuOn) {
+    menu.classList.add(LEFT_MENU_CLASSNAME);
+  }
+
+  // Switches
   if (is24HourOn) {
     twentyFourSwitch.checked = true;
   }
@@ -117,7 +91,30 @@ function showInitialStates() {
 showInitialStates();
 
 renameForm.addEventListener("submit", handleRenameSubmit);
-twentyFourSwitch.addEventListener(CLICK_EVENT, handleTwentyFourClick);
-darkThemeSwitch.addEventListener(CLICK_EVENT, handleDarkThemeClick);
-leftMenuSwitch.addEventListener(CLICK_EVENT, handleLeftMenuClick);
+
+twentyFourSwitch.addEventListener(CLICK_EVENT, function () {
+  changeState(TWENTY_FOUR_KEY);
+
+  if (localStorage.getItem(TWENTY_FOUR_KEY) === "true") {
+    clockHMS = CLOCK_NUMBERS.innerText.split(":");
+    [clockHours, clockMinutes, clockSeconds] = clockHMS;
+
+    CLOCK_NUMBERS.innerText = `${
+      parseInt(clockHours) + 12
+    }:${clockMinutes}:${clockSeconds}`;
+  }
+});
+
+darkThemeSwitch.addEventListener(CLICK_EVENT, function () {
+  changeState("isDarkThemeOn");
+
+  darkBackground.classList.toggle(DARK_THEME_CLASSNAME);
+});
+
+leftMenuSwitch.addEventListener(CLICK_EVENT, function () {
+  changeState("isLeftMenuOn");
+
+  menu.classList.toggle(LEFT_MENU_CLASSNAME);
+});
+
 resetButton.addEventListener(CLICK_EVENT, handleResetClick);

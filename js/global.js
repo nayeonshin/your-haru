@@ -7,6 +7,7 @@ const VISIBLE_CLASSNAME = "visible";
 const TRANSITION_DURATION = 500;
 
 // JS
+const CLOCK_NUMBERS = document.querySelector(".js-clock__numbers");
 const GREETING = document.querySelector(".js-background__greeting");
 
 const CLICK_EVENT = "click";

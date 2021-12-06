@@ -1,5 +1,4 @@
 const clock = document.querySelector(".js-background__clock");
-const clockNumbers = clock.querySelector(".js-clock__numbers");
 const clockAmPm = clock.querySelector(".js-clock__am-pm");
 
 const calendar = document.querySelector(".js-background__calendar");
@@ -45,33 +44,24 @@ function updateClock(currentTime) {
   const isCurrentAm = currentHours < 12 ? true : false;
   const amPm = isCurrentAm ? "am" : "pm";
 
-  const is24HourOn = localStorage.getItem(TWENTY_FOUR_KEY) === "true";
-
-  if (currentHours === 0 && !is24HourOn) {
+  if (currentHours === 0) {
     currentClock[0] = "12"; // When 12 a.m., displays 12
   } else if (!isCurrentAm) {
-    let clockHours;
-
-    if (is24HourOn) {
-      clockHours = currentHours < 12 ? currentHours + 12 : currentHours;
-    } else {
-      clockHours = currentHours - 12;
-    }
-
-    currentClock[0] = String(clockHours).padStart(2, "0");
+    currentClock[0] -= 12; // Uses 12-hour clock by default
   }
 
   let completeClock = "";
 
   currentClock.forEach((unit, index) => {
     if (index === currentClock.length - 1) {
+      // Doesn't add : at the end
       completeClock += unit;
     } else {
       completeClock += `${unit}:`;
     }
   });
 
-  clockNumbers.innerText = completeClock;
+  CLOCK_NUMBERS.innerText = completeClock;
   clockAmPm.innerText = amPm;
 
   changeClockColor(currentClock);
@@ -93,5 +83,5 @@ function getTime() {
   updateClock(currentTime);
 }
 
-getTime();
+getTime(); // Calls immediately in the first place
 setInterval(getTime, 1000);

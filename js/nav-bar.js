@@ -14,11 +14,15 @@ let isOnToDoScreen = false;
 let isOnSettingScreen = false;
 
 function _switchScreens(currentScreen, newScreen) {
-  fadeOut(currentScreen, false);
-
+  currentScreen.classList.add(HIDDEN_CLASSNAME);
   setTimeout(() => {
-    fadeIn(newScreen, false);
+    newScreen.classList.add(VISIBLE_CLASSNAME);
   }, TRANSITION_DURATION);
+  // fadeOut(currentScreen, false);
+
+  // setTimeout(() => {
+  //   fadeIn(newScreen, false);
+  // }, TRANSITION_DURATION);
 
   if (currentScreen === homeScreen) {
     isOnHomeScreen = false;

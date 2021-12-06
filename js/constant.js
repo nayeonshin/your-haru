@@ -1,10 +1,6 @@
 // HTML
-const APPEAR_CLASSNAME = "appear";
-const DISAPPEAR_CLASSNAME = "disappear";
 const HIDDEN_CLASSNAME = "hidden";
 const SLOW_CLASSNAME = "slow";
-const SLOW_APPEAR_CLASSNAME = "slow-appear";
-const SLOW_DISAPPEAR_CLASSNAME = "slow-disappear";
 const VISIBLE_CLASSNAME = "visible";
 
 // CSS

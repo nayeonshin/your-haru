@@ -6,12 +6,11 @@ const loginInput = loginForm.querySelector(".js-log-in__input");
 
 function showGreeting(username) {
   setTimeout(() => {
-    GREETING.classList.add(HIDDEN_CLASSNAME);
+    fadeOut(GREETING);
 
     setTimeout(() => {
       GREETING.innerText = `Hello, ${username}!`;
-      GREETING.classList.remove(HIDDEN_CLASSNAME);
-      GREETING.classList.add(VISIBLE_CLASSNAME);
+      fadeIn(GREETING, { isAfterOut: true });
     }, TRANSITION_DURATION);
   }, TRANSITION_DURATION);
 }
@@ -19,10 +18,8 @@ function showGreeting(username) {
 function handleLogInSubmit(event) {
   event.preventDefault(); // Stops browser from refreshing
 
-  loginFormBackground.classList.remove(VISIBLE_CLASSNAME);
-  loginFormBackground.classList.add(HIDDEN_CLASSNAME);
-  loginForm.classList.remove(VISIBLE_CLASSNAME);
-  loginForm.classList.add(HIDDEN_CLASSNAME);
+  fadeOut(loginFormBackground, { isSlow: true, isAfterIn: true });
+  fadeOut(loginForm, { isSlow: true, isAfterOut: true });
 
   const inputUsername = loginInput.value;
 
@@ -35,11 +32,9 @@ function askForUsername() {
 
   if (savedUsername === null) {
     setTimeout(() => {
-      loginFormBackground.classList.add(VISIBLE_CLASSNAME);
-      loginFormBackground.classList.add(SLOW_CLASSNAME);
-      loginForm.classList.add(VISIBLE_CLASSNAME);
-      loginForm.classList.add(SLOW_CLASSNAME);
-    }, 500);
+      fadeIn(loginFormBackground, { isSlow: true });
+      fadeIn(loginForm, { isSlow: true });
+    }, TRANSITION_DURATION);
 
     loginForm.addEventListener("submit", handleLogInSubmit);
   } else {

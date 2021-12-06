@@ -1,8 +1,8 @@
 const loginFormBackground = document.querySelector(".js-form-background");
 const loginForm = loginFormBackground.querySelector(
-  ".js-form-background__log-in"
+  ".js-form-background__sign-in"
 );
-const loginInput = loginForm.querySelector(".js-log-in__input");
+const loginInput = loginForm.querySelector(".js-sign-in__input");
 
 function showGreeting(username) {
   setTimeout(() => {

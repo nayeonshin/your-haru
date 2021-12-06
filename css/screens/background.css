@@ -9,7 +9,7 @@
   height: 100%;
 }
 
-.background__darkened {
+.background .background__darkened {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.2);
   display: flex;
@@ -91,13 +91,13 @@
   width: 1.1em;
 }
 
-.background__navigation ul li button:hover img {
+.background .background__navigation ul li button:hover img {
   cursor: pointer;
   opacity: 1;
   transition: opacity var(--medium-speed) ease-in;
 }
 
-.background__navigation ul li button:focus {
+.background .background__navigation ul li button:focus {
   border: none;
 }
 
@@ -112,13 +112,13 @@
   transition: var(--slow-speed) ease;
 }
 
-.red-text {
-  color: #f84240;
-}
-
 .left-menu {
   left: 0;
   right: auto;
+}
+
+.red-text {
+  color: #f84240;
 }
 
 /* TODO: Only reduce font size a lot when username is long */

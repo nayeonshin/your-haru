@@ -8,7 +8,8 @@
   width: 100%;
 }
 
-.form-background__log-in {
+/* Sign in */
+.form-background .form-background__sign-in {
   align-items: center;
   background-color: var(--white);
   border-radius: 10px;
@@ -24,11 +25,11 @@
   width: 18em;
 }
 
-.form-background__log-in h1 {
+.form-background .form-background__sign-in h1 {
   margin: 0.2em 0;
 }
 
-.form-background__log-in input {
+.form-background .form-background__sign-in input {
   background-color: var(--dark-gray);
   border: none;
   border-radius: 1em;
@@ -41,14 +42,14 @@
   width: 15em;
 }
 
-.form-background__log-in input:focus {
+.form-background .form-background__sign-in input:focus {
   background-color: rgba(0, 0, 0, 0.9);
   outline: none;
   transition: background-color var(--slow-speed);
 }
 
 /* TODO: Natural transition */
-.form-background__log-in .log-in__message {
+.form-background .form-background__sign-in .sign-in__message {
   color: #66b46c;
   font-size: 0.8rem;
   margin-top: 0.5em;

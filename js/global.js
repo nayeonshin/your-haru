@@ -9,6 +9,7 @@ const TRANSITION_DURATION = 500;
 // JS
 const CLOCK_NUMBERS = document.querySelector(".js-clock__numbers");
 const GREETING = document.querySelector(".js-background__greeting");
+const TO_DO_SCREEN = document.querySelector(".js-background__to-do");
 
 const CLICK_EVENT = "click";
 const TWENTY_FOUR_KEY = "is24HourOn";

@@ -23,6 +23,10 @@ const LEFT_MENU_CLASSNAME = "left-menu";
 
 function handleResetClick(event) {
   event.preventDefault();
+
+  // TODO: Display a warning message
+  localStorage.clear();
+  window.location.reload();
 }
 
 function changeState(key) {

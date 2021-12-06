@@ -1,7 +1,6 @@
 // TODO: When log in form is visible, disable clicking on nav bar
 
 const homeScreen = document.querySelector(".js-background main");
-const toDoScreen = document.querySelector(".js-background__to-do");
 const settingScreen = document.querySelector(".js-background__setting");
 
 const navigationBar = document.querySelector(".js-background__navigation");
@@ -22,7 +21,7 @@ function _switchScreens(currentScreen, newScreen) {
 
   if (currentScreen === homeScreen) {
     isOnHomeScreen = false;
-  } else if (currentScreen === toDoScreen) {
+  } else if (currentScreen === TO_DO_SCREEN) {
     isOnToDoScreen = false;
   } else {
     isOnSettingScreen = false;
@@ -39,7 +38,7 @@ function switchScreens({
   if (isOnHomeScreen) {
     currentScreen = homeScreen;
   } else if (isOnToDoScreen) {
-    currentScreen = toDoScreen;
+    currentScreen = TO_DO_SCREEN;
   } else {
     currentScreen = settingScreen;
   }
@@ -50,7 +49,7 @@ function switchScreens({
   }
 
   if (isToDoClicked && !isOnToDoScreen) {
-    _switchScreens(currentScreen, toDoScreen);
+    _switchScreens(currentScreen, TO_DO_SCREEN);
     isOnToDoScreen = true;
   }
 

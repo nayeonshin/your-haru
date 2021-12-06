@@ -5,7 +5,7 @@
 @import "transition.css";
 
 /* Screens */
-@import "screens/log-in-form.css";
+@import "screens/log-in.css";
 @import "screens/background.css";
 @import "screens/setting.css";
 

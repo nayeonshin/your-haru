@@ -15,5 +15,5 @@
 }
 
 .slow {
-  transition-duration: 0.8s;
+  transition-duration: var(--slow-speed);
 }

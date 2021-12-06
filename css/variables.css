@@ -1,10 +1,11 @@
+/* TODO: Remove unused vars */
 :root {
   --black: #000;
   --dark-gray: rgba(0, 0, 0, 0.8);
   --font: "NanumSquare", sans-serif;
   --gray: rgba(0, 0, 0, 0.5);
   --medium-speed: 0.5s;
-  --slow-speed: 1s;
+  --slow-speed: 0.8s;
   --toggle-gray: rgb(180, 180, 180);
   --toggle-green: #72e07b;
   --white: #fff;

@@ -18,7 +18,8 @@
   justify-content: center;
 }
 
-main {
+/* Main */
+.background main {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -26,36 +27,37 @@ main {
   margin: auto 0.5em;
 }
 
-main .background__calendar,
-main .background__clock .clock__am-pm {
+.background main .background__calendar,
+.background main .background__clock .clock__am-pm {
   text-transform: uppercase;
 }
 
-main .background__clock {
+.background main .background__clock {
   display: flex;
 }
 
-main .background__calendar {
+.background main .background__calendar {
   font-size: 2.5rem;
   margin-bottom: 0.1em;
 }
 
-main .background__clock .clock__numbers {
+.background main .background__clock .clock__numbers {
   font-size: 9rem;
   font-weight: bold;
   margin-right: 0.1em;
 }
 
-main .background__clock .clock__am-pm {
+.background main .background__clock .clock__am-pm {
   font-size: 3.5rem;
   margin-top: 0.2em;
 }
 
-main .background__greeting {
+.background main .background__greeting {
   font-size: 1.5rem;
 }
 
-.background__navigation {
+/* Navigation */
+.background .background__navigation {
   background-color: var(--gray);
   display: flex;
   height: 100%;
@@ -66,24 +68,24 @@ main .background__greeting {
   width: 3em;
 }
 
-.background__navigation ul {
+.background .background__navigation ul {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.background__navigation ul li {
+.background .background__navigation ul li {
   margin: 1.5em auto 1.5em 0.1em;
 }
 
-.background__navigation ul li button {
+.background .background__navigation ul li button {
   background: none;
   border: none;
   color: rgba(255, 255, 255, 0.6);
   font-size: 1.5rem;
 }
 
-.background__navigation img {
+.background .background__navigation img {
   height: 1.1em;
   opacity: 0.5;
   width: 1.1em;
@@ -99,10 +101,12 @@ main .background__greeting {
   border: none;
 }
 
-.background__setting {
+.background .background__to-do,
+.background .background__setting {
   position: fixed;
 }
 
+/* JS classes */
 .darker {
   background-color: var(--gray);
   transition: var(--slow-speed) ease;
@@ -119,39 +123,39 @@ main .background__greeting {
 
 /* TODO: Only reduce font size a lot when username is long */
 @media screen and (max-width: 550px) {
-  main .background__clock .clock__numbers {
+  .background main .background__clock .clock__numbers {
     font-size: 8rem;
   }
 
-  main .background__greeting {
+  .background main .background__greeting {
     font-size: 1.3rem;
   }
 }
 
 @media screen and (max-width: 460px) {
-  main .background__calendar {
+  .background main .background__calendar {
     font-size: 2.1rem;
   }
 
-  main .background__clock .clock__numbers {
+  .background main .background__clock .clock__numbers {
     font-size: 7rem;
   }
 
-  main .background__greeting {
+  .background main .background__greeting {
     font-size: 1.1rem;
   }
 }
 
 @media screen and (max-width: 380px) {
-  main .background__calendar {
+  .background main .background__calendar {
     font-size: 1.8rem;
   }
 
-  main .background__clock .clock__numbers {
+  .background main .background__clock .clock__numbers {
     font-size: 5rem;
   }
 
-  main .background__greeting {
+  .background main .background__greeting {
     font-size: 0.9rem;
   }
 }

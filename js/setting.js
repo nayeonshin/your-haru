@@ -21,8 +21,6 @@ const CHECKED_CLASSNAME = "checked";
 const DARK_THEME_CLASSNAME = "darker";
 const LEFT_MENU_CLASSNAME = "left-menu";
 
-const CLICK_EVENT = "click";
-
 function handleResetClick(event) {
   event.preventDefault();
 }

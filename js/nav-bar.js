@@ -1,5 +1,4 @@
 // TODO: When log in form is visible, disable clicking on nav bar
-// TODO: Fix transition
 
 const homeScreen = document.querySelector(".js-background main");
 const toDoScreen = document.querySelector(".js-background__to-do");
@@ -73,6 +72,6 @@ function handleHomeClick() {
   switchScreens({ isHomeClicked: true });
 }
 
-homeButton.addEventListener("click", handleHomeClick);
-toDoButton.addEventListener("click", handleToDoClick);
-settingButton.addEventListener("click", handleSettingClick);
+homeButton.addEventListener(CLICK_EVENT, handleHomeClick);
+toDoButton.addEventListener(CLICK_EVENT, handleToDoClick);
+settingButton.addEventListener(CLICK_EVENT, handleSettingClick);

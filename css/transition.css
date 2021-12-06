@@ -1,0 +1,19 @@
+.hidden,
+.visible {
+  transition: opacity var(--medium-speed) ease-out,
+    visibility var(--medium-speed) ease-out;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.slow {
+  transition-duration: 0.8s;
+}

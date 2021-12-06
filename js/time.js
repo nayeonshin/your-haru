@@ -50,18 +50,7 @@ function updateClock(currentTime) {
     currentClock[0] -= 12; // Uses 12-hour clock by default
   }
 
-  let completeClock = "";
-
-  currentClock.forEach((unit, index) => {
-    if (index === currentClock.length - 1) {
-      // Doesn't add : at the end
-      completeClock += unit;
-    } else {
-      completeClock += `${unit}:`;
-    }
-  });
-
-  CLOCK_NUMBERS.innerText = completeClock;
+  CLOCK_NUMBERS.innerText = currentClock.join(":");
   clockAmPm.innerText = amPm;
 
   changeClockColor(currentClock);

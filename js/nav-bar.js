@@ -14,15 +14,11 @@ let isOnToDoScreen = false;
 let isOnSettingScreen = false;
 
 function _switchScreens(currentScreen, newScreen) {
-  currentScreen.classList.add(HIDDEN_CLASSNAME);
+  // fadeOut is after fadeIn when the user switches screens more than once
+  fadeOut(currentScreen, { isAfterIn: true });
   setTimeout(() => {
-    newScreen.classList.add(VISIBLE_CLASSNAME);
+    fadeIn(newScreen, { isAfterOut: true });
   }, TRANSITION_DURATION);
-  // fadeOut(currentScreen, false);
-
-  // setTimeout(() => {
-  //   fadeIn(newScreen, false);
-  // }, TRANSITION_DURATION);
 
   if (currentScreen === homeScreen) {
     isOnHomeScreen = false;

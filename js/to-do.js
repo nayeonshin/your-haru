@@ -8,10 +8,23 @@ const toDoList = TO_DO_SCREEN.querySelector(".js-to-do-list__list");
 
 function showToDo(newToDo) {
   const li = document.createElement("li");
-  const span = document.createElement("span");
+  li.classList.add("list__to-do");
 
-  li.appendChild(span);
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+
+  const deleteButton = document.createElement("button");
+  const xImage = document.createElement("img");
+  xImage.src = "img/x.png";
+  deleteButton.appendChild(xImage);
+
+  const span = document.createElement("span");
   span.innerText = newToDo;
+
+  li.appendChild(checkbox);
+  li.appendChild(deleteButton);
+  li.appendChild(span);
+
   toDoList.appendChild(li);
 }
 

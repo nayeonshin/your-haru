@@ -35,6 +35,26 @@
   width: 0.1em;
 }
 
+.background__to-do .to-do__to-do-list .to-do-list__list {
+  font-size: 1.2rem;
+}
+
+.background__to-do .to-do-list__list .list__to-do input {
+  height: 1em;
+  width: 1em;
+}
+
+.background__to-do .to-do-list__list .list__to-do img {
+  height: 0.8em;
+  width: 0.8em;
+}
+
+.background__to-do .to-do-list__list .list__to-do {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
 @media screen and (max-width: 768px) {
   .background__to-do {
     align-items: flex-start;

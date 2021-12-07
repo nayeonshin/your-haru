@@ -39,17 +39,22 @@
   font-size: 1.2rem;
 }
 
-.background__to-do .to-do-list__list .list__to-do input {
-  height: 1em;
-  width: 1em;
+.background__to-do .list__to-do input {
+  height: 1.2em;
+  width: 1.2em;
 }
 
-.background__to-do .to-do-list__list .list__to-do img {
+.background__to-do .list__to-do button {
+  background-color: transparent;
+  border: none;
+}
+
+.background__to-do .list__to-do img {
   height: 0.8em;
   width: 0.8em;
 }
 
-.background__to-do .to-do-list__list .list__to-do {
+.background__to-do .list__to-do {
   align-items: center;
   display: flex;
   justify-content: center;

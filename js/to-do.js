@@ -6,6 +6,10 @@ const toDoList = TO_DO_SCREEN.querySelector(".js-to-do-list__list");
 // TODO: Add a check button -> strikethrough
 // TODO: Calendar
 
+function deleteTodo(event) {
+  console.log(event.target);
+}
+
 function showToDo(newToDo) {
   const li = document.createElement("li");
   li.classList.add("list__to-do");
@@ -17,6 +21,9 @@ function showToDo(newToDo) {
   const xImage = document.createElement("img");
   xImage.src = "img/x.png";
   deleteButton.appendChild(xImage);
+
+  deleteButton.addEventListener(CLICK_EVENT, deleteTodo);
+  xImage.addEventListener(CLICK_EVENT, deleteTodo);
 
   const span = document.createElement("span");
   span.innerText = newToDo;

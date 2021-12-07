@@ -1,4 +1,35 @@
 .background__to-do {
   align-items: center;
   display: flex;
+  height: 100vh;
+  justify-content: space-between;
+  position: relative;
+  width: 90vw;
+}
+
+.background__to-do .to-do__titles h3,
+.background__to-do .to-do__titles h2 {
+  margin: 0.5em auto;
+}
+
+.background__to-do .to-do__titles h3 {
+  font-size: 1.5rem;
+}
+
+.background__to-do .to-do__titles h2 {
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .background__to-do {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 260px) {
+  .background__to-do {
+    display: none;
+  }
 }

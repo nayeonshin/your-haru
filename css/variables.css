@@ -2,6 +2,7 @@
 :root {
   --black: #000;
   --dark-gray: rgba(0, 0, 0, 0.8);
+  --focus-transition: background-color var(--slow-speed);
   --font: "NanumSquare", sans-serif;
   --gray: rgba(0, 0, 0, 0.5);
   --medium-speed: 0.5s;

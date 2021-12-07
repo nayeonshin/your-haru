@@ -37,7 +37,7 @@
 .background__setting .setting__rename .rename__input:focus {
   background-color: var(--dark-gray);
   outline: none;
-  transition: background-color var(--slow-speed);
+  transition: var(--focus-transition);
 }
 
 .background__setting .twenty-four-hour__toggle,

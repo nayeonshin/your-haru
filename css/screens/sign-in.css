@@ -46,7 +46,7 @@
 .form-background .form-background__sign-in input:focus {
   background-color: rgba(0, 0, 0, 0.9);
   outline: none;
-  transition: background-color var(--slow-speed);
+  transition: var(--focus-transition);
 }
 
 /* TODO: Natural transition */

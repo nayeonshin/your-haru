@@ -1,8 +1,10 @@
+const toDoCalendar = TO_DO_SCREEN.querySelector(".titles__header h3");
 const toDoForm = TO_DO_SCREEN.querySelector(".js-to-do-list__form");
 const toDoInput = toDoForm.querySelector("input");
 const toDoList = TO_DO_SCREEN.querySelector(".js-to-do-list__list");
 
 // TODO: Add a check button -> strikethrough
+// TODO: Calendar
 
 function showToDo(newToDo) {
   const li = document.createElement("li");

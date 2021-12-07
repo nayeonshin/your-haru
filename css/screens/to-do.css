@@ -4,20 +4,35 @@
   height: 100vh;
   justify-content: space-between;
   position: relative;
-  width: 90vw;
+  width: 85vw;
 }
 
-.background__to-do .to-do__titles h3,
-.background__to-do .to-do__titles h2 {
+.background__to-do .to-do__titles {
+  align-items: center;
+  display: flex;
+}
+
+.background__to-do .to-do__titles .titles__header {
+  margin-right: 2em;
+}
+
+.background__to-do .titles__header h3,
+.background__to-do .titles__header h2 {
   margin: 0.5em auto;
 }
 
-.background__to-do .to-do__titles h3 {
+.background__to-do .titles__header h3 {
   font-size: 1.5rem;
 }
 
-.background__to-do .to-do__titles h2 {
+.background__to-do .titles__header h2 {
   font-size: 2rem;
+}
+
+.background__to-do .to-do__titles .titles__divider {
+  background-color: var(--white);
+  height: 90vh;
+  width: 0.1em;
 }
 
 @media screen and (max-width: 768px) {
@@ -25,6 +40,20 @@
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
+  }
+
+  .background__to-do .to-do__titles .titles__header {
+    margin-right: auto;
+  }
+
+  .background__to-do .to-do__titles {
+    flex-direction: column;
+  }
+
+  .background__to-do .to-do__titles .titles__divider {
+    height: 0.1em;
+    margin-right: 1em;
+    width: 80vw;
   }
 }
 

@@ -2,6 +2,7 @@ const clock = document.querySelector(".js-background__clock");
 const clockAmPm = clock.querySelector(".js-clock__am-pm");
 
 const calendar = document.querySelector(".js-background__calendar");
+
 const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const months = [
   "Jan",

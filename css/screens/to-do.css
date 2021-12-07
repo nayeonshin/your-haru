@@ -1,5 +1,4 @@
 .background__to-do {
-  align-items: center;
   display: flex;
   height: 100vh;
   position: relative;
@@ -42,6 +41,7 @@
   color: var(--white);
   font: var(--font);
   margin-bottom: 0.5em;
+  margin-top: 4em;
   padding: 0.7em;
   width: 20em;
 }
@@ -52,15 +52,16 @@
   transition: var(--focus-transition);
 }
 
+/* TODO: fix height */
 .background__to-do .to-do__to-do-list .to-do-list__list {
   font-size: 1.2rem;
-  max-height: 22em;
-  overflow-x: hidden;
+  height: 70vh;
   overflow-y: scroll;
-  width: 30em;
 }
 
 .background__to-do .to-do-list__list .list__to-do {
+  align-items: flex-start;
+  display: flex;
   margin: 0.5em auto;
 }
 
@@ -74,11 +75,18 @@
 .background__to-do .list__to-do input[type="button"] {
   background: no-repeat center/80% url("../../img/x.png");
   border: none;
+  margin: 0.2em 0.2em 0 0;
+  opacity: 0.5;
 }
 
-/* TODO: Align vertically */
+.background__to-do .list__to-do input[type="button"]:hover {
+  opacity: 1;
+  transition: var(--hover-transition);
+}
+
 .background__to-do .to-do-list__list .list__to-do span {
   margin-left: 0.5em;
+  width: 50vw; /* Need to fix */
 }
 
 @media screen and (max-width: 768px) {
@@ -98,8 +106,19 @@
 
   .background__to-do .to-do__titles .titles__divider {
     height: 0.1em;
-    margin-right: 1em;
+    margin-left: auto;
     width: 80vw;
+  }
+
+  .background__to-do .to-do-list__form input[type="text"] {
+    margin-top: 2em;
+  }
+
+  /* TODO: Fix that button disappears on smaller screen */
+  .background__to-do .list__to-do input[type="checkbox"],
+  .background__to-do .list__to-do input[type="button"] {
+    height: 0.8em;
+    width: 0.8em;
   }
 }
 

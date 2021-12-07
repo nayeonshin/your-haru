@@ -5,6 +5,7 @@
   --focus-transition: background-color var(--slow-speed);
   --font: "NanumSquare", sans-serif;
   --gray: rgba(0, 0, 0, 0.5);
+  --hover-transition: opacity var(--medium-speed) ease-in;
   --medium-speed: 0.5s;
   --slow-speed: 0.8s;
   --toggle-gray: rgb(180, 180, 180);

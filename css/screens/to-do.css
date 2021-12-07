@@ -39,25 +39,22 @@
   font-size: 1.2rem;
 }
 
-.background__to-do .list__to-do input {
+.background__to-do .to-do__to-do-list .list__to-do {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.background__to-do .list__to-do input[type="checkbox"],
+.background__to-do .list__to-do input[type="button"] {
+  cursor: pointer;
   height: 1.2em;
   width: 1.2em;
 }
 
-.background__to-do .list__to-do button {
-  background-color: transparent;
+.background__to-do .list__to-do input[type="button"] {
+  background: no-repeat center/80% url("../../img/x.png");
   border: none;
-}
-
-.background__to-do .list__to-do img {
-  height: 0.8em;
-  width: 0.8em;
-}
-
-.background__to-do .list__to-do {
-  align-items: center;
-  display: flex;
-  justify-content: center;
 }
 
 @media screen and (max-width: 768px) {

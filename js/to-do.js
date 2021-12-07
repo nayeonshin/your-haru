@@ -7,7 +7,8 @@ const toDoList = TO_DO_SCREEN.querySelector(".js-to-do-list__list");
 // TODO: Calendar
 
 function deleteTodo(event) {
-  console.log(event.target);
+  const toDo = event.target.parentElement;
+  toDo.remove();
 }
 
 function showToDo(newToDo) {
@@ -17,13 +18,10 @@ function showToDo(newToDo) {
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
 
-  const deleteButton = document.createElement("button");
-  const xImage = document.createElement("img");
-  xImage.src = "img/x.png";
-  deleteButton.appendChild(xImage);
+  const deleteButton = document.createElement("input");
+  deleteButton.type = "button";
 
   deleteButton.addEventListener(CLICK_EVENT, deleteTodo);
-  xImage.addEventListener(CLICK_EVENT, deleteTodo);
 
   const span = document.createElement("span");
   span.innerText = newToDo;

@@ -14,8 +14,8 @@
   text-transform: uppercase;
 }
 
-.background__to-do .titles__header h3,
-.background__to-do .titles__header h2 {
+.background__to-do .to-do__titles .titles__header h3,
+.background__to-do .to-do__titles .titles__header h2 {
   margin: 0.5em auto;
 }
 
@@ -61,9 +61,8 @@
   font-size: 1.2rem;
   height: 72vh;
   margin: 0.5em auto 0.5em auto;
-  max-width: 30em;
   overflow-y: scroll;
-  width: 30em;
+  width: 48vw;
   word-break: break-all;
 }
 
@@ -128,7 +127,11 @@
     margin-top: 2em;
   }
 
-  /* TODO: Fix that button disappears on smaller screen */
+  .background__to-do .to-do__to-do-list .to-do-list__list {
+    height: 60vh;
+    width: 80vw;
+  }
+
   .background__to-do .list__to-do input[type="checkbox"],
   .background__to-do .list__to-do input[type="button"] {
     height: 0.8em;

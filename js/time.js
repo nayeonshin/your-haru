@@ -65,6 +65,7 @@ function updateCalendar(currentTime) {
   const currentYear = currentTime.getFullYear();
 
   calendar.innerText = `${currentDay}, ${currentMonth} ${currentDate}, ${currentYear}`;
+  CALENDAR = calendar.innerText;
 }
 
 function getTime() {

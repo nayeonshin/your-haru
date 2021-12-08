@@ -7,6 +7,7 @@ const VISIBLE_CLASSNAME = "visible";
 const TRANSITION_DURATION = 500;
 
 // JS
+let CALENDAR;
 const CLOCK_NUMBERS = document.querySelector(".js-clock__numbers");
 const GREETING = document.querySelector(".js-background__greeting");
 const TO_DO_SCREEN = document.querySelector(".js-background__to-do");

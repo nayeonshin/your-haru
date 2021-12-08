@@ -5,7 +5,6 @@ const toDoList = TO_DO_SCREEN.querySelector(".js-to-do-list__list");
 
 // TODO: Add a check button -> strikethrough
 // TODO: Calendar
-// TODO: If todo input is long, insert line breaks? (or put limit to char count)
 
 function deleteTodo(event) {
   const toDo = event.target.parentElement;
@@ -44,4 +43,5 @@ function handleToDoSubmit(event) {
   showToDo(newToDo);
 }
 
+toDoCalendar.innerText = CALENDAR;
 toDoForm.addEventListener("submit", handleToDoSubmit);

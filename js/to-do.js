@@ -15,16 +15,18 @@ function saveToDos() {
 }
 
 function deleteTodo(event) {
-  const toDo = event.target.parentElement;
-  toDo.remove();
+  const li = event.target.parentElement;
+  console.log(li.id);
+  li.remove();
 }
 
 function showToDo(newToDo) {
   const li = document.createElement("li");
+  li.id = newToDo.id;
   li.classList.add("list__to-do");
 
   const span = document.createElement("span");
-  span.innerText = newToDo;
+  span.innerText = newToDo.text;
 
   const deleteButton = document.createElement("input");
   deleteButton.type = "button";
@@ -47,11 +49,15 @@ function showToDo(newToDo) {
 function handleToDoSubmit(event) {
   event.preventDefault();
 
-  const newToDo = toDoInput.value;
+  const toDoText = toDoInput.value;
   toDoForm.reset();
 
-  toDos.push(newToDo);
-  showToDo(newToDo);
+  const toDo = {
+    id: Date.now(),
+    text: toDoText,
+  };
+  toDos.push(toDo);
+  showToDo(toDo);
   saveToDos();
 }
 
@@ -68,5 +74,9 @@ function showSavedToDos() {
 
 showSavedToDos();
 
-toDoCalendar.innerText = CALENDAR;
+// Updates calendar every second
+setInterval(() => {
+  toDoCalendar.innerText = CALENDAR;
+}, 1000);
+
 toDoForm.addEventListener("submit", handleToDoSubmit);

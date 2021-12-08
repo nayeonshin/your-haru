@@ -60,7 +60,7 @@
 .twenty-four-hour__toggle .toggle__slider,
 .dark-theme__toggle .toggle__slider,
 .left-menu__toggle .toggle__slider {
-  background-color: var(--toggle-gray);
+  background-color: rgb(180, 180, 180);
   border-radius: 0.6em;
   bottom: 0;
   cursor: pointer;
@@ -91,7 +91,7 @@
 .toggle__switch:checked + .toggle__slider,
 .toggle__switch:checked + .toggle__slider,
 .toggle__switch:checked + .toggle__slider {
-  background-color: var(--toggle-green);
+  background-color: #72e07b;
 }
 
 .toggle__switch:checked + .toggle__slider::before,

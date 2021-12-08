@@ -62,7 +62,7 @@
   height: 72vh;
   margin: 0.5em auto 0.5em auto;
   overflow-y: scroll;
-  width: 48vw;
+  width: 50vw;
   word-break: break-all;
 }
 
@@ -79,17 +79,17 @@
   margin: auto auto 0.5em auto;
 }
 
-.background__to-do .list__to-do input[type="checkbox"],
-.background__to-do .list__to-do input[type="button"] {
+.background__to-do .list__to-do input[type="button"],
+.background__to-do .list__to-do input[type="checkbox"] {
   cursor: pointer;
-  min-height: 1.3em;
-  min-width: 1.3em;
+  min-height: 1.45em;
+  min-width: 1.45em;
 }
 
 .background__to-do .list__to-do input[type="button"] {
   background: no-repeat center/80% url("../../img/x.png");
   border: none;
-  margin: 0.2em 0.2em 0 0;
+  margin: 0.1em 0.2em 0 0;
   opacity: 0.5;
 }
 
@@ -98,8 +98,20 @@
   transition: var(--hover-transition);
 }
 
+.background__to-do .list__to-do input[type="checkbox"] {
+  margin-top: 0.15em;
+}
+
 .background__to-do .to-do-list__list .list__to-do span {
   margin-left: 0.5em;
+}
+
+@media screen and (max-width: 962px) {
+  .background__to-do .list__to-do input[type="button"],
+  .background__to-do .list__to-do input[type="checkbox"] {
+    min-height: 1.3em;
+    min-width: 1.3em;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -132,10 +144,43 @@
     width: 80vw;
   }
 
-  .background__to-do .list__to-do input[type="checkbox"],
+  .background__to-do .list__to-do input[type="button"],
+  .background__to-do .list__to-do input[type="checkbox"] {
+    min-height: 1.1em;
+    min-width: 1.1em;
+  }
+
   .background__to-do .list__to-do input[type="button"] {
-    height: 0.8em;
-    width: 0.8em;
+    margin-top: -0.2em;
+  }
+
+  .background__to-do .list__to-do input[type="checkbox"] {
+    margin-top: -0.1em;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .background__to-do .list__to-do input[type="button"],
+  .background__to-do .list__to-do input[type="checkbox"] {
+    margin-top: 0;
+    min-height: 1em;
+    min-width: 1em;
+  }
+
+  .background__to-do .list__to-do input[type="button"] {
+    margin-top: -0.21em;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .background__to-do .list__to-do input[type="button"],
+  .background__to-do .list__to-do input[type="checkbox"] {
+    min-height: 0.9em;
+    min-width: 0.9em;
+  }
+
+  .background__to-do .list__to-do input[type="button"] {
+    margin-right: 0;
   }
 }
 

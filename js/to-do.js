@@ -16,6 +16,9 @@ function showToDo(newToDo) {
   const li = document.createElement("li");
   li.classList.add("list__to-do");
 
+  const span = document.createElement("span");
+  span.innerText = newToDo;
+
   const deleteButton = document.createElement("input");
   deleteButton.type = "button";
 
@@ -23,9 +26,9 @@ function showToDo(newToDo) {
 
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
-
-  const span = document.createElement("span");
-  span.innerText = newToDo;
+  checkbox.addEventListener("click", function () {
+    span.classList.toggle("checked");
+  });
 
   li.appendChild(deleteButton);
   li.appendChild(checkbox);

@@ -111,7 +111,6 @@ darkThemeSwitch.addEventListener(CLICK_EVENT, function () {
   changeState("isDarkThemeOn");
 
   darkBackground.classList.toggle(DARK_THEME_CLASSNAME);
-  console.log(darkBackground.classList);
 });
 
 leftMenuSwitch.addEventListener(CLICK_EVENT, function () {

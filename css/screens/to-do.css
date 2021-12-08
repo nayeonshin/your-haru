@@ -58,7 +58,7 @@
 }
 
 .background__to-do .to-do__to-do-list .to-do-list__list {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   height: 72vh;
   margin: 0.5em auto 0.5em auto;
   overflow-y: auto;
@@ -72,11 +72,11 @@
 }
 
 .background__to-do .to-do-list__list .list__to-do:not(:first-child) {
-  margin: 0.5em auto;
+  margin: 0.7em auto;
 }
 
 .background__to-do .to-do-list__list .list__to-do:first-child {
-  margin: auto auto 0.5em auto;
+  margin: auto auto 0.7em auto;
 }
 
 .background__to-do .list__to-do input[type="button"],
@@ -104,6 +104,12 @@
 
 .background__to-do .to-do-list__list .list__to-do span {
   margin-left: 0.5em;
+}
+
+/* JS Class */
+/* TODO: Transition on strikethrough */
+.checked {
+  text-decoration: line-through;
 }
 
 @media screen and (max-width: 962px) {

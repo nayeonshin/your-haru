@@ -3,8 +3,16 @@ const toDoForm = TO_DO_SCREEN.querySelector(".js-to-do-list__form");
 const toDoInput = toDoForm.querySelector("input");
 const toDoList = TO_DO_SCREEN.querySelector(".js-to-do-list__list");
 
+const TODOS_KEY = "to-dos";
+
+let toDos = [];
+
 // TODO: Add a check button -> strikethrough
 // TODO: Transition on removing and adding to-dos
+
+function saveToDos() {
+  localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
+}
 
 function deleteTodo(event) {
   const toDo = event.target.parentElement;
@@ -38,10 +46,27 @@ function showToDo(newToDo) {
 
 function handleToDoSubmit(event) {
   event.preventDefault();
+
   const newToDo = toDoInput.value;
   toDoForm.reset();
+
+  toDos.push(newToDo);
   showToDo(newToDo);
+  saveToDos();
 }
+
+function showSavedToDos() {
+  const savedToDos = localStorage.getItem(TODOS_KEY);
+  if (savedToDos) {
+    const parsedToDos = JSON.parse(savedToDos);
+    toDos = parsedToDos;
+    parsedToDos.forEach((toDo) => {
+      showToDo(toDo);
+    });
+  }
+}
+
+showSavedToDos();
 
 toDoCalendar.innerText = CALENDAR;
 toDoForm.addEventListener("submit", handleToDoSubmit);

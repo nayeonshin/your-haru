@@ -34,6 +34,12 @@
   width: 0.1em;
 }
 
+.background__to-do .to-do__to-do-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .background__to-do .to-do-list__form input[type="text"] {
   background-color: var(--gray);
   border: none;
@@ -41,7 +47,6 @@
   color: var(--white);
   font: var(--font);
   margin-bottom: 0.5em;
-  margin-top: 4em;
   padding: 0.7em;
   width: 20em;
 }
@@ -52,14 +57,13 @@
   transition: var(--focus-transition);
 }
 
-/* TODO: fix height */
 .background__to-do .to-do__to-do-list .to-do-list__list {
   font-size: 1.2rem;
-  height: 20em;
+  height: 72vh;
+  margin: 0.5em auto 0.5em auto;
+  max-width: 30em;
   overflow-y: scroll;
   width: 30em;
-  margin-top: 0.5em;
-  max-width: 30em;
   word-break: break-all;
 }
 

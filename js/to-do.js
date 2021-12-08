@@ -4,7 +4,7 @@ const toDoInput = toDoForm.querySelector("input");
 const toDoList = TO_DO_SCREEN.querySelector(".js-to-do-list__list");
 
 // TODO: Add a check button -> strikethrough
-// TODO: Calendar
+// TODO: Transition on removing and adding to-dos
 
 function deleteTodo(event) {
   const toDo = event.target.parentElement;

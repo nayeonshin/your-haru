@@ -48,7 +48,7 @@ function updateClock(currentTime) {
 
   if (currentHours === 0) {
     currentClock[0] = "12"; // When 12 a.m., displays 12
-  } else if (!isCurrentAm) {
+  } else if (!isCurrentAm && currentHours !== 12) {
     currentClock[0] -= 12; // Uses 12-hour clock by default
   }
 

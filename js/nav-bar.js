@@ -71,6 +71,10 @@ function handleHomeClick() {
   switchScreens({ isHomeClicked: true });
 }
 
+// window.addEventListener("storage", () => {
+//   console.log("hi!");
+// });
+
 homeButton.addEventListener(CLICK_EVENT, handleHomeClick);
 toDoButton.addEventListener(CLICK_EVENT, handleToDoClick);
 settingButton.addEventListener(CLICK_EVENT, handleSettingClick);

@@ -16,18 +16,13 @@ const leftMenuSwitch = leftMenuToggle.querySelector(".js-toggle__switch");
 const menu = document.querySelector(".js-background__navigation");
 
 const resetButton = setting.querySelector(".js-reset__button");
+const resetModal = setting.querySelector(".js-setting__reset-modal");
+const noButton = resetModal.querySelector("form button:first-child");
+const yesButton = resetModal.querySelector("form button:last-child");
 
 const CHECKED_CLASSNAME = "checked";
 const DARK_THEME_CLASSNAME = "darker";
 const LEFT_MENU_CLASSNAME = "left-menu";
-
-function handleResetClick(event) {
-  event.preventDefault();
-
-  // TODO: Display a warning message
-  localStorage.clear();
-  window.location.reload();
-}
 
 function changeState(key) {
   const isOn = localStorage.getItem(key) === "true";
@@ -119,4 +114,19 @@ leftMenuSwitch.addEventListener(CLICK_EVENT, function () {
   menu.classList.toggle(LEFT_MENU_CLASSNAME);
 });
 
-resetButton.addEventListener(CLICK_EVENT, handleResetClick);
+resetButton.addEventListener(CLICK_EVENT, (event) => {
+  event.preventDefault();
+  fadeIn(resetModal);
+});
+
+noButton.addEventListener(CLICK_EVENT, (event) => {
+  event.preventDefault();
+  fadeOut(resetModal, { isAfterIn: true });
+});
+
+yesButton.addEventListener(CLICK_EVENT, (event) => {
+  event.preventDefault();
+
+  localStorage.clear();
+  window.location.reload();
+});

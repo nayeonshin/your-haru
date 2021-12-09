@@ -81,6 +81,10 @@
   background-color: rgba(255, 255, 255, 0.6);
 }
 
+.background__to-do .to-do-list__list::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
 .background__to-do .to-do-list__list .list__to-do {
   align-items: flex-start;
   display: flex;

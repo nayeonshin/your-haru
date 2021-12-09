@@ -135,6 +135,7 @@
 }
 
 .background__setting .setting__reset-modal h3 {
+  font-size: 1rem;
   font-weight: bold;
   margin: 0 auto 1em auto;
 }
@@ -154,6 +155,7 @@
   border-radius: 1em;
   color: var(--white);
   cursor: pointer;
+  font-size: 0.8rem;
   font-family: inherit;
   height: 2em;
   margin-top: 2em;

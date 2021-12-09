@@ -16,7 +16,12 @@ function saveToDos() {
 
 function deleteTodo(event) {
   const li = event.target.parentElement;
-  li.remove();
+
+  fadeOut(li, { isAfterIn: true }); // Is always after fading in
+  setTimeout(() => {
+    li.remove();
+  }, TRANSITION_DURATION);
+
   toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
   saveToDos();
 }
@@ -45,6 +50,10 @@ function showToDo(newToDo) {
   li.appendChild(span);
 
   toDoList.appendChild(li);
+  li.classList.add(HIDDEN_CLASSNAME);
+  setTimeout(() => {
+    fadeIn(li, { isAfterOut: true }); // Removes "hidden" class
+  }, 10);
 }
 
 function handleToDoSubmit(event) {
@@ -75,9 +84,7 @@ function showSavedToDos() {
 
 showSavedToDos();
 
-// Updates calendar every second
-setInterval(() => {
-  toDoCalendar.innerText = CALENDAR;
-}, 1000);
+// TODO: Update calendar real-time
+toDoCalendar.innerText = CALENDAR;
 
 toDoForm.addEventListener("submit", handleToDoSubmit);

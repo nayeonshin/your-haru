@@ -13,7 +13,7 @@ let isOnToDoScreen = false;
 let isOnSettingScreen = false;
 
 function _switchScreens(currentScreen, newScreen) {
-  // fadeOut is after fadeIn when the user switches screens more than once
+  // Is after fadeIn when the user switches screens more than once
   fadeOut(currentScreen, { isAfterIn: true });
   setTimeout(() => {
     fadeIn(newScreen, { isAfterOut: true });

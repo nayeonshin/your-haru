@@ -9,8 +9,10 @@ const TODOS_KEY = "to-dos";
 let toDos = [];
 
 // TODO: Strikethrough transition
-// TODO: Restores checked todos
-// TODO: Update counter on checked todos
+
+function saveToDos() {
+  localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
+}
 
 function updateCounter() {
   const toDoCount = String(toDos.length).padStart(2, "0");
@@ -19,10 +21,6 @@ function updateCounter() {
   const checkedCount = String(checkedToDos.length).padStart(2, "0");
 
   toDoCounter.innerText = `${checkedCount}/${toDoCount} Done`;
-}
-
-function saveToDos() {
-  localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
 
 function deleteTodo(event) {
@@ -116,7 +114,7 @@ function showSavedToDos() {
 }
 
 setTimeout(() => {
-  updateCalendar(new Date(), { isToDoCalendar: true });
+  updateCalendar(new Date(), { isToDoCalendar: true }); // In time.js
 }, 1000);
 
 showSavedToDos();

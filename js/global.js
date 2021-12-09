@@ -6,7 +6,6 @@ const HIDDEN_CLASSNAME = "hidden";
 const TRANSITION_DURATION = 500;
 
 // JS
-let CALENDAR;
 const GREETING = document.querySelector(".js-background__greeting");
 const TO_DO_SCREEN = document.querySelector(".js-background__to-do");
 

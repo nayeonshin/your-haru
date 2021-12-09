@@ -65,14 +65,18 @@ function updateClock(currentTime) {
   changeClockColor(currentClock);
 }
 
-function updateCalendar(currentTime) {
+function updateCalendar(currentTime, { isToDoCalendar } = {}) {
   const currentDay = days[currentTime.getDay()];
   const currentMonth = months[currentTime.getMonth()];
   const currentDate = currentTime.getDate();
   const currentYear = currentTime.getFullYear();
 
-  calendar.innerText = `${currentDay}, ${currentMonth} ${currentDate}, ${currentYear}`;
-  CALENDAR = calendar.innerText;
+  const currentCalendar = `${currentDay}, ${currentMonth} ${currentDate}, ${currentYear}`;
+  if (isToDoCalendar) {
+    toDoCalendar.innerText = currentCalendar;
+  } else {
+    calendar.innerText = currentCalendar;
+  }
 }
 
 function getTime() {

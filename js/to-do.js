@@ -81,9 +81,10 @@ function showSavedToDos() {
   }
 }
 
-showSavedToDos();
+setTimeout(() => {
+  updateCalendar(new Date(), { isToDoCalendar: true });
+}, 1000);
 
-// TODO: Update calendar real-time
-toDoCalendar.innerText = CALENDAR;
+showSavedToDos();
 
 toDoForm.addEventListener("submit", handleToDoSubmit);

@@ -45,7 +45,7 @@
   border: none;
   border-radius: 2em;
   color: var(--white);
-  font: var(--font);
+  font: inherit;
   margin-bottom: 0.5em;
   padding: 0.7em;
   width: 20em;

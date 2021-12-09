@@ -11,12 +11,12 @@
 @import "screens/setting.css";
 
 html {
-  font-family: var(--font);
   font-size: calc(1vw + 5px);
   overflow: hidden;
 }
 
 body {
+  font-family: var(--font);
   height: 100vh;
   width: 100vw;
 }

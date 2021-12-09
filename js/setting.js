@@ -2,7 +2,7 @@ const setting = document.querySelector(".js-background__setting");
 
 const renameForm = setting.querySelector(".js-setting__rename");
 const renameInput = renameForm.querySelector(".js-rename__input");
-const renameModal = setting.querySelector(".js-setting__modal");
+const renameModal = setting.querySelector(".js-setting__rename-modal");
 
 const twentyFourToggle = setting.querySelector(".js-twenty-four-hour__toggle");
 const twentyFourSwitch = twentyFourToggle.querySelector(".js-toggle__switch");

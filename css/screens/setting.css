@@ -103,18 +103,18 @@
 }
 
 .setting__reset .reset__button {
-  background-color: #f2480d;
+  background-color: var(--alert-red);
   border: none;
   border-radius: 1em;
   color: var(--white);
   cursor: pointer;
-  font-family: var(--font);
+  font-family: inherit;
   font-size: 0.8rem;
   padding: 0.5em 0.8em;
-  text-transform: uppercase;
+  text-transform: inherit;
 }
 
-.background__setting .setting__modal {
+.background__setting .setting__rename-modal {
   background-color: var(--white);
   border-radius: 2em;
   color: var(--black);
@@ -123,6 +123,50 @@
   position: fixed;
   text-align: center;
   text-transform: none;
+}
+
+.background__setting .setting__reset-modal {
+  background-color: var(--white);
+  border-radius: 0.5em;
+  color: var(--black);
+  padding: 1.5em;
+  position: fixed;
+  text-align: center;
+}
+
+.background__setting .setting__reset-modal h3 {
+  font-weight: bold;
+  margin: 0 auto 1em auto;
+}
+
+.background__setting .setting__reset-modal span {
+  font-size: 0.9rem;
+}
+
+.background__setting .setting__reset-modal form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.background__setting .setting__reset-modal form button {
+  border: none;
+  border-radius: 1em;
+  color: var(--white);
+  cursor: pointer;
+  font-family: inherit;
+  height: 2em;
+  margin-top: 2em;
+  text-transform: inherit;
+  width: 4em;
+}
+
+.background__setting .setting__reset-modal form button:first-child {
+  background-color: var(--gray);
+}
+
+.background__setting .setting__reset-modal form button:last-child {
+  background-color: var(--alert-red);
 }
 
 @media screen and (max-width: 1024px) {

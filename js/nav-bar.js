@@ -71,12 +71,11 @@ function handleHomeClick() {
   switchScreens({ isHomeClicked: true });
 }
 
-window.addEventListener("storage", () => {
-  if (localStorage.getItem(USERNAME_KEY)) {
-    homeButton.addEventListener(CLICK_EVENT, handleHomeClick);
-    toDoButton.addEventListener(CLICK_EVENT, handleToDoClick);
-    settingButton.addEventListener(CLICK_EVENT, handleSettingClick);
-  }
-});
+// TODO: Only when the user has entered username, execute below
+function enableButtons() {
+  navigationBar.classList.add("signed-in");
 
-window.dispatchEvent(new Event("storage"));
+  homeButton.addEventListener(CLICK_EVENT, handleHomeClick);
+  toDoButton.addEventListener(CLICK_EVENT, handleToDoClick);
+  settingButton.addEventListener(CLICK_EVENT, handleSettingClick);
+}

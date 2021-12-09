@@ -18,6 +18,8 @@ function showGreeting(username) {
 function handleLogInSubmit(event) {
   event.preventDefault(); // Stops browser from refreshing
 
+  enableButtons();
+
   fadeOut(loginFormBackground, { isSlow: true, isAfterIn: true });
   fadeOut(loginForm, { isSlow: true, isAfterOut: true });
 
@@ -38,6 +40,7 @@ function askForUsername() {
 
     loginForm.addEventListener("submit", handleLogInSubmit);
   } else {
+    enableButtons();
     GREETING.innerText = `Hello, ${savedUsername}!`;
   }
 }

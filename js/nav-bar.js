@@ -1,5 +1,3 @@
-// TODO: When log in form is visible, disable clicking on nav bar
-
 const homeScreen = document.querySelector(".js-background main");
 const settingScreen = document.querySelector(".js-background__setting");
 
@@ -71,7 +69,6 @@ function handleHomeClick() {
   switchScreens({ isHomeClicked: true });
 }
 
-// TODO: Only when the user has entered username, execute below
 function enableButtons() {
   navigationBar.classList.add("signed-in");
 

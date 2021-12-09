@@ -1,4 +1,3 @@
-// TODO: Check if 24-hour clock when pm works
 const clock = document.querySelector(".js-background__clock");
 const clockNumbers = document.querySelector(".js-clock__numbers");
 const clockAmPm = clock.querySelector(".js-clock__am-pm");

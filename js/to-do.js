@@ -53,12 +53,11 @@ function showToDo(newToDo) {
   const toDo = toDos[toDos.findIndex((toDo) => toDo.id === parseInt(li.id))];
   if (toDo.isChecked) {
     checkbox.checked = true;
-  } else {
-    checkbox.checked = false;
+    span.classList.add(CHECKED_CLASSNAME);
   }
 
   checkbox.addEventListener(CLICK_EVENT, function () {
-    span.classList.toggle("checked");
+    span.classList.toggle(CHECKED_CLASSNAME);
 
     if (toDo.isChecked) {
       toDo.isChecked = false;

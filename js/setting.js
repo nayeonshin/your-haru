@@ -20,7 +20,6 @@ const resetModal = setting.querySelector(".js-setting__reset-modal");
 const noButton = resetModal.querySelector("form button:first-child");
 const yesButton = resetModal.querySelector("form button:last-child");
 
-const CHECKED_CLASSNAME = "checked";
 const DARK_THEME_CLASSNAME = "darker";
 const LEFT_MENU_CLASSNAME = "left-menu";
 

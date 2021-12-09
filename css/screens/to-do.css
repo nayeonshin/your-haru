@@ -67,6 +67,20 @@
   word-break: break-all;
 }
 
+.background__to-do .to-do-list__list::-webkit-scrollbar,
+.background__to-do .to-do-list__list::-webkit-scrollbar-thumb {
+  border-radius: 0.5em;
+  width: 0.8em;
+}
+
+.background__to-do .to-do-list__list::-webkit-scrollbar {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.background__to-do .to-do-list__list::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
 .background__to-do .to-do-list__list .list__to-do {
   align-items: flex-start;
   display: flex;

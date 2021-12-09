@@ -7,8 +7,7 @@ const TODOS_KEY = "to-dos";
 
 let toDos = [];
 
-// TODO: Add a check button -> strikethrough
-// TODO: Transition on removing and adding to-dos
+// TODO: Strikethrough transition
 
 function saveToDos() {
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));

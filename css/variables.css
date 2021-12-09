@@ -8,5 +8,6 @@
   --hover-transition: opacity var(--medium-speed) ease-in;
   --medium-speed: 0.5s;
   --slow-speed: 0.8s;
+  --toggle-green: #72e07b;
   --white: #fff;
 }

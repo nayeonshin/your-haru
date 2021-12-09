@@ -13,8 +13,12 @@ let toDos = [];
 // TODO: Update counter on checked todos
 
 function updateCounter() {
-  const numToDos = String(toDos.length).padStart(2, "0");
-  toDoCounter.innerText = `00/${numToDos} Done`;
+  const toDoCount = String(toDos.length).padStart(2, "0");
+
+  const checkedToDos = toDos.filter((toDo) => toDo.isChecked === true);
+  const checkedCount = String(checkedToDos.length).padStart(2, "0");
+
+  toDoCounter.innerText = `${checkedCount}/${toDoCount} Done`;
 }
 
 function saveToDos() {
@@ -65,6 +69,7 @@ function showToDo(newToDo) {
       toDo.isChecked = true;
     }
 
+    updateCounter();
     saveToDos();
   });
 

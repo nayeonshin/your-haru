@@ -91,7 +91,7 @@
 .toggle__switch:checked + .toggle__slider,
 .toggle__switch:checked + .toggle__slider,
 .toggle__switch:checked + .toggle__slider {
-  background-color: #72e07b;
+  background-color: var(--toggle-green);
 }
 
 .toggle__switch:checked + .toggle__slider::before,

@@ -131,6 +131,7 @@
 }
 
 .background__to-do .list__to-do input[type="checkbox"] {
+  accent-color: var(--toggle-green);
   margin-top: 0.15em;
 }
 

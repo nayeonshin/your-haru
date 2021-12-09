@@ -72,9 +72,11 @@ function handleHomeClick() {
 }
 
 window.addEventListener("storage", () => {
-  console.log("hi!");
+  if (localStorage.getItem(USERNAME_KEY)) {
+    homeButton.addEventListener(CLICK_EVENT, handleHomeClick);
+    toDoButton.addEventListener(CLICK_EVENT, handleToDoClick);
+    settingButton.addEventListener(CLICK_EVENT, handleSettingClick);
+  }
 });
 
-homeButton.addEventListener(CLICK_EVENT, handleHomeClick);
-toDoButton.addEventListener(CLICK_EVENT, handleToDoClick);
-settingButton.addEventListener(CLICK_EVENT, handleSettingClick);
+window.dispatchEvent(new Event("storage"));

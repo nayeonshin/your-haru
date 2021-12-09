@@ -1,4 +1,7 @@
-function fadeIn(element, { isAfterOut, isSlow } = {}) {
+const SLOW_CLASSNAME = "slow";
+const VISIBLE_CLASSNAME = "visible";
+
+function fadeIn(element, { isSlow, isAfterOut } = {}) {
   if (isAfterOut) {
     element.classList.remove(HIDDEN_CLASSNAME);
   }
@@ -10,7 +13,7 @@ function fadeIn(element, { isAfterOut, isSlow } = {}) {
   }
 }
 
-function fadeOut(element, { isAfterIn, isSlow } = {}) {
+function fadeOut(element, { isSlow, isAfterIn } = {}) {
   if (isAfterIn) {
     element.classList.remove(VISIBLE_CLASSNAME);
   }

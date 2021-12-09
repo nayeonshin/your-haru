@@ -1,5 +1,6 @@
 // TODO: Check if 24-hour clock when pm works
 const clock = document.querySelector(".js-background__clock");
+const clockNumbers = document.querySelector(".js-clock__numbers");
 const clockAmPm = clock.querySelector(".js-clock__am-pm");
 
 const calendar = document.querySelector(".js-background__calendar");
@@ -59,7 +60,7 @@ function updateClock(currentTime) {
     clockAmPm.classList.add(INVISIBLE_CLASSNAME);
   }
 
-  CLOCK_NUMBERS.innerText = currentClock.join(":");
+  clockNumbers.innerText = currentClock.join(":");
   clockAmPm.innerText = amPm;
 
   changeClockColor(currentClock);

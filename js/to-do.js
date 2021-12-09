@@ -40,7 +40,7 @@ function showToDo(newToDo) {
 
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
-  checkbox.addEventListener("click", function () {
+  checkbox.addEventListener(CLICK_EVENT, function () {
     span.classList.toggle("checked");
   });
 

@@ -13,7 +13,7 @@ let isOnToDoScreen = false;
 let isOnSettingScreen = false;
 
 function _switchScreens(currentScreen, newScreen) {
-  // Is after fadeIn when the user switches screens more than once
+  // Is after fadeIn when user switches screens more than once
   fadeOut(currentScreen, { isAfterIn: true });
   setTimeout(() => {
     fadeIn(newScreen, { isAfterOut: true });
@@ -71,9 +71,9 @@ function handleHomeClick() {
   switchScreens({ isHomeClicked: true });
 }
 
-// window.addEventListener("storage", () => {
-//   console.log("hi!");
-// });
+window.addEventListener("storage", () => {
+  console.log("hi!");
+});
 
 homeButton.addEventListener(CLICK_EVENT, handleHomeClick);
 toDoButton.addEventListener(CLICK_EVENT, handleToDoClick);

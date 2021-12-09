@@ -1,5 +1,6 @@
 const toDoCalendar = TO_DO_SCREEN.querySelector(".titles__header h3");
 const toDoForm = TO_DO_SCREEN.querySelector(".js-to-do-list__form");
+const toDoCounter = toDoForm.querySelector(".js-form__counter");
 const toDoInput = toDoForm.querySelector("input");
 const toDoList = TO_DO_SCREEN.querySelector(".js-to-do-list__list");
 
@@ -8,6 +9,13 @@ const TODOS_KEY = "to-dos";
 let toDos = [];
 
 // TODO: Strikethrough transition
+// TODO: Restores checked todos
+// TODO: Update counter on checked todos
+
+function updateCounter() {
+  const numToDos = String(toDos.length).padStart(2, "0");
+  toDoCounter.innerText = `00/${numToDos} Done`;
+}
 
 function saveToDos() {
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
@@ -23,6 +31,8 @@ function deleteTodo(event) {
 
   toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
   saveToDos();
+
+  updateCounter();
 }
 
 function showToDo(newToDo) {
@@ -53,6 +63,8 @@ function showToDo(newToDo) {
   setTimeout(() => {
     fadeIn(li, { isAfterOut: true }); // Removes "hidden" class
   }, 10);
+
+  updateCounter();
 }
 
 function handleToDoSubmit(event) {
@@ -75,9 +87,12 @@ function showSavedToDos() {
   if (savedToDos) {
     const parsedToDos = JSON.parse(savedToDos);
     toDos = parsedToDos;
+
     parsedToDos.forEach((toDo) => {
       showToDo(toDo);
     });
+
+    updateCounter();
   }
 }
 

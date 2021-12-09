@@ -54,7 +54,7 @@ function updateClock(currentTime) {
     if (currentHours === 0) {
       currentClock[0] = "12"; // When 12 a.m., displays 12
     } else if (!isCurrentAm && currentHours > 12) {
-      currentClock[0] -= 12;
+      currentClock[0] = String(currentClock[0] - 12).padStart(2, "0");
     }
   } else {
     clockAmPm.classList.add(INVISIBLE_CLASSNAME);

@@ -125,7 +125,6 @@
 }
 
 /* JS Class */
-/* TODO: Transition on strikethrough */
 .checked {
   text-decoration: line-through;
 }

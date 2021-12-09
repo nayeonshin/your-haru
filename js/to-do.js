@@ -52,6 +52,12 @@ function showToDo(newToDo) {
   checkbox.type = "checkbox";
   checkbox.addEventListener(CLICK_EVENT, function () {
     span.classList.toggle("checked");
+
+    toDos[
+      toDos.findIndex((toDo) => toDo.id === parseInt(li.id))
+    ].isChecked = true;
+
+    saveToDos();
   });
 
   li.appendChild(deleteButton);

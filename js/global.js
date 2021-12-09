@@ -1,3 +1,4 @@
+// TODO: Remove unused variables
 // HTML
 const HIDDEN_CLASSNAME = "hidden";
 const SLOW_CLASSNAME = "slow";

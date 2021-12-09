@@ -20,6 +20,7 @@ const months = [
   "Dec",
 ];
 
+const INVISIBLE_CLASSNAME = "invisible";
 const RED_TEXT_CLASSNAME = "red-text";
 
 function changeClockColor(currentClock) {
@@ -45,11 +46,17 @@ function updateClock(currentTime) {
 
   const isCurrentAm = currentHours < 12 ? true : false;
   const amPm = isCurrentAm ? "am" : "pm";
+  const is24HourOn = localStorage.getItem(TWENTY_FOUR_KEY) === "true";
 
-  if (currentHours === 0) {
-    currentClock[0] = "12"; // When 12 a.m., displays 12
-  } else if (!isCurrentAm && currentHours !== 12) {
-    currentClock[0] -= 12; // Uses 12-hour clock by default
+  if (!is24HourOn) {
+    clockAmPm.classList.remove(INVISIBLE_CLASSNAME);
+    if (currentHours === 0) {
+      currentClock[0] = "12"; // When 12 a.m., displays 12
+    } else if (!isCurrentAm && currentHours > 12) {
+      currentClock[0] -= 12;
+    }
+  } else {
+    clockAmPm.classList.add(INVISIBLE_CLASSNAME);
   }
 
   CLOCK_NUMBERS.innerText = currentClock.join(":");

@@ -93,13 +93,6 @@ renameForm.addEventListener("submit", handleRenameSubmit);
 
 twentyFourSwitch.addEventListener(CLICK_EVENT, function () {
   changeState(TWENTY_FOUR_KEY);
-
-  if (localStorage.getItem(TWENTY_FOUR_KEY) === "true") {
-    const clockHMS = CLOCK_NUMBERS.innerText.split(":");
-    clockHMS[0] = parseInt(clockHMS[0]) + 12; // Changes hours back to 24-hour clock
-
-    CLOCK_NUMBERS.innerText = clockHMS.join(":");
-  }
 });
 
 darkThemeSwitch.addEventListener(CLICK_EVENT, function () {

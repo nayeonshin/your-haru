@@ -112,6 +112,10 @@
   transition: background-color var(--slow-speed) ease;
 }
 
+.invisible {
+  display: none;
+}
+
 .left-menu {
   left: 0;
   right: auto;

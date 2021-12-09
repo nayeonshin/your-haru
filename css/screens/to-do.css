@@ -57,7 +57,6 @@
   transition: var(--focus-transition);
 }
 
-/* TODO: Style scrollbar */
 .background__to-do .to-do__to-do-list .to-do-list__list {
   font-size: 1.1rem;
   height: 72vh;

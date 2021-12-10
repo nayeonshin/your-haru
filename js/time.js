@@ -20,8 +20,8 @@ const months = [
   "Dec",
 ];
 
-const INVISIBLE_CLASSNAME = "invisible";
 const RED_TEXT_CLASSNAME = "red-text";
+const REMOVED_CLASSNAME = "removed";
 
 function changeClockColor(currentClock) {
   const shouldClockBeRed = () => {
@@ -49,14 +49,14 @@ function updateClock(currentTime) {
   const is24HourOn = localStorage.getItem(TWENTY_FOUR_KEY) === "true";
 
   if (!is24HourOn) {
-    clockAmPm.classList.remove(INVISIBLE_CLASSNAME);
+    clockAmPm.classList.remove(REMOVED_CLASSNAME);
     if (currentHours === 0) {
       currentClock[0] = "12"; // When 12 a.m., displays 12
     } else if (!isCurrentAm && currentHours > 12) {
       currentClock[0] = String(currentClock[0] - 12).padStart(2, "0");
     }
   } else {
-    clockAmPm.classList.add(INVISIBLE_CLASSNAME);
+    clockAmPm.classList.add(REMOVED_CLASSNAME);
   }
 
   clockNumbers.innerText = currentClock.join(":");

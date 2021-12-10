@@ -115,8 +115,12 @@
   color: #f84240;
 }
 
-.invisible {
+.removed {
   display: none;
+}
+
+.added {
+  display: block;
 }
 
 .left-menu {

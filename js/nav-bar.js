@@ -5,6 +5,11 @@ const navigationBar = document.querySelector(".js-background__navigation");
 const homeButton = navigationBar.querySelector("div li:first-child button");
 const toDoButton = navigationBar.querySelector("div li:nth-child(2) button");
 const settingButton = navigationBar.querySelector("div li:last-child button");
+const smileButton = navigationBar.querySelector(".js-navigation__smile-button");
+
+const smileModal = document.querySelector(".js-background__smile-modal");
+
+const ADDED_CLASSNAME = "added";
 
 let isOnHomeScreen = true;
 let isOnToDoScreen = false;
@@ -75,4 +80,10 @@ function enableButtons() {
   homeButton.addEventListener(CLICK_EVENT, handleHomeClick);
   toDoButton.addEventListener(CLICK_EVENT, handleToDoClick);
   settingButton.addEventListener(CLICK_EVENT, handleSettingClick);
+  smileButton.addEventListener("mouseover", () => {
+    smileModal.classList.add(ADDED_CLASSNAME);
+  });
+  smileButton.addEventListener("mouseleave", () => {
+    smileModal.classList.remove(ADDED_CLASSNAME);
+  });
 }

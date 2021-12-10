@@ -18,8 +18,8 @@
   justify-content: center;
 }
 
-/* Main */
-.background main {
+/* Home */
+.background .background__home main {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -27,32 +27,32 @@
   margin: auto 0.5em;
 }
 
-.background main .background__calendar,
-.background main .background__clock .clock__am-pm {
+.background .background__home main .home__calendar,
+.background .background__home main .home__clock .clock__am-pm {
   text-transform: uppercase;
 }
 
-.background main .background__clock {
+.background .background__home main .home__clock {
   display: flex;
 }
 
-.background main .background__calendar {
+.background .background__home main .home__calendar {
   font-size: 2.5rem;
   margin-bottom: 0.1em;
 }
 
-.background main .background__clock .clock__numbers {
+.background .background__home main .home__clock .clock__numbers {
   font-size: 9rem;
   font-weight: bold;
   margin-right: 0.1em;
 }
 
-.background main .background__clock .clock__am-pm {
+.background .background__home main .home__clock .clock__am-pm {
   font-size: 3.5rem;
   margin-top: 0.2em;
 }
 
-.background main .background__greeting {
+.background .background__home main .home__greeting {
   font-size: 1.5rem;
 }
 
@@ -144,45 +144,45 @@
 
 /* TODO: Only reduce font size a lot when username is long */
 @media screen and (max-width: 550px) {
-  .background main .background__clock .clock__numbers {
+  .background .background__home main .home__clock .clock__numbers {
     font-size: 8rem;
   }
 
-  .background main .background__greeting {
+  .background .background__home main .home__greeting {
     font-size: 1.3rem;
   }
 }
 
 @media screen and (max-width: 460px) {
-  .background main .background__calendar {
+  .background .background__home main .home__calendar {
     font-size: 2.1rem;
   }
 
-  .background main .background__clock .clock__numbers {
+  .background .background__home main .home__clock .clock__numbers {
     font-size: 7rem;
   }
 
-  .background main .background__greeting {
+  .background .background__home main .home__greeting {
     font-size: 1.1rem;
   }
 }
 
 @media screen and (max-width: 380px) {
-  .background main .background__calendar {
+  .background .background__home main .home__calendar {
     font-size: 1.8rem;
   }
 
-  .background main .background__clock .clock__numbers {
+  .background .background__home main .home__clock .clock__numbers {
     font-size: 5rem;
   }
 
-  .background main .background__greeting {
+  .background .background__home main .home__greeting {
     font-size: 0.9rem;
   }
 }
 
 @media screen and (max-width: 260px) {
-  .background main,
+  .background .background__home main,
   .background__navigation {
     display: none;
   }

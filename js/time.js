@@ -1,8 +1,8 @@
-const clock = document.querySelector(".js-background__clock");
+const clock = document.querySelector(".js-home__clock");
 const clockNumbers = document.querySelector(".js-clock__numbers");
 const clockAmPm = clock.querySelector(".js-clock__am-pm");
 
-const calendar = document.querySelector(".js-background__calendar");
+const calendar = document.querySelector(".js-home__calendar");
 
 const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const months = [

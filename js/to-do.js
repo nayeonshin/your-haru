@@ -78,7 +78,7 @@ function showToDo(newToDo) {
   toDoList.appendChild(li);
   li.classList.add(HIDDEN_CLASSNAME);
   setTimeout(() => {
-    fadeIn(li, { isAfterOut: true }); // Removes "hidden" class
+    fadeIn(li, { isAfterOut: true }); // true removes .hidden
   }, 10);
 
   updateCounter();

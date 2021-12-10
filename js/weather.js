@@ -1,13 +1,14 @@
 import API_KEY from "./config.js";
 
-// TODO: Save this in LS
+const COORDINATES_KEY = "coordinates";
 
-function onGeoSuccess(position) {
-  const latitude = position.coords.latitude;
-  const longitude = position.coords.longitude;
+function handleGeoFail() {
+  alert("Permission denied. Can't show your weather.");
+}
 
+function getWeather(latitude, longitude) {
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`;
-  console.log(url);
+
   fetch(url).then((response) =>
     response.json().then((data) => {
       // Creates a CSS custom property
@@ -29,8 +30,28 @@ function onGeoSuccess(position) {
   );
 }
 
-function onGeoFail() {
-  alert("Can't find you. No weather for you.");
+function handleGeoSuccess(position) {
+  const latitude = position.coords.latitude;
+  const longitude = position.coords.longitude;
+  const coordinates = {
+    latitude: latitude,
+    longitude: longitude,
+  };
+
+  localStorage.setItem(COORDINATES_KEY, JSON.stringify(coordinates));
+
+  getWeather(latitude, longitude);
 }
 
-navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoFail);
+function askForLocation() {
+  const savedLocation = localStorage.getItem(COORDINATES_KEY);
+
+  if (savedLocation === null) {
+    navigator.geolocation.getCurrentPosition(handleGeoSuccess, handleGeoFail);
+  } else {
+    const parsedLocation = JSON.parse(savedLocation);
+    getWeather(parsedLocation.latitude, parsedLocation.longitude);
+  }
+}
+
+askForLocation();

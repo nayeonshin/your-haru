@@ -10,6 +10,7 @@ const smileButton = navigationBar.querySelector(".js-navigation__smile-button");
 const smileModal = document.querySelector(".js-background__smile-modal");
 
 const ADDED_CLASSNAME = "added";
+const CURRENT_SCREEN_CLASSNAME = "current-screen";
 
 let isOnHomeScreen = true;
 let isOnToDoScreen = false;
@@ -49,16 +50,25 @@ function switchScreens({
   if (isHomeClicked && !isOnHomeScreen) {
     _switchScreens(currentScreen, homeScreen);
     isOnHomeScreen = true;
+    homeButton.classList.add(CURRENT_SCREEN_CLASSNAME);
+    toDoButton.classList.remove(CURRENT_SCREEN_CLASSNAME);
+    settingButton.classList.remove(CURRENT_SCREEN_CLASSNAME);
   }
 
   if (isToDoClicked && !isOnToDoScreen) {
     _switchScreens(currentScreen, TO_DO_SCREEN);
     isOnToDoScreen = true;
+    toDoButton.classList.add(CURRENT_SCREEN_CLASSNAME);
+    homeButton.classList.remove(CURRENT_SCREEN_CLASSNAME);
+    settingButton.classList.remove(CURRENT_SCREEN_CLASSNAME);
   }
 
   if (isSettingClicked && !isOnSettingScreen) {
     _switchScreens(currentScreen, settingScreen);
     isOnSettingScreen = true;
+    settingButton.classList.add(CURRENT_SCREEN_CLASSNAME);
+    homeButton.classList.remove(CURRENT_SCREEN_CLASSNAME);
+    toDoButton.classList.remove(CURRENT_SCREEN_CLASSNAME);
   }
 }
 
@@ -77,12 +87,16 @@ function handleHomeClick() {
 function enableButtons() {
   navigationBar.classList.add("signed-in");
 
+  homeButton.classList.add(CURRENT_SCREEN_CLASSNAME);
+
   homeButton.addEventListener(CLICK_EVENT, handleHomeClick);
   toDoButton.addEventListener(CLICK_EVENT, handleToDoClick);
   settingButton.addEventListener(CLICK_EVENT, handleSettingClick);
+
   smileButton.addEventListener("mouseover", () => {
     smileModal.classList.add(ADDED_CLASSNAME);
   });
+
   smileButton.addEventListener("mouseleave", () => {
     smileModal.classList.remove(ADDED_CLASSNAME);
   });

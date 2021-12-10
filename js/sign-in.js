@@ -31,6 +31,17 @@ function handleLogInSubmit(event) {
   showGreeting(inputUsername);
 }
 
+function changeMessage(event, message) {
+  loginInput.addEventListener(event, () => {
+    fadeOut(loginMessage, { isAfterIn: true });
+
+    setTimeout(() => {
+      loginMessage.innerText = message;
+      fadeIn(loginMessage, { isAfterOut: true });
+    }, TRANSITION_DURATION);
+  });
+}
+
 function askForUsername() {
   const savedUsername = localStorage.getItem(USERNAME_KEY);
 
@@ -39,23 +50,8 @@ function askForUsername() {
       fadeIn(loginFormBackground, { isSlow: true });
       fadeIn(loginForm, { isSlow: true });
 
-      loginInput.addEventListener("focus", () => {
-        fadeOut(loginMessage, { isAfterIn: true });
-
-        setTimeout(() => {
-          loginMessage.innerText = "Press 'Enter' to confirm";
-          fadeIn(loginMessage, { isAfterOut: true });
-        }, TRANSITION_DURATION);
-      });
-
-      loginInput.addEventListener("blur", () => {
-        fadeOut(loginMessage, { isAfterIn: true });
-
-        setTimeout(() => {
-          loginMessage.innerText = "You can always change it later";
-          fadeIn(loginMessage, { isAfterOut: true });
-        }, TRANSITION_DURATION);
-      });
+      changeMessage("focus", "Press 'Enter' to confirm");
+      changeMessage("blur", "You can always change it later.");
     }, TRANSITION_DURATION);
 
     loginForm.addEventListener("submit", handleLogInSubmit);

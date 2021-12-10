@@ -47,28 +47,29 @@ function switchScreens({
     currentScreen = settingScreen;
   }
 
+  const switchButtons = (newButton, oldButtons) => {
+    newButton.classList.add(CURRENT_SCREEN_CLASSNAME);
+    oldButtons.forEach((oldButton) => {
+      oldButton.classList.remove(CURRENT_SCREEN_CLASSNAME);
+    });
+  };
+
   if (isHomeClicked && !isOnHomeScreen) {
     _switchScreens(currentScreen, homeScreen);
     isOnHomeScreen = true;
-    homeButton.classList.add(CURRENT_SCREEN_CLASSNAME);
-    toDoButton.classList.remove(CURRENT_SCREEN_CLASSNAME);
-    settingButton.classList.remove(CURRENT_SCREEN_CLASSNAME);
+    switchButtons(homeButton, [toDoButton, settingButton]);
   }
 
   if (isToDoClicked && !isOnToDoScreen) {
     _switchScreens(currentScreen, TO_DO_SCREEN);
     isOnToDoScreen = true;
-    toDoButton.classList.add(CURRENT_SCREEN_CLASSNAME);
-    homeButton.classList.remove(CURRENT_SCREEN_CLASSNAME);
-    settingButton.classList.remove(CURRENT_SCREEN_CLASSNAME);
+    switchButtons(toDoButton, [homeButton, settingButton]);
   }
 
   if (isSettingClicked && !isOnSettingScreen) {
     _switchScreens(currentScreen, settingScreen);
     isOnSettingScreen = true;
-    settingButton.classList.add(CURRENT_SCREEN_CLASSNAME);
-    homeButton.classList.remove(CURRENT_SCREEN_CLASSNAME);
-    toDoButton.classList.remove(CURRENT_SCREEN_CLASSNAME);
+    switchButtons(settingButton, [homeButton, toDoButton]);
   }
 }
 

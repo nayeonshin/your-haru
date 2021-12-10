@@ -4,6 +4,8 @@ const loginForm = loginFormBackground.querySelector(
 );
 const loginInput = loginForm.querySelector(".js-sign-in__input");
 
+const loginMessage = loginForm.querySelector(".js-sign-in__message");
+
 function showGreeting(username) {
   setTimeout(() => {
     fadeOut(GREETING);
@@ -36,6 +38,24 @@ function askForUsername() {
     setTimeout(() => {
       fadeIn(loginFormBackground, { isSlow: true });
       fadeIn(loginForm, { isSlow: true });
+
+      loginInput.addEventListener("focus", () => {
+        fadeOut(loginMessage, { isAfterIn: true });
+
+        setTimeout(() => {
+          loginMessage.innerText = "Press 'Enter' to confirm";
+          fadeIn(loginMessage, { isAfterOut: true });
+        }, TRANSITION_DURATION);
+      });
+
+      loginInput.addEventListener("blur", () => {
+        fadeOut(loginMessage, { isAfterIn: true });
+
+        setTimeout(() => {
+          loginMessage.innerText = "You can always change it later";
+          fadeIn(loginMessage, { isAfterOut: true });
+        }, TRANSITION_DURATION);
+      });
     }, TRANSITION_DURATION);
 
     loginForm.addEventListener("submit", handleLogInSubmit);

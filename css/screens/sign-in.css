@@ -49,7 +49,6 @@
   transition: var(--focus-transition);
 }
 
-/* TODO: Natural transition */
 .form-background .form-background__sign-in .sign-in__message {
   color: #66b46c;
   font-size: 0.8rem;

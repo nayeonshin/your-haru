@@ -1,18 +1,29 @@
 import API_KEY from "./config.js";
 
+// TODO: Save this in LS
+
 function onGeoSuccess(position) {
   const latitude = position.coords.latitude;
   const longitude = position.coords.longitude;
 
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`;
+  console.log(url);
   fetch(url).then((response) =>
     response.json().then((data) => {
-      const weather = document.querySelector(
-        ".js-home__weather span:first-child"
+      // Creates a CSS custom property
+      const root = document.documentElement;
+      root.style.setProperty(
+        "--weather-icon",
+        `url("../../img/weather/${data.weather[0].icon}.png")`
       );
-      const city = document.querySelector(".js-home__weather span:last-child");
 
-      weather.innerText = `${data.weather[0].main} / ${data.main.temp}`;
+      const weather = document.querySelector(".js-home__weather");
+      const temperature = weather.querySelector(
+        ".js-home__weather .js-weather__temperature"
+      );
+      const city = weather.querySelector(".js-home__weather .js-weather__city");
+
+      temperature.innerText = `${data.main.temp}°C`;
       city.innerText = data.name;
     })
   );

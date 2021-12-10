@@ -1,4 +1,6 @@
-const homeScreen = document.querySelector(".js-background main");
+const homeScreen = document.querySelector(
+  ".js-background .js-background__home"
+);
 const settingScreen = document.querySelector(".js-background__setting");
 
 const navigationBar = document.querySelector(".js-background__navigation");

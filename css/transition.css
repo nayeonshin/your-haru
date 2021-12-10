@@ -1,3 +1,4 @@
+/* Fade transition */
 .hidden,
 .visible {
   transition: opacity var(--medium-speed) ease-out,
@@ -16,4 +17,13 @@
 
 .slow {
   transition-duration: var(--slow-speed);
+}
+
+/* Display */
+.removed {
+  display: none;
+}
+
+.added {
+  display: block;
 }

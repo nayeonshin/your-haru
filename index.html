@@ -29,7 +29,7 @@
             >
           </form>
         </div>
-        <div class="background__home">
+        <div class="background__home js-background__home">
           <main>
             <h3 class="home__calendar js-home__calendar">Mon, Jan 00, 0000</h3>
             <h2 class="home__clock js-home__clock">
@@ -39,8 +39,11 @@
             <h1 class="home__greeting js-home__greeting">Hello!</h1>
           </main>
           <div class="home__weather js-home__weather">
-            <span></span>
-            <span></span>
+            <div class="weather__icon"></div>
+            <div>
+              <span class="weather__temperature js-weather__temperature"></span>
+              <span class="weather__city js-weather__city"></span>
+            </div>
           </div>
         </div>
         <div class="background__to-do js-background__to-do hidden">
@@ -84,6 +87,7 @@
               <span class="toggle__slider"></span>
             </label>
           </form>
+          <!-- TODO: Fahrenheit option -->
           <form class="setting__left-menu">
             <h3>Menu on the Left</h3>
             <label class="left-menu__toggle js-left-menu__toggle">

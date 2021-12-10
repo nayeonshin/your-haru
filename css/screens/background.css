@@ -56,6 +56,38 @@
   font-size: 1.5rem;
 }
 
+/* TODO: When menu on the left, left: auto, right: 0 */
+.background .background__home .home__weather {
+  align-items: flex-end;
+  bottom: 0;
+  display: flex;
+  left: 0;
+  padding: 0.8em;
+  position: absolute;
+}
+
+.background .home__weather .weather__icon {
+  background: var(--weather-icon) no-repeat center/80%;
+  height: 4em;
+  width: 4em;
+}
+
+.background .home__weather .weather__icon + div {
+  display: flex;
+  flex-direction: column;
+  margin: auto auto 0.5em 0.2em;
+}
+
+.background .home__weather .weather__temperature {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.background .home__weather .weather__city {
+  font-size: 0.9rem;
+  margin-top: 0.2em;
+}
+
 /* Navigation */
 .background .background__navigation {
   background-color: var(--gray);
@@ -113,14 +145,6 @@
 
 .red-text {
   color: #f84240;
-}
-
-.removed {
-  display: none;
-}
-
-.added {
-  display: block;
 }
 
 .left-menu {
@@ -182,8 +206,8 @@
 }
 
 @media screen and (max-width: 260px) {
-  .background .background__home main,
-  .background__navigation {
+  .background .background__home,
+  .background .background__navigation {
     display: none;
   }
 }

@@ -56,7 +56,6 @@
   font-size: 1.5rem;
 }
 
-/* TODO: When menu on the left, left: auto, right: 0 */
 .background .background__home .home__weather {
   align-items: flex-end;
   bottom: 0;
@@ -145,6 +144,11 @@
 
 .red-text {
   color: #f84240;
+}
+
+.background .background__home .right-weather {
+  left: auto;
+  right: 0;
 }
 
 .left-menu {

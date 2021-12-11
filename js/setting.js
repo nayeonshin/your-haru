@@ -14,6 +14,7 @@ const darkBackground = document.querySelector(".js-background__darkened");
 const leftMenuToggle = setting.querySelector(".js-left-menu__toggle");
 const leftMenuSwitch = leftMenuToggle.querySelector(".js-toggle__switch");
 const menu = document.querySelector(".js-background__navigation");
+const weather = document.querySelector(".js-home__weather");
 
 const resetButton = setting.querySelector(".js-reset__button");
 const resetModal = setting.querySelector(".js-setting__reset-modal");
@@ -22,6 +23,7 @@ const yesButton = resetModal.querySelector("form button:last-child");
 
 const DARK_THEME_CLASSNAME = "darker";
 const LEFT_MENU_CLASSNAME = "left-menu";
+const RIGHT_WEATHER_CLASSNAME = "right-weather";
 
 function changeState(key) {
   const isOn = localStorage.getItem(key) === "true";
@@ -70,6 +72,7 @@ function showInitialStates() {
 
   if (isLeftMenuOn) {
     menu.classList.add(LEFT_MENU_CLASSNAME);
+    weather.classList.add(RIGHT_WEATHER_CLASSNAME);
   }
 
   // Switches
@@ -104,6 +107,7 @@ leftMenuSwitch.addEventListener(CLICK_EVENT, function () {
   changeState("isLeftMenuOn");
 
   menu.classList.toggle(LEFT_MENU_CLASSNAME);
+  weather.classList.toggle(RIGHT_WEATHER_CLASSNAME);
 });
 
 resetButton.addEventListener(CLICK_EVENT, (event) => {

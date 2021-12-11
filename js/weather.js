@@ -6,7 +6,7 @@ function handleGeoFail() {
   alert("Permission denied. Can't show your weather.");
 }
 
-function getWeather(latitude, longitude) {
+function getWeather(latitude, longitude, isWeatherSaved) {
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`;
 
   fetch(url).then((response) =>
@@ -26,6 +26,10 @@ function getWeather(latitude, longitude) {
 
       temperature.innerText = `${data.main.temp}°C`;
       city.innerText = data.name;
+
+      if (!isWeatherSaved) {
+        fadeIn(weather, { isAfterOut: true });
+      }
     })
   );
 }
@@ -40,17 +44,20 @@ function handleGeoSuccess(position) {
 
   localStorage.setItem(COORDINATES_KEY, JSON.stringify(coordinates));
 
-  getWeather(latitude, longitude);
+  getWeather(latitude, longitude, false);
 }
 
 function askForLocation() {
   const savedLocation = localStorage.getItem(COORDINATES_KEY);
 
   if (savedLocation === null) {
+    const weather = document.querySelector(".js-home__weather");
+    weather.classList.add(HIDDEN_CLASSNAME);
+
     navigator.geolocation.getCurrentPosition(handleGeoSuccess, handleGeoFail);
   } else {
     const parsedLocation = JSON.parse(savedLocation);
-    getWeather(parsedLocation.latitude, parsedLocation.longitude);
+    getWeather(parsedLocation.latitude, parsedLocation.longitude, true);
   }
 }
 

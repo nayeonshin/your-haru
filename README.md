@@ -5,6 +5,7 @@ your haru is a productivity web app built in HTML, CSS, and Vanilla JS only.\
 
 ![Desktop](/img/docs/desktop.jpg)
 ![Mobile](/img/docs/mobile.jpg)
+![Tablet](/img/docs/tablet.jpg)
 
 ### Notes
 

@@ -170,7 +170,6 @@
   outline: none;
 }
 
-/* TODO: Only reduce font size a lot when username is long */
 @media screen and (max-width: 550px) {
   .background .background__home main .home__clock .clock__numbers {
     font-size: 8rem;

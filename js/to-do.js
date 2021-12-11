@@ -8,8 +8,6 @@ const TODOS_KEY = "to-dos";
 
 let toDos = [];
 
-// TODO: Strikethrough transition
-
 function saveToDos() {
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }

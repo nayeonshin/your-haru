@@ -7,6 +7,20 @@ your haru is a productivity web app built in HTML, CSS, and Vanilla JS only.\
 ![Mobile](/img/docs/mobile.jpg)
 ![Tablet](/img/docs/tablet.jpg)
 
+## Features
+
+### Calendar and Clock
+
+![Calendar and Clock](img/docs/calendar-and-clock.png)
+
+### To-Do List
+
+![To-Do List](img/docs/to-do-list.png)
+
+### Settings
+
+![Settings](img/docs/settings.png)
+
 ### Notes
 
 Thanks to this project, I learned that I'm not a fan of CSS.

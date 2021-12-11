@@ -23,6 +23,7 @@ const yesButton = resetModal.querySelector("form button:last-child");
 
 const DARK_THEME_CLASSNAME = "darker";
 const LEFT_MENU_CLASSNAME = "left-menu";
+const LEFT_SMILE_MODAL_CLASSNAME = "left-smile-modal";
 const RIGHT_WEATHER_CLASSNAME = "right-weather";
 
 function changeState(key) {
@@ -73,6 +74,7 @@ function showInitialStates() {
   if (isLeftMenuOn) {
     menu.classList.add(LEFT_MENU_CLASSNAME);
     weather.classList.add(RIGHT_WEATHER_CLASSNAME);
+    SMILE_MODAL.classList.add(LEFT_SMILE_MODAL_CLASSNAME);
   }
 
   // Switches
@@ -108,6 +110,7 @@ leftMenuSwitch.addEventListener(CLICK_EVENT, function () {
 
   menu.classList.toggle(LEFT_MENU_CLASSNAME);
   weather.classList.toggle(RIGHT_WEATHER_CLASSNAME);
+  SMILE_MODAL.classList.toggle(LEFT_SMILE_MODAL_CLASSNAME);
 });
 
 resetButton.addEventListener(CLICK_EVENT, (event) => {

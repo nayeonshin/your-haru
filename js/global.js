@@ -6,6 +6,7 @@ const TRANSITION_DURATION = 500;
 
 // JS
 const GREETING = document.querySelector(".js-home__greeting");
+const SMILE_MODAL = document.querySelector(".js-background__smile-modal");
 const TO_DO_SCREEN = document.querySelector(".js-background__to-do");
 
 const CHECKED_CLASSNAME = "checked";

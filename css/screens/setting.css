@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: space-around;
   text-transform: uppercase;
+  z-index: 1;
 }
 
 .background__setting form {

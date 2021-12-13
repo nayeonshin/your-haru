@@ -21,6 +21,10 @@ your haru is a productivity web app built in HTML, CSS, and Vanilla JS only.\
 
 ![Settings](img/docs/settings.png)
 
+## Tip
+
+If you press f11 (Windows) or Control + Command + F (Mac), you can go full-screen.
+
 ### Notes
 
 Thanks to this project, I learned that I'm not a fan of CSS.

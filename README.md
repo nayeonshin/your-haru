@@ -1,4 +1,4 @@
-# [your haru](https://lucid-hermann-f09465.netlify.app/)
+# [your haru](https://your-haru.netlify.app/)
 
 your haru is a productivity web app built in HTML, CSS, and Vanilla JS only.\
 "haru" is pronounced hah-ru and means "day" in Korean.

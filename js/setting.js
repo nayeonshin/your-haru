@@ -9,7 +9,7 @@ const twentyFourSwitch = twentyFourToggle.querySelector(".js-toggle__switch");
 
 const darkThemeToggle = setting.querySelector(".js-dark-theme__toggle");
 const darkThemeSwitch = darkThemeToggle.querySelector(".js-toggle__switch");
-const darkBackground = document.querySelector(".js-background__darkened");
+const darkBackground = document.querySelector(".js-background--darkened");
 
 const leftMenuToggle = setting.querySelector(".js-left-menu__toggle");
 const leftMenuSwitch = leftMenuToggle.querySelector(".js-toggle__switch");

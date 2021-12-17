@@ -9,7 +9,7 @@
   height: 100%;
 }
 
-.background__darkened {
+.background--darkened {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.3);
   display: flex;

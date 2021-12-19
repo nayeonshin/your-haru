@@ -50,7 +50,7 @@ function handleRenameSubmit(event) {
   const savedUsername = localStorage.getItem(USERNAME_KEY);
 
   if (newUsername === savedUsername) {
-    showModal(`⚠️ Username is already "${newUsername}".`);
+    showModal(`⚠️ Username is already "${newUsername}."`);
   } else {
     localStorage.setItem(USERNAME_KEY, newUsername);
 

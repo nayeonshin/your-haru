@@ -11,11 +11,11 @@ your haru is a productivity web app built in HTML, CSS, and Vanilla JS only.\
 
 ## Features
 
-### Calendar and Clock
+### Calendar & clock
 
 ![Calendar and Clock](img/docs/calendar-and-clock.png)
 
-### To-Do List
+### To-do list
 
 ![To-Do List](img/docs/to-do-list.png)
 

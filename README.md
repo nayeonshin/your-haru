@@ -15,7 +15,7 @@ your haru is a productivity web app built in HTML, CSS, and Vanilla JS only.\
 
 ![Date and Clock](img/docs/calendar-and-clock.png)
 
-### To-do List
+### To-Do List
 
 ![To-Do List](img/docs/to-do-list.png)
 
@@ -31,4 +31,4 @@ If you press F11 (Windows) or Control + Command + F (Mac), you can go full-scree
 
 Thanks to this project, I learned that I'm not a fan of CSS.
 
-![CSS meme](https://img-9gag-fun.9cache.com/photo/a1rQGo8_460s.jpg)
+![CSS Meme](https://img-9gag-fun.9cache.com/photo/a1rQGo8_460s.jpg)

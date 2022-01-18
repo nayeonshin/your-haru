@@ -46,7 +46,7 @@ function showModal(message) {
 function handleRenameSubmit(event) {
   event.preventDefault();
 
-  const newUsername = renameInput.value;
+  const newUsername = renameInput.value.trim();
   const savedUsername = localStorage.getItem(USERNAME_KEY);
 
   if (newUsername === savedUsername) {

@@ -48,15 +48,15 @@ function updateClock(currentTime) {
   const amPm = isCurrentAm ? "am" : "pm";
   const is24HourOn = localStorage.getItem(TWENTY_FOUR_KEY) === "true";
 
-  if (!is24HourOn) {
+  if (is24HourOn) {
+    clockAmPm.classList.add(REMOVED_CLASSNAME);
+  } else {
     clockAmPm.classList.remove(REMOVED_CLASSNAME);
     if (currentHours === 0) {
       currentClock[0] = "12"; // When 12 a.m., displays 12
     } else if (!isCurrentAm && currentHours > 12) {
       currentClock[0] = String(currentClock[0] - 12).padStart(2, "0");
     }
-  } else {
-    clockAmPm.classList.add(REMOVED_CLASSNAME);
   }
 
   clockNumbers.innerText = currentClock.join(":");

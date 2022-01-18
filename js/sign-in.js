@@ -25,7 +25,7 @@ function handleLogInSubmit(event) {
   fadeOut(loginFormBackground, { isSlow: true, isAfterIn: true });
   fadeOut(loginForm, { isSlow: true, isAfterOut: true });
 
-  const inputUsername = loginInput.value;
+  const inputUsername = loginInput.value.trim();
 
   localStorage.setItem(USERNAME_KEY, inputUsername);
   showGreeting(inputUsername);

@@ -13,7 +13,7 @@ your haru is a productivity web app built in HTML, CSS, and Vanilla JS only.\
 
 ### Date & Clock
 
-![Date and Clock](img/docs/calendar-and-clock.png)
+![Date and Clock](img/docs/date-and-clock.png)
 
 ### To-Do List
 

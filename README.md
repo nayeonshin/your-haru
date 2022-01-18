@@ -3,7 +3,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e527141c-e916-4040-a16e-4fa4993a999a/deploy-status)](https://app.netlify.com/sites/your-haru/deploys)
 
 your haru is a productivity web app built in HTML, CSS, and Vanilla JS only.\
-"haru" is pronounced hah-ru and means "day" in Korean.
+"haru" is pronounced hah-roo and means "day" in Korean.
 
 ![Desktop](/img/docs/desktop.jpg)
 ![Mobile](/img/docs/mobile.jpg)

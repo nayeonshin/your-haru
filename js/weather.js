@@ -6,7 +6,7 @@ function handleGeoFail() {
   alert("Permission denied. Can't show your weather.");
 }
 
-function getWeather(latitude, longitude, isWeatherSaved) {
+function getWeather(latitude, longitude, { isWeatherSaved } = {}) {
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`;
 
   fetch(url).then((response) =>
@@ -44,7 +44,7 @@ function handleGeoSuccess(position) {
 
   localStorage.setItem(COORDINATES_KEY, JSON.stringify(coordinates));
 
-  getWeather(latitude, longitude, false);
+  getWeather(latitude, longitude, { isWeatherSaved: false });
 }
 
 function askForLocation() {
@@ -57,7 +57,9 @@ function askForLocation() {
     navigator.geolocation.getCurrentPosition(handleGeoSuccess, handleGeoFail);
   } else {
     const parsedLocation = JSON.parse(savedLocation);
-    getWeather(parsedLocation.latitude, parsedLocation.longitude, true);
+    getWeather(parsedLocation.latitude, parsedLocation.longitude, {
+      isWeatherSaved: true,
+    });
   }
 }
 

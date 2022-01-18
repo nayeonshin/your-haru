@@ -1,4 +1,3 @@
-const toDoCalendar = TO_DO_SCREEN.querySelector(".titles__header h3");
 const toDoForm = TO_DO_SCREEN.querySelector(".js-to-do-list__form");
 const toDoCounter = toDoForm.querySelector(".js-form__counter");
 const toDoInput = toDoForm.querySelector("input");
@@ -112,7 +111,7 @@ function showSavedToDos() {
 }
 
 setTimeout(() => {
-  updateCalendar(new Date(), { isToDoCalendar: true }); // In time.js
+  updateDate(new Date(), { isToDoDate: true }); // In time.js
 }, 1000);
 
 showSavedToDos();

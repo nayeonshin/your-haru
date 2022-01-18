@@ -2,7 +2,7 @@ const clock = document.querySelector(".js-home__clock");
 const clockNumbers = document.querySelector(".js-clock__numbers");
 const clockAmPm = clock.querySelector(".js-clock__am-pm");
 
-const calendar = document.querySelector(".js-home__calendar");
+const date = document.querySelector(".js-home__date");
 
 const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const months = [
@@ -65,24 +65,24 @@ function updateClock(currentTime) {
   changeClockColor(currentClock);
 }
 
-function updateCalendar(currentTime, { isToDoCalendar } = {}) {
+function updateDate(currentTime, { isToDoDate } = {}) {
   const currentDay = days[currentTime.getDay()];
   const currentMonth = months[currentTime.getMonth()];
   const currentDate = currentTime.getDate();
   const currentYear = currentTime.getFullYear();
 
-  const currentCalendar = `${currentDay}, ${currentMonth} ${currentDate}, ${currentYear}`;
-  if (isToDoCalendar) {
-    toDoCalendar.innerText = currentCalendar;
+  const dateToShow = `${currentDay}, ${currentMonth} ${currentDate}, ${currentYear}`;
+  if (isToDoDate) {
+    TO_DO_DATE.innerText = dateToShow;
   } else {
-    calendar.innerText = currentCalendar;
+    date.innerText = dateToShow;
   }
 }
 
 function getTime() {
   const currentTime = new Date();
 
-  updateCalendar(currentTime);
+  updateDate(currentTime);
   updateClock(currentTime);
 }
 

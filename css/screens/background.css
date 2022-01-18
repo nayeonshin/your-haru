@@ -27,7 +27,7 @@
   margin: auto 0.5em;
 }
 
-.background .background__home main .home__calendar,
+.background .background__home main .home__date,
 .background .background__home main .home__clock .clock__am-pm {
   text-transform: uppercase;
 }
@@ -36,7 +36,7 @@
   display: flex;
 }
 
-.background .background__home main .home__calendar {
+.background .background__home main .home__date {
   font-size: 2.5rem;
   margin-bottom: 0.1em;
 }
@@ -186,7 +186,7 @@
 }
 
 @media screen and (max-width: 460px) {
-  .background .background__home main .home__calendar {
+  .background .background__home main .home__date {
     font-size: 2.1rem;
   }
 
@@ -200,7 +200,7 @@
 }
 
 @media screen and (max-width: 380px) {
-  .background .background__home main .home__calendar {
+  .background .background__home main .home__date {
     font-size: 1.8rem;
   }
 

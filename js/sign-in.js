@@ -20,7 +20,7 @@ function showGreeting(username) {
 function handleLogInSubmit(event) {
   event.preventDefault(); // Stops browser from refreshing
 
-  enableButtons();
+  enableButtons(); // In nav-bar.js
 
   fadeOut(loginFormBackground, { isSlow: true, isAfterIn: true });
   fadeOut(loginForm, { isSlow: true, isAfterOut: true });
@@ -56,7 +56,7 @@ function askForUsername() {
 
     loginForm.addEventListener("submit", handleLogInSubmit);
   } else {
-    enableButtons();
+    enableButtons(); // In nav-bar.js
     GREETING.innerText = `Hello, ${savedUsername}!`;
   }
 }

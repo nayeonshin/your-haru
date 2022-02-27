@@ -25,7 +25,7 @@ const REMOVED_CLASSNAME = "removed";
 
 function changeClockColor(currentClock) {
   const shouldClockBeRed = () => {
-    [_, currentMinutes, currentSeconds] = currentClock;
+    [, currentMinutes, currentSeconds] = currentClock;
     return parseInt(currentMinutes) === 59 && parseInt(currentSeconds) >= 55;
   };
 

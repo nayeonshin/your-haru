@@ -58,11 +58,7 @@ function showToDo(newToDo) {
   checkbox.addEventListener(CLICK_EVENT, function () {
     span.classList.toggle(CHECKED_CLASSNAME);
 
-    if (toDo.isChecked) {
-      toDo.isChecked = false;
-    } else {
-      toDo.isChecked = true;
-    }
+    toDo.isChecked = !toDo.isChecked;
 
     updateCounter();
     saveToDos();

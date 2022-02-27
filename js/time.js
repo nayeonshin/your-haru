@@ -24,12 +24,12 @@ const RED_TEXT_CLASSNAME = "red-text";
 const REMOVED_CLASSNAME = "removed";
 
 function changeClockColor(currentClock) {
-  const shouldClockBeRed = () => {
+  const checkHasToBeRed = () => {
     [, currentMinutes, currentSeconds] = currentClock;
     return parseInt(currentMinutes) === 59 && parseInt(currentSeconds) >= 55;
   };
 
-  if (shouldClockBeRed()) {
+  if (checkHasToBeRed()) {
     clock.classList.add(RED_TEXT_CLASSNAME);
   } else {
     clock.classList.remove(RED_TEXT_CLASSNAME);

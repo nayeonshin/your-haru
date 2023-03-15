@@ -1,6 +1,6 @@
 const clock = document.querySelector(".js-home__clock");
 const clockNumbers = document.querySelector(".js-clock__numbers");
-const clockAmPm = clock.querySelector(".js-clock__am-pm");
+const clockMeridiem = clock.querySelector(".js-clock__am-pm");
 
 const date = document.querySelector(".js-home__date");
 
@@ -44,14 +44,14 @@ function updateClock(currentTime) {
   ].map((number) => String(number).padStart(2, "0"));
   const currentHours = parseInt(currentClock[0]);
 
-  const isCurrentAm = currentHours < 12 ? true : false;
-  const amPm = isCurrentAm ? "am" : "pm";
+  const isCurrentAm = currentHours < 12;
+  const meridiem = isCurrentAm ? "am" : "pm";
   const is24HourOn = localStorage.getItem(TWENTY_FOUR_KEY) === "true";
 
   if (is24HourOn) {
-    clockAmPm.classList.add(REMOVED_CLASSNAME);
+    clockMeridiem.classList.add(REMOVED_CLASSNAME);
   } else {
-    clockAmPm.classList.remove(REMOVED_CLASSNAME);
+    clockMeridiem.classList.remove(REMOVED_CLASSNAME);
     if (currentHours === 0) {
       currentClock[0] = "12"; // When 12 a.m., displays 12
     } else if (!isCurrentAm && currentHours > 12) {
@@ -60,7 +60,7 @@ function updateClock(currentTime) {
   }
 
   clockNumbers.innerText = currentClock.join(":");
-  clockAmPm.innerText = amPm;
+  clockMeridiem.innerText = meridiem;
 
   changeClockColor(currentClock);
 }

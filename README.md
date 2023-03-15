@@ -2,7 +2,8 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e527141c-e916-4040-a16e-4fa4993a999a/deploy-status)](https://app.netlify.com/sites/your-haru/deploys)
 
-your haru is a productivity web app built in HTML, CSS, and Vanilla JS only.\
+your haru is a productivity web app built in HTML, CSS, and Vanilla JS only.
+
 "haru" is pronounced hah-roo and means "day" in Korean.
 
 ![Desktop](/img/docs/desktop.jpg)
@@ -22,6 +23,30 @@ your haru is a productivity web app built in HTML, CSS, and Vanilla JS only.\
 ### Settings
 
 ![Settings](img/docs/settings.png)
+
+### Fade transitions
+
+I implemented the fade in and out transitions in pure CSS and Vailla JS.
+
+See:
+
+- [CSS](/css/transition.css)
+- [JavaScript](/js/transition.js)
+
+Example:
+
+```js
+function showGreeting(username) {
+  setTimeout(() => {
+    fadeOut(GREETING);
+
+    setTimeout(() => {
+      GREETING.innerText = `Hello, ${username}!`;
+      fadeIn(GREETING, { isAfterOut: true });
+    }, TRANSITION_DURATION);
+  }, TRANSITION_DURATION);
+}
+```
 
 ## Tip
 

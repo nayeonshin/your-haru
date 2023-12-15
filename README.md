@@ -26,7 +26,7 @@ your haru is a productivity web app built in HTML, CSS, and Vanilla JS only.
 
 ### Fade transitions
 
-I implemented the fade in and out transitions in pure CSS and Vailla JS.
+I implemented the fade-in and out transitions in pure CSS and Vanilla JS.
 
 See:
 
